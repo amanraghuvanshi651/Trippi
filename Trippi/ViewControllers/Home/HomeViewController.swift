@@ -16,8 +16,6 @@ class HomeViewController: UIViewController {
     
     private var viewModel = HomeViewModel()
     
-    let transition = CircularTransition()
-    
     var cellRect = CGRect()
     
     let maxHeaderHeight: CGFloat = 170
@@ -38,6 +36,9 @@ class HomeViewController: UIViewController {
     var location = (0.0, 0.0)
     
     var isAnimationInProgress = false
+    
+    var animator: Animator?
+    var selectedCellImageViewSnapshot: UIView?
     
     //MARK: - Outlets
     @IBOutlet weak var discoveryLabel: UILabel!
@@ -65,19 +66,21 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
-        
         setUpUI()
-        
         locationManager.delegate = self
         getCurrentLocation()
+//        selectedCellImageViewSnapshot = profileButton.snapshotView(afterScreenUpdates: true)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        selectedCellImageViewSnapshot = profileButtonContainerView.snapshotView(afterScreenUpdates: true)
     }
     
     //MARK: - Actions
     @IBAction func onClickProfileButton(_ sender: Any) {
         let vc = getVC(storyboard: .setting, vc: SettingViewController.identifier) as! SettingViewController
-        let rect = self.view.convert(profileButton.bounds, from: profileButtonContainerView)
-        vc.buttonFrame = rect
-        vc.badgeFrame = self.view.convert(badgeView.bounds, from: badgeView)
+        vc.transitioningDelegate = self
         self.presentVC(vc: vc)
     }
     
@@ -103,7 +106,6 @@ class HomeViewController: UIViewController {
     func registerCell() {
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: CitiesForYouTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CitiesForYouTableViewCell.identifier)
-        tableView.register(UINib(nibName: HomeHeaderTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: HomeHeaderTableViewCell.identifier)
     }
     
     func setUpLargeHeaderUI() {
@@ -170,7 +172,7 @@ class HomeViewController: UIViewController {
                 if let currentLocation:CLLocation = self.locationManager.location {
                     self.location.0 = currentLocation.coordinate.latitude
                     self.location.1 = currentLocation.coordinate.longitude
-                    self.getReverSerGeoLocation(location: currentLocation)
+                    self.getReversedGeoLocation(location: currentLocation)
                 }
             default:
                 self.locationManager.requestLocation()
@@ -179,7 +181,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func getReverSerGeoLocation(location : CLLocation) {
+    func getReversedGeoLocation(location : CLLocation) {
         CLGeocoder().reverseGeocodeLocation(location) {
             placemarks , error in
             if error == nil && placemarks!.count > 0 {
@@ -211,11 +213,11 @@ extension HomeViewController: CLLocationManagerDelegate {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         location.0 = locValue.latitude
         location.1 = locValue.longitude
-        getReverSerGeoLocation(location: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude))
+        getReversedGeoLocation(location: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude))
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-//        showLocationSettingAlert()
+        showLocationSettingAlert()
     }
 }
 
@@ -268,33 +270,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//MARK: -
-extension HomeViewController: HomeHeaderTableViewCellDelegate {
-    func onClickProfileButton() {
-        let vc = getVC(storyboard: .setting, vc: SettingViewController.identifier) as! SettingViewController
-        //        vc.transitioningDelegate = self
-        vc.modalPresentationStyle = .fullScreen
-        self.presentVC(vc: vc)
+extension HomeViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let secondViewController = presented as? SettingViewController,
+                let selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
+                else { return nil }
+
+        animator = Animator(type: .present, firstViewController: self, secondViewController: secondViewController, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot)
+            return animator
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let secondViewController = dismissed as? SettingViewController,
+                let selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
+                else { return nil }
+
+            animator = Animator(type: .dismiss, firstViewController: self, secondViewController: secondViewController, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot)
+            return animator
     }
 }
 
-//extension HomeViewController: UIViewControllerTransitioningDelegate {
-//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        guard let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? HomeHeaderTableViewCell else {
-//            return transition
-//        }
-//        cellRect =
-//                cell.profileButton.convert(cell.profileButton.bounds,
-//                                       to: view)
-//        transition.transitionMode = .present
-//        transition.circleColor = UIColor(named: APP_BACKGROUND_COLOR) ?? .white
-//        transition.startingPoint = CGPoint(x: cellRect.midX, y: cellRect.midY)
-//        return transition
-//    }
-//
-//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        transition.transitionMode = .dismiss
-//        transition.startingPoint = CGPoint(x: cellRect.midX, y: cellRect.midY)
-//        return transition
-//    }
-//}

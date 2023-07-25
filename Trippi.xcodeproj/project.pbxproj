@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */; };
 		50AF64BF2A6FC5AE005FFAB8 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50AF64BD2A6FC5AE005FFAB8 /* SettingTableViewCell.xib */; };
+		50AF64C12A6FFD7E005FFAB8 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64C02A6FFD7E005FFAB8 /* SettingsModel.swift */; };
+		50AF64C52A701421005FFAB8 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64C42A701421005FFAB8 /* Animator.swift */; };
 		50BB53412A6A7289000DE037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53402A6A7289000DE037 /* AppDelegate.swift */; };
 		50BB53432A6A7289000DE037 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53422A6A7289000DE037 /* SceneDelegate.swift */; };
 		50BB53452A6A7289000DE037 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53442A6A7289000DE037 /* OnBoardingViewController.swift */; };
@@ -31,13 +33,11 @@
 		50BB539C2A6AA1B2000DE037 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BB539B2A6AA1B2000DE037 /* CustomHeaderView.xib */; };
 		50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB539E2A6ABC1B000DE037 /* CityCollectionViewCell.swift */; };
 		50BB53A12A6ABC1B000DE037 /* CityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BB539F2A6ABC1B000DE037 /* CityCollectionViewCell.xib */; };
-		50C3D09B2A6E5DFA00DDED53 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D09A2A6E5DFA00DDED53 /* CircularTransition.swift */; };
 		50C3D09E2A6E5FFA00DDED53 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */; };
 		50C3D0A02A6E613800DDED53 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D09F2A6E613800DDED53 /* SettingViewController.swift */; };
 		50C3D0A32A6EADCA00DDED53 /* ReversedGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D0A22A6EADCA00DDED53 /* ReversedGeoLocation.swift */; };
 		50C3D0A52A6EB66800DDED53 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D0A42A6EB66800DDED53 /* UIImageView+Extension.swift */; };
 		50C3D0A82A6EB6A500DDED53 /* unknownLocation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D0A72A6EB6A500DDED53 /* unknownLocation.gif */; };
-		50C3D0AA2A6EB74C00DDED53 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D0A92A6EB74C00DDED53 /* iOSDevCenters+GIF.swift */; };
 		50C3D0AD2A6EBAFC00DDED53 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 50C3D0AC2A6EBAFC00DDED53 /* Lottie */; };
 		50C3D0B02A6EBB3B00DDED53 /* unknownLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */; };
 		7863F7092A6B534C00E62C27 /* HomeHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863F7072A6B534C00E62C27 /* HomeHeaderTableViewCell.swift */; };
@@ -64,6 +64,8 @@
 /* Begin PBXFileReference section */
 		50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		50AF64BD2A6FC5AE005FFAB8 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		50AF64C02A6FFD7E005FFAB8 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		50AF64C42A701421005FFAB8 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		50BB533D2A6A7289000DE037 /* Trippi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trippi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50BB53402A6A7289000DE037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50BB53422A6A7289000DE037 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,13 +92,11 @@
 		50BB539B2A6AA1B2000DE037 /* CustomHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
 		50BB539E2A6ABC1B000DE037 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 		50BB539F2A6ABC1B000DE037 /* CityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCollectionViewCell.xib; sourceTree = "<group>"; };
-		50C3D09A2A6E5DFA00DDED53 /* CircularTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		50C3D09F2A6E613800DDED53 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		50C3D0A22A6EADCA00DDED53 /* ReversedGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversedGeoLocation.swift; sourceTree = "<group>"; };
 		50C3D0A42A6EB66800DDED53 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		50C3D0A72A6EB6A500DDED53 /* unknownLocation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = unknownLocation.gif; sourceTree = "<group>"; };
-		50C3D0A92A6EB74C00DDED53 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 		50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unknownLocation.json; sourceTree = "<group>"; };
 		7863F7072A6B534C00E62C27 /* HomeHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		7863F7082A6B534C00E62C27 /* HomeHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderTableViewCell.xib; sourceTree = "<group>"; };
@@ -309,8 +309,7 @@
 		50C3D0992A6E5DE100DDED53 /* ExtraClasses */ = {
 			isa = PBXGroup;
 			children = (
-				50C3D09A2A6E5DFA00DDED53 /* CircularTransition.swift */,
-				50C3D0A92A6EB74C00DDED53 /* iOSDevCenters+GIF.swift */,
+				50AF64C42A701421005FFAB8 /* Animator.swift */,
 			);
 			path = ExtraClasses;
 			sourceTree = "<group>";
@@ -328,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				50C3D0A22A6EADCA00DDED53 /* ReversedGeoLocation.swift */,
+				50AF64C02A6FFD7E005FFAB8 /* SettingsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -496,15 +496,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				50BB53452A6A7289000DE037 /* OnBoardingViewController.swift in Sources */,
+				50AF64C12A6FFD7E005FFAB8 /* SettingsModel.swift in Sources */,
 				50C3D0A32A6EADCA00DDED53 /* ReversedGeoLocation.swift in Sources */,
-				50C3D09B2A6E5DFA00DDED53 /* CircularTransition.swift in Sources */,
 				50BB53412A6A7289000DE037 /* AppDelegate.swift in Sources */,
-				50C3D0AA2A6EB74C00DDED53 /* iOSDevCenters+GIF.swift in Sources */,
 				50BB53432A6A7289000DE037 /* SceneDelegate.swift in Sources */,
 				50BB53862A6A8C1F000DE037 /* HomeViewModel.swift in Sources */,
 				50C3D0A02A6E613800DDED53 /* SettingViewController.swift in Sources */,
 				50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */,
 				7863F7092A6B534C00E62C27 /* HomeHeaderTableViewCell.swift in Sources */,
+				50AF64C52A701421005FFAB8 /* Animator.swift in Sources */,
 				50BB53782A6A781A000DE037 /* Constants.swift in Sources */,
 				50C3D0A52A6EB66800DDED53 /* UIImageView+Extension.swift in Sources */,
 				50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */,

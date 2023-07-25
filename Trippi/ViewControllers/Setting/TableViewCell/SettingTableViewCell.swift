@@ -22,4 +22,9 @@ class SettingTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func configure(setting: SettingsModel) {
+        titleLabel.text = setting.name
+        settingImageView.image = UIImage(named: setting.icon)
+    }
+    
 }
