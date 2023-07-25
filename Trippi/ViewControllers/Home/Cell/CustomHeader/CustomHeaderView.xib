@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-VariableFont_wght.ttf">
+            <string>MontserratRoman-Bold</string>
+            <string>MontserratRoman-Medium</string>
+            <string>MontserratRoman-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomHeaderView" customModule="Trippi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="653" height="378"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ywo-Uq-dKJ">
+                    <rect key="frame" x="0.0" y="0.0" width="653" height="378"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discovery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJO-DD-9ah">
+                            <rect key="frame" x="20" y="19.999999999999996" width="533" height="35.666666666666657"/>
+                            <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="29"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're in Indore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnC-Jq-BjQ">
+                            <rect key="frame" x="20" y="60.666666666666657" width="533" height="22"/>
+                            <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJU-zo-1B4">
+                            <rect key="frame" x="573" y="20" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="pDH-bR-dth"/>
+                                <constraint firstAttribute="height" constant="60" id="vgK-9d-8r0"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="User">
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                            </state>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQi-Kc-XQ1">
+                            <rect key="frame" x="621" y="22" width="10" height="10"/>
+                            <color key="backgroundColor" name="ButtonBackground"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="18u-5F-oHg"/>
+                                <constraint firstAttribute="width" constant="10" id="JOa-Km-JMZ"/>
+                            </constraints>
+                        </view>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XaC-Zi-hDh">
+                            <rect key="frame" x="20" y="112.66666666666669" width="613" height="60"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tSG-R2-1oz">
+                                    <rect key="frame" x="20" y="15.999999999999996" width="30" height="28.333333333333332"/>
+                                    <color key="tintColor" red="0.51372549020000002" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="4Ex-Ac-HrA"/>
+                                    </constraints>
+                                </imageView>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where do you want to go" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZPO-CE-OcP">
+                                    <rect key="frame" x="60" y="15" width="543" height="30"/>
+                                    <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="tSG-R2-1oz" firstAttribute="top" secondItem="XaC-Zi-hDh" secondAttribute="top" constant="15" id="1aW-vg-CZ0"/>
+                                <constraint firstAttribute="bottom" secondItem="tSG-R2-1oz" secondAttribute="bottom" constant="15" id="8EN-kh-F46"/>
+                                <constraint firstAttribute="trailing" secondItem="ZPO-CE-OcP" secondAttribute="trailing" constant="10" id="CTi-YT-I3H"/>
+                                <constraint firstItem="ZPO-CE-OcP" firstAttribute="bottom" secondItem="tSG-R2-1oz" secondAttribute="bottom" id="Zii-hr-sbT"/>
+                                <constraint firstItem="tSG-R2-1oz" firstAttribute="leading" secondItem="XaC-Zi-hDh" secondAttribute="leading" constant="20" id="iTA-vi-Guu"/>
+                                <constraint firstItem="ZPO-CE-OcP" firstAttribute="leading" secondItem="tSG-R2-1oz" secondAttribute="trailing" constant="10" id="jCS-DM-mqf"/>
+                                <constraint firstAttribute="height" constant="60" id="tnI-Sm-qg6"/>
+                                <constraint firstItem="ZPO-CE-OcP" firstAttribute="top" secondItem="tSG-R2-1oz" secondAttribute="top" id="v2s-ja-wu8"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="AppBackground"/>
+                    <constraints>
+                        <constraint firstItem="CJU-zo-1B4" firstAttribute="top" secondItem="Ywo-Uq-dKJ" secondAttribute="top" constant="20" id="2Zx-We-8cJ"/>
+                        <constraint firstItem="jQi-Kc-XQ1" firstAttribute="top" secondItem="CJU-zo-1B4" secondAttribute="top" constant="2" id="3Y6-IU-MXz"/>
+                        <constraint firstItem="CJU-zo-1B4" firstAttribute="leading" secondItem="sJO-DD-9ah" secondAttribute="trailing" constant="20" id="7mD-W5-ZBA"/>
+                        <constraint firstItem="XaC-Zi-hDh" firstAttribute="top" secondItem="YnC-Jq-BjQ" secondAttribute="bottom" constant="30" id="FIR-cW-o3i"/>
+                        <constraint firstItem="CJU-zo-1B4" firstAttribute="leading" secondItem="YnC-Jq-BjQ" secondAttribute="trailing" constant="20" id="O2Z-I8-XjN"/>
+                        <constraint firstItem="XaC-Zi-hDh" firstAttribute="leading" secondItem="Ywo-Uq-dKJ" secondAttribute="leading" constant="20" id="S5Y-VH-1YB"/>
+                        <constraint firstItem="jQi-Kc-XQ1" firstAttribute="trailing" secondItem="CJU-zo-1B4" secondAttribute="trailing" constant="-2" id="WcS-Uh-81p"/>
+                        <constraint firstAttribute="trailing" secondItem="XaC-Zi-hDh" secondAttribute="trailing" constant="20" id="ana-hx-5CW"/>
+                        <constraint firstItem="sJO-DD-9ah" firstAttribute="top" secondItem="Ywo-Uq-dKJ" secondAttribute="top" constant="20" id="dUJ-yv-gWg"/>
+                        <constraint firstItem="YnC-Jq-BjQ" firstAttribute="leading" secondItem="Ywo-Uq-dKJ" secondAttribute="leading" constant="20" id="ekC-2a-qlr"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="XaC-Zi-hDh" secondAttribute="bottom" constant="20" id="hoe-31-MHE"/>
+                        <constraint firstItem="YnC-Jq-BjQ" firstAttribute="top" secondItem="sJO-DD-9ah" secondAttribute="bottom" constant="5" id="kdc-Xw-Rab"/>
+                        <constraint firstAttribute="trailing" secondItem="CJU-zo-1B4" secondAttribute="trailing" constant="20" id="lO9-gj-qXd"/>
+                        <constraint firstItem="sJO-DD-9ah" firstAttribute="leading" secondItem="Ywo-Uq-dKJ" secondAttribute="leading" constant="20" id="mCZ-Np-EgD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="AppBackground"/>
+            <constraints>
+                <constraint firstItem="Ywo-Uq-dKJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LgZ-cN-jeN"/>
+                <constraint firstItem="Ywo-Uq-dKJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TWt-gr-VMf"/>
+                <constraint firstAttribute="bottom" secondItem="Ywo-Uq-dKJ" secondAttribute="bottom" id="crP-ZX-6d7"/>
+                <constraint firstItem="Ywo-Uq-dKJ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="pL0-P6-cM4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="badgeView" destination="jQi-Kc-XQ1" id="GLR-1D-khT"/>
+                <outlet property="locationLabel" destination="YnC-Jq-BjQ" id="MEc-ej-ZPm"/>
+                <outlet property="profileButton" destination="CJU-zo-1B4" id="ZGl-rJ-VdM"/>
+                <outlet property="searchContainerView" destination="XaC-Zi-hDh" id="raa-Ck-gCE"/>
+                <outlet property="searchTextField" destination="ZPO-CE-OcP" id="a8E-VA-Vdj"/>
+            </connections>
+            <point key="canvasLocation" x="319.84732824427482" y="52.816901408450704"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="User" width="300" height="300"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <namedColor name="AppBackground">
+            <color red="0.92941176470588238" green="0.94117647058823528" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButtonBackground">
+            <color red="0.98039215686274506" green="0.81568627450980391" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

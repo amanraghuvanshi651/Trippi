@@ -1,0 +1,880 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */; };
+		50AF64BF2A6FC5AE005FFAB8 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50AF64BD2A6FC5AE005FFAB8 /* SettingTableViewCell.xib */; };
+		50BB53412A6A7289000DE037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53402A6A7289000DE037 /* AppDelegate.swift */; };
+		50BB53432A6A7289000DE037 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53422A6A7289000DE037 /* SceneDelegate.swift */; };
+		50BB53452A6A7289000DE037 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53442A6A7289000DE037 /* OnBoardingViewController.swift */; };
+		50BB53482A6A7289000DE037 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50BB53462A6A7289000DE037 /* OnBoarding.storyboard */; };
+		50BB534A2A6A728B000DE037 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50BB53492A6A728B000DE037 /* Assets.xcassets */; };
+		50BB534D2A6A728B000DE037 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50BB534B2A6A728B000DE037 /* LaunchScreen.storyboard */; };
+		50BB53582A6A728B000DE037 /* TrippiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53572A6A728B000DE037 /* TrippiTests.swift */; };
+		50BB53622A6A728B000DE037 /* TrippiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53612A6A728B000DE037 /* TrippiUITests.swift */; };
+		50BB53642A6A728B000DE037 /* TrippiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53632A6A728B000DE037 /* TrippiUITestsLaunchTests.swift */; };
+		50BB53752A6A759A000DE037 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50BB53742A6A7595000DE037 /* Montserrat-VariableFont_wght.ttf */; };
+		50BB53782A6A781A000DE037 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53772A6A781A000DE037 /* Constants.swift */; };
+		50BB537B2A6A78CD000DE037 /* TrippiStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB537A2A6A78CD000DE037 /* TrippiStoryboards.swift */; };
+		50BB537D2A6A790C000DE037 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50BB537C2A6A790C000DE037 /* Home.storyboard */; };
+		50BB537F2A6A7CB9000DE037 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB537E2A6A7CB9000DE037 /* HomeViewController.swift */; };
+		50BB53822A6A8825000DE037 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53812A6A8825000DE037 /* UIViewController+Extension.swift */; };
+		50BB53862A6A8C1F000DE037 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53852A6A8C1F000DE037 /* HomeViewModel.swift */; };
+		50BB53902A6A9641000DE037 /* CitiesForYouTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB538E2A6A9641000DE037 /* CitiesForYouTableViewCell.swift */; };
+		50BB53912A6A9641000DE037 /* CitiesForYouTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BB538F2A6A9641000DE037 /* CitiesForYouTableViewCell.xib */; };
+		50BB539A2A6AA18A000DE037 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53992A6AA18A000DE037 /* CustomHeaderView.swift */; };
+		50BB539C2A6AA1B2000DE037 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BB539B2A6AA1B2000DE037 /* CustomHeaderView.xib */; };
+		50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB539E2A6ABC1B000DE037 /* CityCollectionViewCell.swift */; };
+		50BB53A12A6ABC1B000DE037 /* CityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BB539F2A6ABC1B000DE037 /* CityCollectionViewCell.xib */; };
+		50C3D09B2A6E5DFA00DDED53 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D09A2A6E5DFA00DDED53 /* CircularTransition.swift */; };
+		50C3D09E2A6E5FFA00DDED53 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */; };
+		50C3D0A02A6E613800DDED53 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D09F2A6E613800DDED53 /* SettingViewController.swift */; };
+		50C3D0A32A6EADCA00DDED53 /* ReversedGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D0A22A6EADCA00DDED53 /* ReversedGeoLocation.swift */; };
+		50C3D0A52A6EB66800DDED53 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D0A42A6EB66800DDED53 /* UIImageView+Extension.swift */; };
+		50C3D0A82A6EB6A500DDED53 /* unknownLocation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D0A72A6EB6A500DDED53 /* unknownLocation.gif */; };
+		50C3D0AA2A6EB74C00DDED53 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D0A92A6EB74C00DDED53 /* iOSDevCenters+GIF.swift */; };
+		50C3D0AD2A6EBAFC00DDED53 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 50C3D0AC2A6EBAFC00DDED53 /* Lottie */; };
+		50C3D0B02A6EBB3B00DDED53 /* unknownLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */; };
+		7863F7092A6B534C00E62C27 /* HomeHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863F7072A6B534C00E62C27 /* HomeHeaderTableViewCell.swift */; };
+		7863F70A2A6B534C00E62C27 /* HomeHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7863F7082A6B534C00E62C27 /* HomeHeaderTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50BB53542A6A728B000DE037 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50BB53352A6A7289000DE037 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50BB533C2A6A7289000DE037;
+			remoteInfo = Trippi;
+		};
+		50BB535E2A6A728B000DE037 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50BB53352A6A7289000DE037 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50BB533C2A6A7289000DE037;
+			remoteInfo = Trippi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		50AF64BD2A6FC5AE005FFAB8 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		50BB533D2A6A7289000DE037 /* Trippi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trippi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50BB53402A6A7289000DE037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		50BB53422A6A7289000DE037 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		50BB53442A6A7289000DE037 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		50BB53472A6A7289000DE037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OnBoarding.storyboard; sourceTree = "<group>"; };
+		50BB53492A6A728B000DE037 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50BB534C2A6A728B000DE037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		50BB534E2A6A728B000DE037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50BB53532A6A728B000DE037 /* TrippiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrippiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50BB53572A6A728B000DE037 /* TrippiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippiTests.swift; sourceTree = "<group>"; };
+		50BB535D2A6A728B000DE037 /* TrippiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrippiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50BB53612A6A728B000DE037 /* TrippiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippiUITests.swift; sourceTree = "<group>"; };
+		50BB53632A6A728B000DE037 /* TrippiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		50BB53742A6A7595000DE037 /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		50BB53772A6A781A000DE037 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		50BB537A2A6A78CD000DE037 /* TrippiStoryboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippiStoryboards.swift; sourceTree = "<group>"; };
+		50BB537C2A6A790C000DE037 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		50BB537E2A6A7CB9000DE037 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		50BB53812A6A8825000DE037 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		50BB53852A6A8C1F000DE037 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		50BB538E2A6A9641000DE037 /* CitiesForYouTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesForYouTableViewCell.swift; sourceTree = "<group>"; };
+		50BB538F2A6A9641000DE037 /* CitiesForYouTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CitiesForYouTableViewCell.xib; sourceTree = "<group>"; };
+		50BB53992A6AA18A000DE037 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
+		50BB539B2A6AA1B2000DE037 /* CustomHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
+		50BB539E2A6ABC1B000DE037 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
+		50BB539F2A6ABC1B000DE037 /* CityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCollectionViewCell.xib; sourceTree = "<group>"; };
+		50C3D09A2A6E5DFA00DDED53 /* CircularTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
+		50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		50C3D09F2A6E613800DDED53 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		50C3D0A22A6EADCA00DDED53 /* ReversedGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversedGeoLocation.swift; sourceTree = "<group>"; };
+		50C3D0A42A6EB66800DDED53 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		50C3D0A72A6EB6A500DDED53 /* unknownLocation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = unknownLocation.gif; sourceTree = "<group>"; };
+		50C3D0A92A6EB74C00DDED53 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
+		50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unknownLocation.json; sourceTree = "<group>"; };
+		7863F7072A6B534C00E62C27 /* HomeHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		7863F7082A6B534C00E62C27 /* HomeHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50BB533A2A6A7289000DE037 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50C3D0AD2A6EBAFC00DDED53 /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50BB53502A6A728B000DE037 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50BB535A2A6A728B000DE037 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50AF64BB2A6FC588005FFAB8 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */,
+				50AF64BD2A6FC5AE005FFAB8 /* SettingTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		50BB53342A6A7289000DE037 = {
+			isa = PBXGroup;
+			children = (
+				50BB533F2A6A7289000DE037 /* Trippi */,
+				50BB53562A6A728B000DE037 /* TrippiTests */,
+				50BB53602A6A728B000DE037 /* TrippiUITests */,
+				50BB533E2A6A7289000DE037 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50BB533E2A6A7289000DE037 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50BB533D2A6A7289000DE037 /* Trippi.app */,
+				50BB53532A6A728B000DE037 /* TrippiTests.xctest */,
+				50BB535D2A6A728B000DE037 /* TrippiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50BB533F2A6A7289000DE037 /* Trippi */ = {
+			isa = PBXGroup;
+			children = (
+				50C3D0AE2A6EBB2C00DDED53 /* LottieJSON */,
+				50C3D0A62A6EB69600DDED53 /* Gif */,
+				50C3D0A12A6EADAF00DDED53 /* Models */,
+				50C3D0992A6E5DE100DDED53 /* ExtraClasses */,
+				50BB53802A6A8805000DE037 /* Extensions */,
+				50BB53792A6A78B3000DE037 /* Enums */,
+				50BB53762A6A7806000DE037 /* Constants */,
+				50BB53702A6A729C000DE037 /* ViewControllers */,
+				50BB53712A6A72A9000DE037 /* Storyboards */,
+				50BB53732A6A7561000DE037 /* Fonts */,
+				50BB53402A6A7289000DE037 /* AppDelegate.swift */,
+				50BB53422A6A7289000DE037 /* SceneDelegate.swift */,
+				50BB53492A6A728B000DE037 /* Assets.xcassets */,
+				50BB534B2A6A728B000DE037 /* LaunchScreen.storyboard */,
+				50BB534E2A6A728B000DE037 /* Info.plist */,
+			);
+			path = Trippi;
+			sourceTree = "<group>";
+		};
+		50BB53562A6A728B000DE037 /* TrippiTests */ = {
+			isa = PBXGroup;
+			children = (
+				50BB53572A6A728B000DE037 /* TrippiTests.swift */,
+			);
+			path = TrippiTests;
+			sourceTree = "<group>";
+		};
+		50BB53602A6A728B000DE037 /* TrippiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				50BB53612A6A728B000DE037 /* TrippiUITests.swift */,
+				50BB53632A6A728B000DE037 /* TrippiUITestsLaunchTests.swift */,
+			);
+			path = TrippiUITests;
+			sourceTree = "<group>";
+		};
+		50BB53702A6A729C000DE037 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				50C3D09C2A6E5FBA00DDED53 /* Setting */,
+				50BB53842A6A8C06000DE037 /* Home */,
+				50BB53832A6A8BF3000DE037 /* OnBoarding */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		50BB53712A6A72A9000DE037 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				50BB53462A6A7289000DE037 /* OnBoarding.storyboard */,
+				50BB537C2A6A790C000DE037 /* Home.storyboard */,
+				50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		50BB53732A6A7561000DE037 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				50BB53742A6A7595000DE037 /* Montserrat-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		50BB53762A6A7806000DE037 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				50BB53772A6A781A000DE037 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		50BB53792A6A78B3000DE037 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				50BB537A2A6A78CD000DE037 /* TrippiStoryboards.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		50BB53802A6A8805000DE037 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				50BB53812A6A8825000DE037 /* UIViewController+Extension.swift */,
+				50C3D0A42A6EB66800DDED53 /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		50BB53832A6A8BF3000DE037 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				50BB53442A6A7289000DE037 /* OnBoardingViewController.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		50BB53842A6A8C06000DE037 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				50BB53872A6A8E21000DE037 /* Cell */,
+				50BB537E2A6A7CB9000DE037 /* HomeViewController.swift */,
+				50BB53852A6A8C1F000DE037 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		50BB53872A6A8E21000DE037 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				50BB539D2A6ABB58000DE037 /* CollectionViewCell */,
+				50BB53982A6AA146000DE037 /* CustomHeader */,
+				50BB538D2A6A960B000DE037 /* TableViewCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		50BB538D2A6A960B000DE037 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				50BB538E2A6A9641000DE037 /* CitiesForYouTableViewCell.swift */,
+				50BB538F2A6A9641000DE037 /* CitiesForYouTableViewCell.xib */,
+				7863F7072A6B534C00E62C27 /* HomeHeaderTableViewCell.swift */,
+				7863F7082A6B534C00E62C27 /* HomeHeaderTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		50BB53982A6AA146000DE037 /* CustomHeader */ = {
+			isa = PBXGroup;
+			children = (
+				50BB53992A6AA18A000DE037 /* CustomHeaderView.swift */,
+				50BB539B2A6AA1B2000DE037 /* CustomHeaderView.xib */,
+			);
+			path = CustomHeader;
+			sourceTree = "<group>";
+		};
+		50BB539D2A6ABB58000DE037 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				50BB539E2A6ABC1B000DE037 /* CityCollectionViewCell.swift */,
+				50BB539F2A6ABC1B000DE037 /* CityCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		50C3D0992A6E5DE100DDED53 /* ExtraClasses */ = {
+			isa = PBXGroup;
+			children = (
+				50C3D09A2A6E5DFA00DDED53 /* CircularTransition.swift */,
+				50C3D0A92A6EB74C00DDED53 /* iOSDevCenters+GIF.swift */,
+			);
+			path = ExtraClasses;
+			sourceTree = "<group>";
+		};
+		50C3D09C2A6E5FBA00DDED53 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				50AF64BB2A6FC588005FFAB8 /* TableViewCell */,
+				50C3D09F2A6E613800DDED53 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		50C3D0A12A6EADAF00DDED53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50C3D0A22A6EADCA00DDED53 /* ReversedGeoLocation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50C3D0A62A6EB69600DDED53 /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				50C3D0A72A6EB6A500DDED53 /* unknownLocation.gif */,
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
+		50C3D0AE2A6EBB2C00DDED53 /* LottieJSON */ = {
+			isa = PBXGroup;
+			children = (
+				50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */,
+			);
+			path = LottieJSON;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50BB533C2A6A7289000DE037 /* Trippi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50BB53672A6A728B000DE037 /* Build configuration list for PBXNativeTarget "Trippi" */;
+			buildPhases = (
+				50BB53392A6A7289000DE037 /* Sources */,
+				50BB533A2A6A7289000DE037 /* Frameworks */,
+				50BB533B2A6A7289000DE037 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Trippi;
+			packageProductDependencies = (
+				50C3D0AC2A6EBAFC00DDED53 /* Lottie */,
+			);
+			productName = Trippi;
+			productReference = 50BB533D2A6A7289000DE037 /* Trippi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		50BB53522A6A728B000DE037 /* TrippiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50BB536A2A6A728B000DE037 /* Build configuration list for PBXNativeTarget "TrippiTests" */;
+			buildPhases = (
+				50BB534F2A6A728B000DE037 /* Sources */,
+				50BB53502A6A728B000DE037 /* Frameworks */,
+				50BB53512A6A728B000DE037 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50BB53552A6A728B000DE037 /* PBXTargetDependency */,
+			);
+			name = TrippiTests;
+			productName = TrippiTests;
+			productReference = 50BB53532A6A728B000DE037 /* TrippiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		50BB535C2A6A728B000DE037 /* TrippiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50BB536D2A6A728B000DE037 /* Build configuration list for PBXNativeTarget "TrippiUITests" */;
+			buildPhases = (
+				50BB53592A6A728B000DE037 /* Sources */,
+				50BB535A2A6A728B000DE037 /* Frameworks */,
+				50BB535B2A6A728B000DE037 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50BB535F2A6A728B000DE037 /* PBXTargetDependency */,
+			);
+			name = TrippiUITests;
+			productName = TrippiUITests;
+			productReference = 50BB535D2A6A728B000DE037 /* TrippiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50BB53352A6A7289000DE037 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					50BB533C2A6A7289000DE037 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					50BB53522A6A728B000DE037 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 50BB533C2A6A7289000DE037;
+					};
+					50BB535C2A6A728B000DE037 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 50BB533C2A6A7289000DE037;
+					};
+				};
+			};
+			buildConfigurationList = 50BB53382A6A7289000DE037 /* Build configuration list for PBXProject "Trippi" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 50BB53342A6A7289000DE037;
+			packageReferences = (
+				50C3D0AB2A6EBAFC00DDED53 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
+			productRefGroup = 50BB533E2A6A7289000DE037 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50BB533C2A6A7289000DE037 /* Trippi */,
+				50BB53522A6A728B000DE037 /* TrippiTests */,
+				50BB535C2A6A728B000DE037 /* TrippiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50BB533B2A6A7289000DE037 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50AF64BF2A6FC5AE005FFAB8 /* SettingTableViewCell.xib in Resources */,
+				50BB53752A6A759A000DE037 /* Montserrat-VariableFont_wght.ttf in Resources */,
+				50BB537D2A6A790C000DE037 /* Home.storyboard in Resources */,
+				50BB534D2A6A728B000DE037 /* LaunchScreen.storyboard in Resources */,
+				50BB53A12A6ABC1B000DE037 /* CityCollectionViewCell.xib in Resources */,
+				50BB539C2A6AA1B2000DE037 /* CustomHeaderView.xib in Resources */,
+				50BB534A2A6A728B000DE037 /* Assets.xcassets in Resources */,
+				50C3D0B02A6EBB3B00DDED53 /* unknownLocation.json in Resources */,
+				50BB53912A6A9641000DE037 /* CitiesForYouTableViewCell.xib in Resources */,
+				50C3D09E2A6E5FFA00DDED53 /* Setting.storyboard in Resources */,
+				50BB53482A6A7289000DE037 /* OnBoarding.storyboard in Resources */,
+				7863F70A2A6B534C00E62C27 /* HomeHeaderTableViewCell.xib in Resources */,
+				50C3D0A82A6EB6A500DDED53 /* unknownLocation.gif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50BB53512A6A728B000DE037 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50BB535B2A6A728B000DE037 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50BB53392A6A7289000DE037 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50BB53452A6A7289000DE037 /* OnBoardingViewController.swift in Sources */,
+				50C3D0A32A6EADCA00DDED53 /* ReversedGeoLocation.swift in Sources */,
+				50C3D09B2A6E5DFA00DDED53 /* CircularTransition.swift in Sources */,
+				50BB53412A6A7289000DE037 /* AppDelegate.swift in Sources */,
+				50C3D0AA2A6EB74C00DDED53 /* iOSDevCenters+GIF.swift in Sources */,
+				50BB53432A6A7289000DE037 /* SceneDelegate.swift in Sources */,
+				50BB53862A6A8C1F000DE037 /* HomeViewModel.swift in Sources */,
+				50C3D0A02A6E613800DDED53 /* SettingViewController.swift in Sources */,
+				50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */,
+				7863F7092A6B534C00E62C27 /* HomeHeaderTableViewCell.swift in Sources */,
+				50BB53782A6A781A000DE037 /* Constants.swift in Sources */,
+				50C3D0A52A6EB66800DDED53 /* UIImageView+Extension.swift in Sources */,
+				50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */,
+				50BB53822A6A8825000DE037 /* UIViewController+Extension.swift in Sources */,
+				50BB537B2A6A78CD000DE037 /* TrippiStoryboards.swift in Sources */,
+				50BB539A2A6AA18A000DE037 /* CustomHeaderView.swift in Sources */,
+				50BB53902A6A9641000DE037 /* CitiesForYouTableViewCell.swift in Sources */,
+				50BB537F2A6A7CB9000DE037 /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50BB534F2A6A728B000DE037 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50BB53582A6A728B000DE037 /* TrippiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50BB53592A6A728B000DE037 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50BB53642A6A728B000DE037 /* TrippiUITestsLaunchTests.swift in Sources */,
+				50BB53622A6A728B000DE037 /* TrippiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50BB53552A6A728B000DE037 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50BB533C2A6A7289000DE037 /* Trippi */;
+			targetProxy = 50BB53542A6A728B000DE037 /* PBXContainerItemProxy */;
+		};
+		50BB535F2A6A728B000DE037 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50BB533C2A6A7289000DE037 /* Trippi */;
+			targetProxy = 50BB535E2A6A728B000DE037 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		50BB53462A6A7289000DE037 /* OnBoarding.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50BB53472A6A7289000DE037 /* Base */,
+			);
+			name = OnBoarding.storyboard;
+			sourceTree = "<group>";
+		};
+		50BB534B2A6A728B000DE037 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50BB534C2A6A728B000DE037 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		50BB53652A6A728B000DE037 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		50BB53662A6A728B000DE037 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		50BB53682A6A728B000DE037 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 637U2CRCZ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Trippi/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your locaiton to personalize your experience.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = OnBoarding;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FruityCode.Trippi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		50BB53692A6A728B000DE037 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 637U2CRCZ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Trippi/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your locaiton to personalize your experience.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = OnBoarding;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FruityCode.Trippi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		50BB536B2A6A728B000DE037 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 637U2CRCZ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FruityCode.TrippiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trippi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Trippi";
+			};
+			name = Debug;
+		};
+		50BB536C2A6A728B000DE037 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 637U2CRCZ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FruityCode.TrippiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trippi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Trippi";
+			};
+			name = Release;
+		};
+		50BB536E2A6A728B000DE037 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 637U2CRCZ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FruityCode.TrippiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Trippi;
+			};
+			name = Debug;
+		};
+		50BB536F2A6A728B000DE037 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 637U2CRCZ4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FruityCode.TrippiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Trippi;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50BB53382A6A7289000DE037 /* Build configuration list for PBXProject "Trippi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50BB53652A6A728B000DE037 /* Debug */,
+				50BB53662A6A728B000DE037 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50BB53672A6A728B000DE037 /* Build configuration list for PBXNativeTarget "Trippi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50BB53682A6A728B000DE037 /* Debug */,
+				50BB53692A6A728B000DE037 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50BB536A2A6A728B000DE037 /* Build configuration list for PBXNativeTarget "TrippiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50BB536B2A6A728B000DE037 /* Debug */,
+				50BB536C2A6A728B000DE037 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50BB536D2A6A728B000DE037 /* Build configuration list for PBXNativeTarget "TrippiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50BB536E2A6A728B000DE037 /* Debug */,
+				50BB536F2A6A728B000DE037 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		50C3D0AB2A6EBAFC00DDED53 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		50C3D0AC2A6EBAFC00DDED53 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 50C3D0AB2A6EBAFC00DDED53 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 50BB53352A6A7289000DE037 /* Project object */;
+}

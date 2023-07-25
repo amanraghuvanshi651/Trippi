@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uvq-Xj-mUQ">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-VariableFont_wght.ttf">
+            <string>MontserratRoman-Bold</string>
+            <string>MontserratRoman-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--On Boarding View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="OnBoardingViewController" customModule="Trippi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="Onboarding" translatesAutoresizingMaskIntoConstraints="NO" id="m8k-qg-6YS">
+                                <rect key="frame" x="0.0" y="78.999999999999972" width="393" height="493.33333333333326"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trippi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="6xc-CX-UVf">
+                                <rect key="frame" x="20" y="592.33333333333337" width="353" height="49"/>
+                                <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travel anywhere in the world without any hassle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1X-vY-Xgs">
+                                <rect key="frame" x="25" y="656.33333333333337" width="343" height="41.666666666666629"/>
+                                <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRb-tm-QsI">
+                                <rect key="frame" x="100" y="728" width="193" height="70"/>
+                                <color key="backgroundColor" name="ButtonBackground"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="JPR-Fo-qoV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" name="ButtonTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickGetStarted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e4s-bw-snX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hRb-tm-QsI" secondAttribute="trailing" constant="100" id="4JB-00-Esv"/>
+                            <constraint firstItem="C1X-vY-Xgs" firstAttribute="top" secondItem="6xc-CX-UVf" secondAttribute="bottom" constant="15" id="4cx-in-s42"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m8k-qg-6YS" secondAttribute="trailing" id="6Im-wW-C4c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C1X-vY-Xgs" secondAttribute="trailing" constant="25" id="6dC-IA-pr3"/>
+                            <constraint firstItem="6xc-CX-UVf" firstAttribute="top" secondItem="m8k-qg-6YS" secondAttribute="bottom" constant="20" id="99N-EA-wkj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hRb-tm-QsI" secondAttribute="bottom" constant="20" id="EAa-fr-rQE"/>
+                            <constraint firstItem="hRb-tm-QsI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="RoY-4t-3Vx"/>
+                            <constraint firstItem="m8k-qg-6YS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bNb-eN-oef"/>
+                            <constraint firstItem="m8k-qg-6YS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="f5J-ub-9AX"/>
+                            <constraint firstItem="C1X-vY-Xgs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="ixz-kk-1LX"/>
+                            <constraint firstItem="hRb-tm-QsI" firstAttribute="top" secondItem="C1X-vY-Xgs" secondAttribute="bottom" constant="30" id="p12-rU-0We"/>
+                            <constraint firstItem="6xc-CX-UVf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rEl-ca-cQO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6xc-CX-UVf" secondAttribute="trailing" constant="20" id="w7D-hf-Bey"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="rB0-aK-5BM"/>
+                    <connections>
+                        <outlet property="getStartedButton" destination="hRb-tm-QsI" id="fty-61-3OC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uL8-MR-ajn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="uvq-Xj-mUQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="BDF-Sg-lXg">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="XIF-bp-E0r"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ezx-aQ-KcE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Onboarding" width="166.66667175292969" height="166.66667175292969"/>
+        <namedColor name="ButtonBackground">
+            <color red="0.98000001907348633" green="0.81599998474121094" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButtonTextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
