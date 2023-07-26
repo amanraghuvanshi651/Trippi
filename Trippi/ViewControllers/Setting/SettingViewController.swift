@@ -13,6 +13,7 @@ class SettingViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var badgeView: UIView!
     @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var profileButtonContainerView: UIView!
     
     //setting view
     @IBOutlet weak var tableView: UITableView!
@@ -49,8 +50,8 @@ class SettingViewController: UIViewController {
     
     //custom methods
     func setUpUI() {
-        profileButton.layer.cornerRadius = 22
-        badgeView.layer.cornerRadius = 4
+        profileButton.layer.cornerRadius = 24
+        badgeView.layer.cornerRadius = 10
     }
     
     //MARK: - Actions

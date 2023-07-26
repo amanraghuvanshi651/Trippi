@@ -7,6 +7,15 @@
 
 import UIKit
 
+enum PresentationType {
+    case present
+    case dismiss
+    
+    var isPresenting: Bool {
+        return self == .present
+    }
+}
+
 final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
     
     static let duration: TimeInterval = 0.5
@@ -16,6 +25,8 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
     private let secondViewController: SettingViewController
     private let selectedCellImageViewSnapshot: UIView
     private let cellImageViewRect: CGRect
+    
+    private var isSettingVC = false
     
     init?(type: PresentationType, firstViewController: HomeViewController, secondViewController: SettingViewController, selectedCellImageViewSnapshot: UIView) {
         self.type = type
@@ -37,6 +48,12 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
         
+        if type == .present {
+            isSettingVC = true
+        } else {
+            isSettingVC = false
+        }
+        
         let view = secondViewController.view ?? firstViewController.view ?? nil
         
         guard let toView = view
@@ -50,7 +67,7 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
         // deleted line: transitionContext.completeTransition(true)
         guard let window = firstViewController.view.window ?? secondViewController.view.window,
               let cellImageSnapshot = firstViewController.profileButtonContainerView.snapshotView(afterScreenUpdates: false),
-              let controllerImageSnapshot = secondViewController.profileButton.snapshotView(afterScreenUpdates: false)
+              let controllerImageSnapshot = secondViewController.profileButton.snapshotView(afterScreenUpdates: true)
         else {
             transitionContext.completeTransition(true)
             return
@@ -76,26 +93,36 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
             $0.frame = isPresenting ? cellImageViewRect : controllerImageViewRect
         }
         
+        if isPresenting {
+            secondViewController.badgeView.alpha = 0
+            secondViewController.profileButton.alpha = 0
+            firstViewController.profileButtonContainerView.isHidden = true
+        }
+        
         UIView.animateKeyframes(withDuration: Self.duration, delay: 0, options: .calculationModeCubic, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1) {
                 imageViewSnapshot.frame = isPresenting ? controllerImageViewRect : self.cellImageViewRect
+                if self.isSettingVC {
+                    toView.alpha = 1
+                }
             }
         }, completion: { _ in
-            imageViewSnapshot.removeFromSuperview()
             
-            toView.alpha = 1
+            if isPresenting {
+                UIView.animate(withDuration: 0.3) {
+                    if self.isSettingVC {
+                        self.secondViewController.badgeView.alpha = 1
+                        self.secondViewController.profileButton.alpha = 1
+                    }
+                } completion: { _ in
+                    imageViewSnapshot.removeFromSuperview()
+                }
+            } else {
+                toView.alpha = 1
+                imageViewSnapshot.removeFromSuperview()
+            }
             
             transitionContext.completeTransition(true)
         })
-    }
-}
-
-enum PresentationType {
-    
-    case present
-    case dismiss
-    
-    var isPresenting: Bool {
-        return self == .present
     }
 }

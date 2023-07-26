@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091A6EC2A7108820091197E /* CreateNewTripTableViewCell.swift */; };
+		5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */; };
 		50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */; };
 		50AF64BF2A6FC5AE005FFAB8 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50AF64BD2A6FC5AE005FFAB8 /* SettingTableViewCell.xib */; };
 		50AF64C12A6FFD7E005FFAB8 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64C02A6FFD7E005FFAB8 /* SettingsModel.swift */; };
@@ -29,8 +31,6 @@
 		50BB53862A6A8C1F000DE037 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53852A6A8C1F000DE037 /* HomeViewModel.swift */; };
 		50BB53902A6A9641000DE037 /* CitiesForYouTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB538E2A6A9641000DE037 /* CitiesForYouTableViewCell.swift */; };
 		50BB53912A6A9641000DE037 /* CitiesForYouTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BB538F2A6A9641000DE037 /* CitiesForYouTableViewCell.xib */; };
-		50BB539A2A6AA18A000DE037 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53992A6AA18A000DE037 /* CustomHeaderView.swift */; };
-		50BB539C2A6AA1B2000DE037 /* CustomHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BB539B2A6AA1B2000DE037 /* CustomHeaderView.xib */; };
 		50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB539E2A6ABC1B000DE037 /* CityCollectionViewCell.swift */; };
 		50BB53A12A6ABC1B000DE037 /* CityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BB539F2A6ABC1B000DE037 /* CityCollectionViewCell.xib */; };
 		50C3D09E2A6E5FFA00DDED53 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */; };
@@ -62,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5091A6EC2A7108820091197E /* CreateNewTripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTripTableViewCell.swift; sourceTree = "<group>"; };
+		5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewTripTableViewCell.xib; sourceTree = "<group>"; };
 		50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		50AF64BD2A6FC5AE005FFAB8 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		50AF64C02A6FFD7E005FFAB8 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
@@ -88,8 +90,6 @@
 		50BB53852A6A8C1F000DE037 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		50BB538E2A6A9641000DE037 /* CitiesForYouTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesForYouTableViewCell.swift; sourceTree = "<group>"; };
 		50BB538F2A6A9641000DE037 /* CitiesForYouTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CitiesForYouTableViewCell.xib; sourceTree = "<group>"; };
-		50BB53992A6AA18A000DE037 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
-		50BB539B2A6AA1B2000DE037 /* CustomHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomHeaderView.xib; sourceTree = "<group>"; };
 		50BB539E2A6ABC1B000DE037 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 		50BB539F2A6ABC1B000DE037 /* CityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCollectionViewCell.xib; sourceTree = "<group>"; };
 		50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
@@ -271,7 +271,6 @@
 			isa = PBXGroup;
 			children = (
 				50BB539D2A6ABB58000DE037 /* CollectionViewCell */,
-				50BB53982A6AA146000DE037 /* CustomHeader */,
 				50BB538D2A6A960B000DE037 /* TableViewCell */,
 			);
 			path = Cell;
@@ -284,17 +283,10 @@
 				50BB538F2A6A9641000DE037 /* CitiesForYouTableViewCell.xib */,
 				7863F7072A6B534C00E62C27 /* HomeHeaderTableViewCell.swift */,
 				7863F7082A6B534C00E62C27 /* HomeHeaderTableViewCell.xib */,
+				5091A6EC2A7108820091197E /* CreateNewTripTableViewCell.swift */,
+				5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */,
 			);
 			path = TableViewCell;
-			sourceTree = "<group>";
-		};
-		50BB53982A6AA146000DE037 /* CustomHeader */ = {
-			isa = PBXGroup;
-			children = (
-				50BB53992A6AA18A000DE037 /* CustomHeaderView.swift */,
-				50BB539B2A6AA1B2000DE037 /* CustomHeaderView.xib */,
-			);
-			path = CustomHeader;
 			sourceTree = "<group>";
 		};
 		50BB539D2A6ABB58000DE037 /* CollectionViewCell */ = {
@@ -462,8 +454,8 @@
 				50BB53752A6A759A000DE037 /* Montserrat-VariableFont_wght.ttf in Resources */,
 				50BB537D2A6A790C000DE037 /* Home.storyboard in Resources */,
 				50BB534D2A6A728B000DE037 /* LaunchScreen.storyboard in Resources */,
+				5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */,
 				50BB53A12A6ABC1B000DE037 /* CityCollectionViewCell.xib in Resources */,
-				50BB539C2A6AA1B2000DE037 /* CustomHeaderView.xib in Resources */,
 				50BB534A2A6A728B000DE037 /* Assets.xcassets in Resources */,
 				50C3D0B02A6EBB3B00DDED53 /* unknownLocation.json in Resources */,
 				50BB53912A6A9641000DE037 /* CitiesForYouTableViewCell.xib in Resources */,
@@ -505,12 +497,12 @@
 				50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */,
 				7863F7092A6B534C00E62C27 /* HomeHeaderTableViewCell.swift in Sources */,
 				50AF64C52A701421005FFAB8 /* Animator.swift in Sources */,
+				5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */,
 				50BB53782A6A781A000DE037 /* Constants.swift in Sources */,
 				50C3D0A52A6EB66800DDED53 /* UIImageView+Extension.swift in Sources */,
 				50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */,
 				50BB53822A6A8825000DE037 /* UIViewController+Extension.swift in Sources */,
 				50BB537B2A6A78CD000DE037 /* TrippiStoryboards.swift in Sources */,
-				50BB539A2A6AA18A000DE037 /* CustomHeaderView.swift in Sources */,
 				50BB53902A6A9641000DE037 /* CitiesForYouTableViewCell.swift in Sources */,
 				50BB537F2A6A7CB9000DE037 /* HomeViewController.swift in Sources */,
 			);

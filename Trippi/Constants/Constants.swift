@@ -14,6 +14,7 @@ var BUTTON_TEXT_COLOR = "ButtonTextColor"
 var HIGHLIGHT_VIEW_BACKGROUND_COLOR = "HighlightViewBackground"
 var SECONDARY_TEXT_COLOR = "SecondaryTextColor"
 var TEXT_COLOR = "TextColor"
+var BADGE_COLOR = "BadgeColor"
 
 
 func getVC(storyboard: TrippiStoryboards, vc: String) -> UIViewController {

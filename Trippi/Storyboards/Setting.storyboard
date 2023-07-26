@@ -48,11 +48,11 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAq-jS-SVW">
-                                <rect key="frame" x="234.66666666666666" y="81" width="10" height="10"/>
+                                <rect key="frame" x="226.66666666666666" y="79" width="20" height="20"/>
                                 <color key="backgroundColor" name="ButtonBackground"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="WRe-M8-iRJ"/>
-                                    <constraint firstAttribute="width" constant="10" id="kBp-fg-YkZ"/>
+                                    <constraint firstAttribute="height" constant="20" id="WRe-M8-iRJ"/>
+                                    <constraint firstAttribute="width" constant="20" id="kBp-fg-YkZ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -66,8 +66,8 @@
                             <constraint firstItem="qFM-h0-GNL" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Huh-2V-uNg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="qFM-h0-GNL" secondAttribute="bottom" id="Olp-8X-M37"/>
                             <constraint firstItem="qFM-h0-GNL" firstAttribute="top" secondItem="2AC-Lc-jYK" secondAttribute="bottom" constant="20" id="SBq-IJ-kc0"/>
-                            <constraint firstItem="oAq-jS-SVW" firstAttribute="top" secondItem="2AC-Lc-jYK" secondAttribute="top" constant="2" id="TYT-Qb-sbW"/>
-                            <constraint firstItem="oAq-jS-SVW" firstAttribute="trailing" secondItem="2AC-Lc-jYK" secondAttribute="trailing" constant="-2" id="cdO-JE-MIh"/>
+                            <constraint firstItem="oAq-jS-SVW" firstAttribute="top" secondItem="2AC-Lc-jYK" secondAttribute="top" id="TYT-Qb-sbW"/>
+                            <constraint firstItem="oAq-jS-SVW" firstAttribute="trailing" secondItem="2AC-Lc-jYK" secondAttribute="trailing" id="cdO-JE-MIh"/>
                             <constraint firstItem="o0F-uO-EXk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="t4C-jj-Zkv"/>
                         </constraints>
                     </view>

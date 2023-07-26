@@ -12,17 +12,14 @@ import Lottie
 class HomeViewController: UIViewController {
     static let identifier = "HomeViewController"
     
-    var previousScrollOffset: CGFloat = 0
-    
     private var viewModel = HomeViewModel()
-    
-    var cellRect = CGRect()
-    
+        
+    //header
     let maxHeaderHeight: CGFloat = 170
     let headerHeight: CGFloat = 80
     let minHeaderHeight: CGFloat = 0
+    var previousScrollOffset: CGFloat = 0
     
-    //profile
     var largeProfileButtonHeight: CGFloat = 60
     var smallProfileButtonHeight: CGFloat = 50
     
@@ -32,10 +29,11 @@ class HomeViewController: UIViewController {
     var largeSearchTrailingConstant: CGFloat = 60
     var smallSearchTrailingConstant: CGFloat = -10
     
+    var isAnimationInProgress = false
+    
+    //location
     let locationManager = CLLocationManager()
     var location = (0.0, 0.0)
-    
-    var isAnimationInProgress = false
     
     var animator: Animator?
     var selectedCellImageViewSnapshot: UIView?
@@ -49,16 +47,18 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var stickyHeader: UIView!
     @IBOutlet weak var searchTextFieldContainerView: UIView!
     @IBOutlet weak var searchTextField: UITextField!
-    @IBOutlet weak var badgeView: UIView!
     @IBOutlet weak var lottieAnimationView: LottieAnimationView!
     
     @IBOutlet weak var stickyHeaderHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchTextFieldContainerStackTrailingConstraint: NSLayoutConstraint!
     
     //profile
+    @IBOutlet weak var badgeView: UIView!
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var profileButtonContainerView: UIView!
     
+    @IBOutlet weak var badgeViewHeightConstriant: NSLayoutConstraint!
+    @IBOutlet weak var badgeViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var profileButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var profileButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var profileButtonBottomConstraint: NSLayoutConstraint!
@@ -69,7 +69,9 @@ class HomeViewController: UIViewController {
         setUpUI()
         locationManager.delegate = self
         getCurrentLocation()
-//        selectedCellImageViewSnapshot = profileButton.snapshotView(afterScreenUpdates: true)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapBackGroundView))
+        view.addGestureRecognizer(tapGesture)
     }
     
     override func viewDidLayoutSubviews() {
@@ -84,7 +86,12 @@ class HomeViewController: UIViewController {
         self.presentVC(vc: vc)
     }
     
-    //custom methods
+    //MARK: - Custom Methods
+    
+    @objc func didTapBackGroundView() {
+        view.endEditing(true)
+    }
+    
     func setUpUI() {
         switch self.locationManager.authorizationStatus {
         case .authorizedWhenInUse, .authorizedAlways:
@@ -100,14 +107,17 @@ class HomeViewController: UIViewController {
         
         searchTextFieldContainerView.layer.cornerRadius = 15
         profileButton.layer.cornerRadius = 15
-        badgeView.layer.cornerRadius = 4
+        badgeView.layer.cornerRadius = 6
     }
     
+    //MARK: Register Cell
     func registerCell() {
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: CitiesForYouTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CitiesForYouTableViewCell.identifier)
+        tableView.register(UINib(nibName: CreateNewTripTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CreateNewTripTableViewCell.identifier)
     }
     
+    //MARK: Header UI
     func setUpLargeHeaderUI() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
@@ -129,6 +139,11 @@ class HomeViewController: UIViewController {
                 self.profileButtonHeightConstraint.constant = self.largeProfileButtonHeight
                 self.profileButtonWidthConstraint.constant = self.largeProfileButtonHeight
                 self.profileButtonBottomConstraint.constant = self.largeProfileBottomConstraint
+                
+                self.profileButton.layer.cornerRadius = 15
+                self.badgeViewHeightConstriant.constant = 12
+                self.badgeViewWidthConstraint.constant = 12
+                self.badgeView.layer.cornerRadius = 6
                 
                 self.searchTextFieldContainerStackTrailingConstraint.constant = self.largeSearchTrailingConstant
                 
@@ -152,6 +167,11 @@ class HomeViewController: UIViewController {
                 self.profileButtonWidthConstraint.constant = self.smallProfileButtonHeight
                 self.profileButtonBottomConstraint.constant = self.smallProfileBottomConstraint
                 
+                self.profileButton.layer.cornerRadius = 12
+                self.badgeViewHeightConstriant.constant = 11
+                self.badgeViewWidthConstraint.constant = 11
+                self.badgeView.layer.cornerRadius = 5.5
+                
                 self.discoveryLabel.alpha = 0
                 self.locationLabel.alpha = 0
                 self.lottieAnimationView.alpha = 0
@@ -165,6 +185,7 @@ class HomeViewController: UIViewController {
         }
     }
     
+    //MARK: location
     func getCurrentLocation() {
         DispatchQueue.global().async {
             switch self.locationManager.authorizationStatus {
@@ -194,6 +215,7 @@ class HomeViewController: UIViewController {
         }
     }
     
+    //MARK: Alert
     func showLocationSettingAlert() {
         let alert = UIAlertController(title: "Location Permission", message: "Allow Location Permission from settings to personalize your experience.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "settings", style: UIAlertAction.Style.default, handler: { _ in
@@ -224,17 +246,32 @@ extension HomeViewController: CLLocationManagerDelegate {
 //MARK: - TableView Delegate and DataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CitiesForYouTableViewCell.identifier, for: indexPath) as! CitiesForYouTableViewCell
-        cell.selectionStyle = .none
-        cell.frame = tableView.bounds
-        cell.layoutIfNeeded()
-        cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.7
-        cell.collectionView.reloadData()
-        return cell
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: CitiesForYouTableViewCell.identifier, for: indexPath) as! CitiesForYouTableViewCell
+            cell.selectionStyle = .none
+            cell.frame = tableView.bounds
+            cell.layoutIfNeeded()
+            cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.7
+            cell.collectionView.reloadData()
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: CreateNewTripTableViewCell.identifier) as! CreateNewTripTableViewCell
+            cell.delegate = self
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: CitiesForYouTableViewCell.identifier, for: indexPath) as! CitiesForYouTableViewCell
+            cell.selectionStyle = .none
+            cell.frame = tableView.bounds
+            cell.layoutIfNeeded()
+            cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.7
+            cell.collectionView.reloadData()
+            return cell
+        }
     }
     
     func canAnimateHeader (_ scrollView: UIScrollView) -> Bool {
@@ -270,23 +307,32 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+//MARK: - CreateNewTrip Cell Delegate
+extension HomeViewController: CreateNewTripTableViewCellDelegate {
+    func onClickCreateTripButton() {
+    }
+}
+
+//MARK: - Transitioning Delegate
 extension HomeViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         guard let secondViewController = presented as? SettingViewController,
-                let selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
-                else { return nil }
-
+              let selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
+        else { return nil }
+        
         animator = Animator(type: .present, firstViewController: self, secondViewController: secondViewController, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot)
-            return animator
+        return animator
     }
-
+    
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         guard let secondViewController = dismissed as? SettingViewController,
-                let selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
-                else { return nil }
-
-            animator = Animator(type: .dismiss, firstViewController: self, secondViewController: secondViewController, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot)
-            return animator
+              let selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
+        else { return nil }
+        
+        animator = Animator(type: .dismiss, firstViewController: self, secondViewController: secondViewController, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot)
+        
+        profileButtonContainerView.isHidden = false
+        return nil
     }
 }
 
