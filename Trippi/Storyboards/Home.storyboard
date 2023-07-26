@@ -33,14 +33,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're in parts unknown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-hL-4wp">
-                                        <rect key="frame" x="20.000000000000014" y="58" width="222.33333333333337" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-hL-4wp">
+                                        <rect key="frame" x="20" y="58" width="78.333333333333329" height="22"/>
                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MqQ-Gi-Qlo" customClass="LottieAnimationView" customModule="Lottie">
-                                        <rect key="frame" x="242.33333333333334" y="56.666666666666671" width="25.000000000000028" height="25"/>
+                                        <rect key="frame" x="98.333333333333343" y="56.666666666666671" width="24.999999999999986" height="25"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="F2D-7L-Tad"/>

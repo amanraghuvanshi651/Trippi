@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     static let identifier = "HomeViewController"
     
     private var viewModel = HomeViewModel()
-        
+    
     //header
     let maxHeaderHeight: CGFloat = 170
     let headerHeight: CGFloat = 80
@@ -65,9 +65,14 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCell()
-        setUpUI()
         locationManager.delegate = self
+        locationManager.requestLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        //            locationManager.startUpdatingLocation()
+        
+        setUpUI()
+        registerCell()
         getCurrentLocation()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapBackGroundView))
@@ -93,21 +98,32 @@ class HomeViewController: UIViewController {
     }
     
     func setUpUI() {
+        setUpLottieAnimationView()
+        searchTextFieldContainerView.layer.cornerRadius = 15
+        profileButton.layer.cornerRadius = 15
+        badgeView.layer.cornerRadius = 6
+    }
+    
+    func setUpLottieAnimationView() {
         switch self.locationManager.authorizationStatus {
         case .authorizedWhenInUse, .authorizedAlways:
-            lottieAnimationView.isHidden = true
+            UIView.animate(withDuration: 0.3) {
+                self.lottieAnimationView.alpha = 0
+            } completion: { _ in
+                self.lottieAnimationView.isHidden = true
+            }
         default:
             lottieAnimationView.isHidden = false
             lottieAnimationView.contentMode = .scaleAspectFit
             lottieAnimationView.loopMode = .loop
             lottieAnimationView.animationSpeed = 0.5
             lottieAnimationView.backgroundColor = .clear
+            locationLabel.text = "You're in parts unknown"
             lottieAnimationView.play()
+            UIView.animate(withDuration: 0.3) {
+                self.lottieAnimationView.alpha = 1
+            }
         }
-        
-        searchTextFieldContainerView.layer.cornerRadius = 15
-        profileButton.layer.cornerRadius = 15
-        badgeView.layer.cornerRadius = 6
     }
     
     //MARK: Register Cell
@@ -187,7 +203,7 @@ class HomeViewController: UIViewController {
     
     //MARK: location
     func getCurrentLocation() {
-        DispatchQueue.global().async {
+        DispatchQueue.main.async {
             switch self.locationManager.authorizationStatus {
             case .authorizedWhenInUse, .authorizedAlways:
                 if let currentLocation:CLLocation = self.locationManager.location {
@@ -195,9 +211,10 @@ class HomeViewController: UIViewController {
                     self.location.1 = currentLocation.coordinate.longitude
                     self.getReversedGeoLocation(location: currentLocation)
                 }
+            case .denied, .restricted:
+                self.showLocationSettingAlert()
             default:
                 self.locationManager.requestLocation()
-                break
             }
         }
     }
@@ -210,6 +227,7 @@ class HomeViewController: UIViewController {
                     return
                 }
                 let reversedGeoLocation = ReversedGeoLocation(with: placemark)
+                self.setUpLottieAnimationView()
                 self.locationLabel.text = "You're in \(reversedGeoLocation.city)"
             }
         }
@@ -230,16 +248,17 @@ class HomeViewController: UIViewController {
 
 //MARK: - CLLocation Delegate
 extension HomeViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        setUpUI()
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         location.0 = locValue.latitude
         location.1 = locValue.longitude
         getReversedGeoLocation(location: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude))
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    }
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        showLocationSettingAlert()
     }
 }
 

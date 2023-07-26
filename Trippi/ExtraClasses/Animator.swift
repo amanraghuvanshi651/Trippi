@@ -18,7 +18,7 @@ enum PresentationType {
 
 final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
     
-    static let duration: TimeInterval = 0.5
+    static let duration: TimeInterval = 0.3
     
     private let type: PresentationType
     private let firstViewController: HomeViewController
