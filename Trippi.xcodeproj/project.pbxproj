@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091A6EC2A7108820091197E /* CreateNewTripTableViewCell.swift */; };
 		5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */; };
+		50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2C8402A7230920096850D /* CreateTripViewController.swift */; };
+		50A2C8432A72309E0096850D /* CreateTrip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A2C8422A72309E0096850D /* CreateTrip.storyboard */; };
 		50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */; };
 		50AF64BF2A6FC5AE005FFAB8 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50AF64BD2A6FC5AE005FFAB8 /* SettingTableViewCell.xib */; };
 		50AF64C12A6FFD7E005FFAB8 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64C02A6FFD7E005FFAB8 /* SettingsModel.swift */; };
@@ -64,6 +66,8 @@
 /* Begin PBXFileReference section */
 		5091A6EC2A7108820091197E /* CreateNewTripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTripTableViewCell.swift; sourceTree = "<group>"; };
 		5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewTripTableViewCell.xib; sourceTree = "<group>"; };
+		50A2C8402A7230920096850D /* CreateTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
+		50A2C8422A72309E0096850D /* CreateTrip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateTrip.storyboard; sourceTree = "<group>"; };
 		50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		50AF64BD2A6FC5AE005FFAB8 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		50AF64C02A6FFD7E005FFAB8 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
@@ -128,6 +132,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50A2C83F2A72307C0096850D /* CreateTrip */ = {
+			isa = PBXGroup;
+			children = (
+				50A2C8402A7230920096850D /* CreateTripViewController.swift */,
+			);
+			path = CreateTrip;
+			sourceTree = "<group>";
+		};
+		50A2C8442A72340B0096850D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50AF64C02A6FFD7E005FFAB8 /* SettingsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50A2C8452A7234220096850D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		50AF64BB2A6FC588005FFAB8 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +226,7 @@
 		50BB53702A6A729C000DE037 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				50A2C83F2A72307C0096850D /* CreateTrip */,
 				50C3D09C2A6E5FBA00DDED53 /* Setting */,
 				50BB53842A6A8C06000DE037 /* Home */,
 				50BB53832A6A8BF3000DE037 /* OnBoarding */,
@@ -212,6 +240,7 @@
 				50BB53462A6A7289000DE037 /* OnBoarding.storyboard */,
 				50BB537C2A6A790C000DE037 /* Home.storyboard */,
 				50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */,
+				50A2C8422A72309E0096850D /* CreateTrip.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -260,6 +289,7 @@
 		50BB53842A6A8C06000DE037 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				50A2C8452A7234220096850D /* Models */,
 				50BB53872A6A8E21000DE037 /* Cell */,
 				50BB537E2A6A7CB9000DE037 /* HomeViewController.swift */,
 				50BB53852A6A8C1F000DE037 /* HomeViewModel.swift */,
@@ -309,6 +339,7 @@
 		50C3D09C2A6E5FBA00DDED53 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				50A2C8442A72340B0096850D /* Models */,
 				50AF64BB2A6FC588005FFAB8 /* TableViewCell */,
 				50C3D09F2A6E613800DDED53 /* SettingViewController.swift */,
 			);
@@ -319,7 +350,6 @@
 			isa = PBXGroup;
 			children = (
 				50C3D0A22A6EADCA00DDED53 /* ReversedGeoLocation.swift */,
-				50AF64C02A6FFD7E005FFAB8 /* SettingsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -461,6 +491,7 @@
 				50BB53912A6A9641000DE037 /* CitiesForYouTableViewCell.xib in Resources */,
 				50C3D09E2A6E5FFA00DDED53 /* Setting.storyboard in Resources */,
 				50BB53482A6A7289000DE037 /* OnBoarding.storyboard in Resources */,
+				50A2C8432A72309E0096850D /* CreateTrip.storyboard in Resources */,
 				7863F70A2A6B534C00E62C27 /* HomeHeaderTableViewCell.xib in Resources */,
 				50C3D0A82A6EB6A500DDED53 /* unknownLocation.gif in Resources */,
 			);
@@ -497,6 +528,7 @@
 				50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */,
 				7863F7092A6B534C00E62C27 /* HomeHeaderTableViewCell.swift in Sources */,
 				50AF64C52A701421005FFAB8 /* Animator.swift in Sources */,
+				50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */,
 				5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */,
 				50BB53782A6A781A000DE037 /* Constants.swift in Sources */,
 				50C3D0A52A6EB66800DDED53 /* UIImageView+Extension.swift in Sources */,
