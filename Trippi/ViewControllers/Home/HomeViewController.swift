@@ -32,8 +32,7 @@ class HomeViewController: UIViewController {
     var isAnimationInProgress = false
     
     //location
-    let locationManager = CLLocationManager()
-    var location = (0.0, 0.0)
+    var locationStatus = CLAuthorizationStatus.notDetermined
     
     var animator: Animator?
     var selectedCellImageViewSnapshot: UIView?
@@ -65,15 +64,11 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.delegate = self
-        locationManager.requestLocation()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        //            locationManager.startUpdatingLocation()
+        viewModel.delegate = self
         
         setUpUI()
         registerCell()
-        getCurrentLocation()
+        viewModel.getCurrentLocation()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapBackGroundView))
         view.addGestureRecognizer(tapGesture)
@@ -105,7 +100,7 @@ class HomeViewController: UIViewController {
     }
     
     func setUpLottieAnimationView() {
-        switch self.locationManager.authorizationStatus {
+        switch locationStatus {
         case .authorizedWhenInUse, .authorizedAlways:
             UIView.animate(withDuration: 0.3) {
                 self.lottieAnimationView.alpha = 0
@@ -131,6 +126,7 @@ class HomeViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: CitiesForYouTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CitiesForYouTableViewCell.identifier)
         tableView.register(UINib(nibName: CreateNewTripTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CreateNewTripTableViewCell.identifier)
+        tableView.register(UINib(nibName: TopJourneysTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TopJourneysTableViewCell.identifier)
     }
     
     //MARK: Header UI
@@ -139,7 +135,7 @@ class HomeViewController: UIViewController {
             guard let self = self else { return }
             self.discoveryLabel.isHidden = false
             self.locationLabel.isHidden = false
-            switch self.locationManager.authorizationStatus {
+            switch self.locationStatus {
             case .authorizedWhenInUse, .authorizedAlways:
                 self.lottieAnimationView.isHidden = true
             default:
@@ -201,38 +197,6 @@ class HomeViewController: UIViewController {
         }
     }
     
-    //MARK: location
-    func getCurrentLocation() {
-        DispatchQueue.main.async {
-            switch self.locationManager.authorizationStatus {
-            case .authorizedWhenInUse, .authorizedAlways:
-                if let currentLocation:CLLocation = self.locationManager.location {
-                    self.location.0 = currentLocation.coordinate.latitude
-                    self.location.1 = currentLocation.coordinate.longitude
-                    self.getReversedGeoLocation(location: currentLocation)
-                }
-            case .denied, .restricted:
-                self.showLocationSettingAlert()
-            default:
-                self.locationManager.requestLocation()
-            }
-        }
-    }
-    
-    func getReversedGeoLocation(location : CLLocation) {
-        CLGeocoder().reverseGeocodeLocation(location) {
-            placemarks , error in
-            if error == nil && placemarks!.count > 0 {
-                guard let placemark = placemarks?.last else {
-                    return
-                }
-                let reversedGeoLocation = ReversedGeoLocation(with: placemark)
-                self.setUpLottieAnimationView()
-                self.locationLabel.text = "You're in \(reversedGeoLocation.city)"
-            }
-        }
-    }
-    
     //MARK: Alert
     func showLocationSettingAlert() {
         let alert = UIAlertController(title: "Location Permission", message: "Allow Location Permission from settings to personalize your experience.", preferredStyle: UIAlertController.Style.alert)
@@ -246,26 +210,23 @@ class HomeViewController: UIViewController {
     }
 }
 
-//MARK: - CLLocation Delegate
-extension HomeViewController: CLLocationManagerDelegate {
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        location.0 = locValue.latitude
-        location.1 = locValue.longitude
-        getReversedGeoLocation(location: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude))
+//MARK: - View Model Delegate
+extension HomeViewController: HomeViewModelDelegate {
+    func currentLocation(location: String, status: CLAuthorizationStatus) {
+        self.locationStatus = status
+        self.setUpLottieAnimationView()
+        self.locationLabel.text = "You're in \(location)"
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    func showAlert() {
+        showLocationSettingAlert()
     }
 }
 
 //MARK: - TableView Delegate and DataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -275,19 +236,29 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.selectionStyle = .none
             cell.frame = tableView.bounds
             cell.layoutIfNeeded()
-            cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.7
+            cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.8
             cell.collectionView.reloadData()
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: CreateNewTripTableViewCell.identifier) as! CreateNewTripTableViewCell
+            cell.selectionStyle = .none
             cell.delegate = self
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TopJourneysTableViewCell.identifier) as! TopJourneysTableViewCell
+            cell.selectionStyle = .none
+            cell.selectionStyle = .none
+            cell.frame = tableView.bounds
+            cell.layoutIfNeeded()
+            cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.5
+            cell.collectionView.reloadData()
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: CitiesForYouTableViewCell.identifier, for: indexPath) as! CitiesForYouTableViewCell
             cell.selectionStyle = .none
             cell.frame = tableView.bounds
             cell.layoutIfNeeded()
-            cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.7
+            cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.8
             cell.collectionView.reloadData()
             return cell
         }
@@ -329,6 +300,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - CreateNewTrip Cell Delegate
 extension HomeViewController: CreateNewTripTableViewCellDelegate {
     func onClickCreateTripButton() {
+        let vc = getVC(storyboard: .createTrip, vc: CreateTripViewController.identifier) as! CreateTripViewController
+        self.navigationController?.presentVC(vc: vc)
     }
 }
 

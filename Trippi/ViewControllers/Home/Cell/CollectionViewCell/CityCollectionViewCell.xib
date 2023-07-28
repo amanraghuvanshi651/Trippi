@@ -16,45 +16,47 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CityCollectionViewCell" id="gTV-IL-0wX" customClass="CityCollectionViewCell" customModule="Trippi" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="193" height="297"/>
+            <rect key="frame" x="0.0" y="0.0" width="193" height="238"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="193" height="297"/>
+                <rect key="frame" x="0.0" y="0.0" width="193" height="238"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdm-b9-Xai">
-                        <rect key="frame" x="0.0" y="10" width="193" height="229.66666666666663"/>
+                        <rect key="frame" x="0.0" y="0.0" width="193" height="238"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="yrf-I9-gzf">
-                                <rect key="frame" x="10" y="10" width="173" height="150"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SunRise" translatesAutoresizingMaskIntoConstraints="NO" id="yrf-I9-gzf">
+                                <rect key="frame" x="10" y="10" width="173" height="134"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="4wR-wP-lay"/>
+                                    <constraint firstAttribute="height" constant="134" id="hte-0K-23j"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hM8-Gc-B75">
-                                <rect key="frame" x="10" y="170" width="173" height="22"/>
-                                <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvj-g5-axg">
-                                <rect key="frame" x="10" y="195" width="173" height="14.666666666666657"/>
-                                <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="12"/>
-                                <color key="textColor" name="SecondaryTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="hCg-Xg-vxv">
+                                <rect key="frame" x="10" y="154" width="173" height="47"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hM8-Gc-B75">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="22"/>
+                                        <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvj-g5-axg">
+                                        <rect key="frame" x="0.0" y="25" width="173" height="22"/>
+                                        <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="12"/>
+                                        <color key="textColor" name="SecondaryTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="HighlightViewBackground"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="nvj-g5-axg" secondAttribute="trailing" constant="10" id="3Gg-6j-doG"/>
-                            <constraint firstItem="nvj-g5-axg" firstAttribute="leading" secondItem="kdm-b9-Xai" secondAttribute="leading" constant="10" id="Qjb-RO-OYm"/>
-                            <constraint firstItem="hM8-Gc-B75" firstAttribute="leading" secondItem="kdm-b9-Xai" secondAttribute="leading" constant="10" id="VXT-in-L4c"/>
-                            <constraint firstItem="nvj-g5-axg" firstAttribute="top" secondItem="hM8-Gc-B75" secondAttribute="bottom" constant="3" id="bbZ-7Y-tmT"/>
+                            <constraint firstItem="hCg-Xg-vxv" firstAttribute="leading" secondItem="kdm-b9-Xai" secondAttribute="leading" constant="10" id="PMz-BB-9nh"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hCg-Xg-vxv" secondAttribute="bottom" constant="10" id="RTO-fV-cON"/>
+                            <constraint firstItem="hCg-Xg-vxv" firstAttribute="top" secondItem="yrf-I9-gzf" secondAttribute="bottom" constant="10" id="WIW-L1-nSr"/>
+                            <constraint firstAttribute="trailing" secondItem="hCg-Xg-vxv" secondAttribute="trailing" constant="10" id="azC-sO-ZBh"/>
                             <constraint firstAttribute="trailing" secondItem="yrf-I9-gzf" secondAttribute="trailing" constant="10" id="mTN-f0-zeS"/>
                             <constraint firstItem="yrf-I9-gzf" firstAttribute="top" secondItem="kdm-b9-Xai" secondAttribute="top" constant="10" id="mYv-Ws-Sqn"/>
-                            <constraint firstAttribute="trailing" secondItem="hM8-Gc-B75" secondAttribute="trailing" constant="10" id="nlW-Rs-y9r"/>
-                            <constraint firstAttribute="bottom" secondItem="nvj-g5-axg" secondAttribute="bottom" constant="20" id="pfr-Hz-r84"/>
-                            <constraint firstItem="hM8-Gc-B75" firstAttribute="top" secondItem="yrf-I9-gzf" secondAttribute="bottom" constant="10" id="y2X-KD-ow7"/>
                             <constraint firstItem="yrf-I9-gzf" firstAttribute="leading" secondItem="kdm-b9-Xai" secondAttribute="leading" constant="10" id="yLv-uR-zYa"/>
                         </constraints>
                     </view>
@@ -62,24 +64,24 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="kdm-b9-Xai" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="3dD-89-tFK"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kdm-b9-Xai" secondAttribute="bottom" constant="10" id="T4K-aV-YGB"/>
+                <constraint firstItem="kdm-b9-Xai" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3dD-89-tFK"/>
+                <constraint firstAttribute="bottom" secondItem="kdm-b9-Xai" secondAttribute="bottom" id="7qZ-i9-qhH"/>
                 <constraint firstAttribute="trailing" secondItem="kdm-b9-Xai" secondAttribute="trailing" id="oUH-kb-0Xb"/>
                 <constraint firstItem="kdm-b9-Xai" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ufM-qQ-yPg"/>
             </constraints>
-            <size key="customSize" width="193" height="297"/>
+            <size key="customSize" width="193" height="238"/>
             <connections>
                 <outlet property="cityImageView" destination="yrf-I9-gzf" id="DX9-ZQ-R5B"/>
-                <outlet property="cityImageViewHeightConstraint" destination="4wR-wP-lay" id="aaS-f3-sR5"/>
+                <outlet property="cityImageViewHeightConstraint" destination="hte-0K-23j" id="icH-pQ-4pb"/>
                 <outlet property="cityLabel" destination="hM8-Gc-B75" id="W5h-Tf-why"/>
                 <outlet property="containerView" destination="kdm-b9-Xai" id="Cg8-JA-tm1"/>
                 <outlet property="countryLabel" destination="nvj-g5-axg" id="ub0-gj-siG"/>
             </connections>
-            <point key="canvasLocation" x="176.33587786259542" y="76.408450704225359"/>
+            <point key="canvasLocation" x="176.33587786259542" y="39.436619718309863"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="User" width="300" height="300"/>
+        <image name="SunRise" width="1440" height="900"/>
         <namedColor name="HighlightViewBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

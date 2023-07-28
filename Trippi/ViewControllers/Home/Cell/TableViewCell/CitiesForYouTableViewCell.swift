@@ -50,7 +50,7 @@ extension CitiesForYouTableViewCell: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width / 2 - 60 , height: collectionView.frame.size.width / 1.7)
+        return CGSize(width: collectionView.frame.size.width / 2 - 60 , height: collectionView.frame.size.width / 1.8)
     }
     
 }

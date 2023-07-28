@@ -9,47 +9,67 @@ import UIKit
 import CoreLocation
 
 protocol HomeViewModelDelegate: AnyObject {
-    func getCurrentLocation(location: String)
+    func currentLocation(location: String, status: CLAuthorizationStatus)
+    func showAlert()
 }
 
-class HomeViewModel {
+class HomeViewModel: NSObject {
     
     let locationManager = CLLocationManager()
-//    private let locationManager = LocationManager()
+    var location = (0.0, 0.0)
+    weak var delegate: HomeViewModelDelegate?
     
-    init () {
-        getCurrentLocation()
+    override init () {
+        super.init()
+        locationManager.delegate = self
+        locationManager.requestLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestLocation()
     }
     
     func getCurrentLocation() {
-        // Ask for Authorisation from the User.
-        self.locationManager.requestAlwaysAuthorization()
-        
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
         DispatchQueue.main.async {
-            if CLLocationManager.locationServicesEnabled() {
-                //            locationManager.delegate = self
-                self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-                self.locationManager.startUpdatingLocation()
-                let location = self.locationManager.location?.coordinate
-                let clLocation = CLLocation(latitude: location?.latitude ?? CLLocationDegrees(), longitude: location?.longitude ?? CLLocationDegrees())
-                let geocoder = CLGeocoder()
-                geocoder.reverseGeocodeLocation(clLocation) { placemarks, error in
-                    
-                    guard error == nil else {
-                        print("*** Error in \(#function): \(error!.localizedDescription)")
-                        return
-                    }
-                    
-                    guard let placemark = placemarks?[0] else {
-                        print("*** Error in \(#function): placemark is nil")
-                        return
-                    }
-                    
-                    print("placemark here ------------------ \(placemark)")
+            switch self.locationManager.authorizationStatus {
+            case .authorizedWhenInUse, .authorizedAlways:
+                if let currentLocation:CLLocation = self.locationManager.location {
+                    self.location.0 = currentLocation.coordinate.latitude
+                    self.location.1 = currentLocation.coordinate.longitude
+                    self.getReversedGeoLocation(location: currentLocation)
                 }
+            case .denied, .restricted:
+                self.delegate?.showAlert()
+            default:
+                self.locationManager.requestLocation()
             }
         }
+    }
+    
+    func getReversedGeoLocation(location : CLLocation) {
+        CLGeocoder().reverseGeocodeLocation(location) {
+            placemarks , error in
+            if error == nil && placemarks!.count > 0 {
+                guard let placemark = placemarks?.last else {
+                    return
+                }
+                let reversedGeoLocation = ReversedGeoLocation(with: placemark)
+                self.delegate?.currentLocation(location: reversedGeoLocation.city, status: self.locationManager.authorizationStatus)
+            }
+        }
+    }
+}
+
+extension HomeViewModel: CLLocationManagerDelegate {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        location.0 = locValue.latitude
+        location.1 = locValue.longitude
+        getReversedGeoLocation(location: CLLocation(latitude: locValue.latitude, longitude: locValue.longitude))
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     }
 }

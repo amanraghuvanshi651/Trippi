@@ -2,28 +2,34 @@
 //  CreateTripViewController.swift
 //  Trippi
 //
-//  Created by macmini50 on 27/07/23.
+//  Created by Aman Raghuvanshi on 27/07/23.
 //
 
 import UIKit
 
 class CreateTripViewController: UIViewController {
+    static let identifier = "CreateTripViewController"
 
+    //MARK: - Outlets
+    @IBOutlet weak var addImageContainerView: UIView!
+    
+    @IBOutlet weak var topSmallView: UIView!
+    @IBOutlet weak var containerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapBackGroundView))
+        view.addGestureRecognizer(tapGesture)
+        
+        addImageContainerView.layer.cornerRadius = 20
+        
+        containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        containerView.layer.cornerRadius = 20
+        topSmallView.layer.cornerRadius = 2.5
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func didTapBackGroundView() {
+        view.endEditing(true)
     }
-    */
-
 }

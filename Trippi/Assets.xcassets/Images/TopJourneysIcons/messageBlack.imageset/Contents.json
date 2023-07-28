@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "5402361_bubble_chat_message_notification_comment_icon.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "5402361_bubble_chat_message_notification_comment_icon (1).png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "5402361_bubble_chat_message_notification_comment_icon (2).png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

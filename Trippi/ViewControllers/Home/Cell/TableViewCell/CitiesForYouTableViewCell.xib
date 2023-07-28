@@ -23,8 +23,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="371" height="223"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cities For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6h-jf-AkQ">
-                        <rect key="frame" x="20" y="20" width="261" height="13"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cities for you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6h-jf-AkQ">
+                        <rect key="frame" x="20" y="20" width="261" height="23"/>
                         <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="18"/>
                         <color key="textColor" name="TextColor"/>
                         <nil key="highlightedColor"/>
@@ -43,13 +43,13 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mor-iM-SI3">
-                        <rect key="frame" x="291" y="11.666666666666664" width="60" height="30"/>
+                        <rect key="frame" x="291" y="16.666666666666668" width="60" height="30.000000000000004"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="Atl-wQ-K8F"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="14"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="See All">
+                        <state key="normal" title="see all">
                             <color key="titleColor" name="TextColor"/>
                         </state>
                         <connections>
@@ -62,7 +62,7 @@
                     <constraint firstItem="mor-iM-SI3" firstAttribute="centerY" secondItem="x6h-jf-AkQ" secondAttribute="centerY" id="1tc-eR-aLy"/>
                     <constraint firstAttribute="bottom" secondItem="xoq-u4-NaC" secondAttribute="bottom" constant="20" id="3ix-a2-oUY"/>
                     <constraint firstItem="xoq-u4-NaC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EfE-Pc-Rm8"/>
-                    <constraint firstItem="xoq-u4-NaC" firstAttribute="top" secondItem="x6h-jf-AkQ" secondAttribute="bottom" constant="20" id="YwB-FP-Te4"/>
+                    <constraint firstItem="xoq-u4-NaC" firstAttribute="top" secondItem="x6h-jf-AkQ" secondAttribute="bottom" constant="10" id="YwB-FP-Te4"/>
                     <constraint firstItem="mor-iM-SI3" firstAttribute="leading" secondItem="x6h-jf-AkQ" secondAttribute="trailing" constant="10" id="aCi-nj-CUa"/>
                     <constraint firstItem="x6h-jf-AkQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="jFU-qZ-TJU"/>
                     <constraint firstAttribute="trailing" secondItem="mor-iM-SI3" secondAttribute="trailing" constant="20" id="jeK-GU-IEv"/>

@@ -35,6 +35,10 @@
 		50BB53912A6A9641000DE037 /* CitiesForYouTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BB538F2A6A9641000DE037 /* CitiesForYouTableViewCell.xib */; };
 		50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB539E2A6ABC1B000DE037 /* CityCollectionViewCell.swift */; };
 		50BB53A12A6ABC1B000DE037 /* CityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BB539F2A6ABC1B000DE037 /* CityCollectionViewCell.xib */; };
+		50BF321F2A73C10400F7CD28 /* TopJourneysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BF321D2A73C10400F7CD28 /* TopJourneysTableViewCell.swift */; };
+		50BF32202A73C10400F7CD28 /* TopJourneysTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BF321E2A73C10400F7CD28 /* TopJourneysTableViewCell.xib */; };
+		50BF32232A73CB4900F7CD28 /* TopJourneysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BF32212A73CB4900F7CD28 /* TopJourneysCollectionViewCell.swift */; };
+		50BF32242A73CB4900F7CD28 /* TopJourneysCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BF32222A73CB4900F7CD28 /* TopJourneysCollectionViewCell.xib */; };
 		50C3D09E2A6E5FFA00DDED53 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */; };
 		50C3D0A02A6E613800DDED53 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D09F2A6E613800DDED53 /* SettingViewController.swift */; };
 		50C3D0A32A6EADCA00DDED53 /* ReversedGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D0A22A6EADCA00DDED53 /* ReversedGeoLocation.swift */; };
@@ -42,8 +46,6 @@
 		50C3D0A82A6EB6A500DDED53 /* unknownLocation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D0A72A6EB6A500DDED53 /* unknownLocation.gif */; };
 		50C3D0AD2A6EBAFC00DDED53 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 50C3D0AC2A6EBAFC00DDED53 /* Lottie */; };
 		50C3D0B02A6EBB3B00DDED53 /* unknownLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */; };
-		7863F7092A6B534C00E62C27 /* HomeHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7863F7072A6B534C00E62C27 /* HomeHeaderTableViewCell.swift */; };
-		7863F70A2A6B534C00E62C27 /* HomeHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7863F7082A6B534C00E62C27 /* HomeHeaderTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,14 +98,16 @@
 		50BB538F2A6A9641000DE037 /* CitiesForYouTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CitiesForYouTableViewCell.xib; sourceTree = "<group>"; };
 		50BB539E2A6ABC1B000DE037 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 		50BB539F2A6ABC1B000DE037 /* CityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCollectionViewCell.xib; sourceTree = "<group>"; };
+		50BF321D2A73C10400F7CD28 /* TopJourneysTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopJourneysTableViewCell.swift; sourceTree = "<group>"; };
+		50BF321E2A73C10400F7CD28 /* TopJourneysTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopJourneysTableViewCell.xib; sourceTree = "<group>"; };
+		50BF32212A73CB4900F7CD28 /* TopJourneysCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopJourneysCollectionViewCell.swift; sourceTree = "<group>"; };
+		50BF32222A73CB4900F7CD28 /* TopJourneysCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopJourneysCollectionViewCell.xib; sourceTree = "<group>"; };
 		50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		50C3D09F2A6E613800DDED53 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		50C3D0A22A6EADCA00DDED53 /* ReversedGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversedGeoLocation.swift; sourceTree = "<group>"; };
 		50C3D0A42A6EB66800DDED53 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		50C3D0A72A6EB6A500DDED53 /* unknownLocation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = unknownLocation.gif; sourceTree = "<group>"; };
 		50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unknownLocation.json; sourceTree = "<group>"; };
-		7863F7072A6B534C00E62C27 /* HomeHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		7863F7082A6B534C00E62C27 /* HomeHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,10 +315,10 @@
 			children = (
 				50BB538E2A6A9641000DE037 /* CitiesForYouTableViewCell.swift */,
 				50BB538F2A6A9641000DE037 /* CitiesForYouTableViewCell.xib */,
-				7863F7072A6B534C00E62C27 /* HomeHeaderTableViewCell.swift */,
-				7863F7082A6B534C00E62C27 /* HomeHeaderTableViewCell.xib */,
 				5091A6EC2A7108820091197E /* CreateNewTripTableViewCell.swift */,
 				5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */,
+				50BF321D2A73C10400F7CD28 /* TopJourneysTableViewCell.swift */,
+				50BF321E2A73C10400F7CD28 /* TopJourneysTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -324,6 +328,8 @@
 			children = (
 				50BB539E2A6ABC1B000DE037 /* CityCollectionViewCell.swift */,
 				50BB539F2A6ABC1B000DE037 /* CityCollectionViewCell.xib */,
+				50BF32212A73CB4900F7CD28 /* TopJourneysCollectionViewCell.swift */,
+				50BF32222A73CB4900F7CD28 /* TopJourneysCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -481,18 +487,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				50AF64BF2A6FC5AE005FFAB8 /* SettingTableViewCell.xib in Resources */,
+				50BF32242A73CB4900F7CD28 /* TopJourneysCollectionViewCell.xib in Resources */,
 				50BB53752A6A759A000DE037 /* Montserrat-VariableFont_wght.ttf in Resources */,
 				50BB537D2A6A790C000DE037 /* Home.storyboard in Resources */,
 				50BB534D2A6A728B000DE037 /* LaunchScreen.storyboard in Resources */,
 				5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */,
 				50BB53A12A6ABC1B000DE037 /* CityCollectionViewCell.xib in Resources */,
+				50BF32202A73C10400F7CD28 /* TopJourneysTableViewCell.xib in Resources */,
 				50BB534A2A6A728B000DE037 /* Assets.xcassets in Resources */,
 				50C3D0B02A6EBB3B00DDED53 /* unknownLocation.json in Resources */,
 				50BB53912A6A9641000DE037 /* CitiesForYouTableViewCell.xib in Resources */,
 				50C3D09E2A6E5FFA00DDED53 /* Setting.storyboard in Resources */,
 				50BB53482A6A7289000DE037 /* OnBoarding.storyboard in Resources */,
 				50A2C8432A72309E0096850D /* CreateTrip.storyboard in Resources */,
-				7863F70A2A6B534C00E62C27 /* HomeHeaderTableViewCell.xib in Resources */,
 				50C3D0A82A6EB6A500DDED53 /* unknownLocation.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,11 +533,12 @@
 				50BB53862A6A8C1F000DE037 /* HomeViewModel.swift in Sources */,
 				50C3D0A02A6E613800DDED53 /* SettingViewController.swift in Sources */,
 				50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */,
-				7863F7092A6B534C00E62C27 /* HomeHeaderTableViewCell.swift in Sources */,
 				50AF64C52A701421005FFAB8 /* Animator.swift in Sources */,
+				50BF321F2A73C10400F7CD28 /* TopJourneysTableViewCell.swift in Sources */,
 				50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */,
 				5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */,
 				50BB53782A6A781A000DE037 /* Constants.swift in Sources */,
+				50BF32232A73CB4900F7CD28 /* TopJourneysCollectionViewCell.swift in Sources */,
 				50C3D0A52A6EB66800DDED53 /* UIImageView+Extension.swift in Sources */,
 				50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */,
 				50BB53822A6A8825000DE037 /* UIViewController+Extension.swift in Sources */,
@@ -716,6 +724,7 @@
 				DEVELOPMENT_TEAM = 637U2CRCZ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trippi/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app uses your locaiton to personalize your experience.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your locaiton to personalize your experience.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -745,6 +754,7 @@
 				DEVELOPMENT_TEAM = 637U2CRCZ4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trippi/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app uses your locaiton to personalize your experience.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your locaiton to personalize your experience.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
