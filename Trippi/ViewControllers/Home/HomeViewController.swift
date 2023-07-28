@@ -29,8 +29,6 @@ class HomeViewController: UIViewController {
     var largeSearchTrailingConstant: CGFloat = 60
     var smallSearchTrailingConstant: CGFloat = -10
     
-    var isAnimationInProgress = false
-    
     //location
     var locationStatus = CLAuthorizationStatus.notDetermined
     
@@ -133,21 +131,8 @@ class HomeViewController: UIViewController {
     func setUpLargeHeaderUI() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.discoveryLabel.isHidden = false
-            self.locationLabel.isHidden = false
-            switch self.locationStatus {
-            case .authorizedWhenInUse, .authorizedAlways:
-                self.lottieAnimationView.isHidden = true
-            default:
-                self.lottieAnimationView.isHidden = false
-            }
-            self.isAnimationInProgress = true
             UIView.animate(withDuration: 0.2) { [weak self] in
                 guard let self = self else { return }
-                self.discoveryLabel.alpha = 1
-                self.locationLabel.alpha = 1
-                self.lottieAnimationView.alpha = 1
-                
                 self.profileButtonHeightConstraint.constant = self.largeProfileButtonHeight
                 self.profileButtonWidthConstraint.constant = self.largeProfileButtonHeight
                 self.profileButtonBottomConstraint.constant = self.largeProfileBottomConstraint
@@ -162,14 +147,12 @@ class HomeViewController: UIViewController {
                 self.stickyHeaderHeightConstraint.constant = self.maxHeaderHeight
                 self.view.layoutIfNeeded()
             } completion: { _ in
-                self.isAnimationInProgress = false
             }
         }
     }
     
     func setUpSmallHeaderUI() {
         DispatchQueue.main.async {
-            self.isAnimationInProgress = true
             UIView.animate(withDuration: 0.2) { [weak self] in
                 guard let self = self else { return }
                 self.searchTextFieldContainerStackTrailingConstraint.constant = self.smallSearchTrailingConstant
@@ -184,15 +167,8 @@ class HomeViewController: UIViewController {
                 self.badgeViewWidthConstraint.constant = 11
                 self.badgeView.layer.cornerRadius = 5.5
                 
-                self.discoveryLabel.alpha = 0
-                self.locationLabel.alpha = 0
-                self.lottieAnimationView.alpha = 0
                 self.view.layoutIfNeeded()
             } completion: { _ in
-                self.isAnimationInProgress = false
-                self.discoveryLabel.isHidden = true
-                self.locationLabel.isHidden = true
-                self.lottieAnimationView.isHidden = true
             }
         }
     }
@@ -264,36 +240,29 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func canAnimateHeader (_ scrollView: UIScrollView) -> Bool {
-        let scrollViewMaxHeight = scrollView.frame.height + self.stickyHeaderHeightConstraint.constant - minHeaderHeight
-        return scrollView.contentSize.height > scrollViewMaxHeight
-    }
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollDiff = (scrollView.contentOffset.y - previousScrollOffset)
         let isScrollingDown = scrollDiff > 0
         let isScrollingUp = scrollDiff < 0
-        if canAnimateHeader(scrollView) {
-            var newHeight = stickyHeaderHeightConstraint.constant
-            if isScrollingDown {
-                newHeight = max(minHeaderHeight, stickyHeaderHeightConstraint.constant - abs(scrollDiff + 1))
-            } else if isScrollingUp {
-                newHeight = min(headerHeight, stickyHeaderHeightConstraint.constant + abs(scrollDiff + 1))
-            }
-            
-            if scrollView.contentOffset.y == 0 && stickyHeaderHeightConstraint.constant <= maxHeaderHeight && !isAnimationInProgress {
-                setUpLargeHeaderUI()
-            } else if !self.locationLabel.isHidden && self.locationLabel.alpha == 1 {
-                print(scrollView.contentOffset.y)
-                setUpSmallHeaderUI()
-            }
-            
-            if newHeight != stickyHeaderHeightConstraint.constant || isScrollingDown {
-                stickyHeaderHeightConstraint.constant = newHeight
-            }
-            
-            previousScrollOffset = scrollView.contentOffset.y
+        var newHeight = stickyHeaderHeightConstraint.constant
+        if isScrollingDown {
+            newHeight = max(minHeaderHeight, stickyHeaderHeightConstraint.constant - abs(scrollDiff + 1))
+        } else if isScrollingUp {
+            newHeight = min(headerHeight, stickyHeaderHeightConstraint.constant + abs(scrollDiff + 1))
         }
+        
+        if scrollView.contentOffset.y == 0 && stickyHeaderHeightConstraint.constant <= maxHeaderHeight {
+            setUpLargeHeaderUI()
+        } else if !self.locationLabel.isHidden && self.locationLabel.alpha == 1 {
+            print(scrollView.contentOffset.y)
+            setUpSmallHeaderUI()
+        }
+        
+        if newHeight != stickyHeaderHeightConstraint.constant || isScrollingDown {
+            stickyHeaderHeightConstraint.constant = newHeight
+        }
+        
+        previousScrollOffset = scrollView.contentOffset.y
     }
 }
 
