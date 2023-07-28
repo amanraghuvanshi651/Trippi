@@ -7,11 +7,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Montserrat-VariableFont_wght.ttf">
-            <string>MontserratRoman-ExtraBold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -21,19 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trippi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="FfL-am-8KU">
-                                <rect key="frame" x="80" y="408" width="233" height="61"/>
-                                <fontDescription key="fontDescription" name="MontserratRoman-ExtraBold" family="Montserrat" pointSize="50"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trippi" translatesAutoresizingMaskIntoConstraints="NO" id="XsN-4x-Wwi">
+                                <rect key="frame" x="60" y="326" width="273" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="B65-Bb-kEb"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="ButtonBackground"/>
                         <constraints>
-                            <constraint firstItem="FfL-am-8KU" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Khr-X6-TaW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FfL-am-8KU" secondAttribute="trailing" constant="80" id="KoV-A0-aAo"/>
-                            <constraint firstItem="FfL-am-8KU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="i38-gA-JJx"/>
+                            <constraint firstItem="XsN-4x-Wwi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="4fq-B5-P1k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XsN-4x-Wwi" secondAttribute="trailing" constant="60" id="RCa-mO-nUT"/>
+                            <constraint firstItem="XsN-4x-Wwi" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="iat-HM-Pdo"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -43,6 +38,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Trippi" width="1024" height="1024"/>
         <namedColor name="ButtonBackground">
             <color red="0.98000001907348633" green="0.81599998474121094" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -46,6 +46,7 @@
 		50C3D0A82A6EB6A500DDED53 /* unknownLocation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D0A72A6EB6A500DDED53 /* unknownLocation.gif */; };
 		50C3D0AD2A6EBAFC00DDED53 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 50C3D0AC2A6EBAFC00DDED53 /* Lottie */; };
 		50C3D0B02A6EBB3B00DDED53 /* unknownLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */; };
+		78FDE5852A744DC800AA5C6E /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FDE5842A744DC800AA5C6E /* SignUp.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		50C3D0A42A6EB66800DDED53 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		50C3D0A72A6EB6A500DDED53 /* unknownLocation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = unknownLocation.gif; sourceTree = "<group>"; };
 		50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unknownLocation.json; sourceTree = "<group>"; };
+		78FDE5842A744DC800AA5C6E /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 				50BB537C2A6A790C000DE037 /* Home.storyboard */,
 				50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */,
 				50A2C8422A72309E0096850D /* CreateTrip.storyboard */,
+				78FDE5842A744DC800AA5C6E /* SignUp.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				50C3D09E2A6E5FFA00DDED53 /* Setting.storyboard in Resources */,
 				50BB53482A6A7289000DE037 /* OnBoarding.storyboard in Resources */,
 				50A2C8432A72309E0096850D /* CreateTrip.storyboard in Resources */,
+				78FDE5852A744DC800AA5C6E /* SignUp.storyboard in Resources */,
 				50C3D0A82A6EB6A500DDED53 /* unknownLocation.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
