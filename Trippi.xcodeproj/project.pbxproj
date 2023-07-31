@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091A6EC2A7108820091197E /* CreateNewTripTableViewCell.swift */; };
 		5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */; };
+		509E2DFB2A77AB6E00638F06 /* Fastis in Frameworks */ = {isa = PBXBuildFile; productRef = 509E2DFA2A77AB6E00638F06 /* Fastis */; };
+		509E2DFD2A77AE6700638F06 /* UIcolor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E2DFC2A77AE6700638F06 /* UIcolor+Extension.swift */; };
 		50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2C8402A7230920096850D /* CreateTripViewController.swift */; };
 		50A2C8432A72309E0096850D /* CreateTrip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A2C8422A72309E0096850D /* CreateTrip.storyboard */; };
 		50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */; };
@@ -69,6 +71,7 @@
 /* Begin PBXFileReference section */
 		5091A6EC2A7108820091197E /* CreateNewTripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTripTableViewCell.swift; sourceTree = "<group>"; };
 		5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewTripTableViewCell.xib; sourceTree = "<group>"; };
+		509E2DFC2A77AE6700638F06 /* UIcolor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIcolor+Extension.swift"; sourceTree = "<group>"; };
 		50A2C8402A7230920096850D /* CreateTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
 		50A2C8422A72309E0096850D /* CreateTrip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateTrip.storyboard; sourceTree = "<group>"; };
 		50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509E2DFB2A77AB6E00638F06 /* Fastis in Frameworks */,
 				50C3D0AD2A6EBAFC00DDED53 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				50AF64C42A701421005FFAB8 /* Animator.swift */,
+				509E2DFC2A77AE6700638F06 /* UIcolor+Extension.swift */,
 			);
 			path = ExtraClasses;
 			sourceTree = "<group>";
@@ -405,6 +410,7 @@
 			name = Trippi;
 			packageProductDependencies = (
 				50C3D0AC2A6EBAFC00DDED53 /* Lottie */,
+				509E2DFA2A77AB6E00638F06 /* Fastis */,
 			);
 			productName = Trippi;
 			productReference = 50BB533D2A6A7289000DE037 /* Trippi.app */;
@@ -480,6 +486,7 @@
 			mainGroup = 50BB53342A6A7289000DE037;
 			packageReferences = (
 				50C3D0AB2A6EBAFC00DDED53 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				509E2DF92A77AB6E00638F06 /* XCRemoteSwiftPackageReference "Fastis" */,
 			);
 			productRefGroup = 50BB533E2A6A7289000DE037 /* Products */;
 			projectDirPath = "";
@@ -553,6 +560,7 @@
 				50BF32232A73CB4900F7CD28 /* TopJourneysCollectionViewCell.swift in Sources */,
 				50C3D0A52A6EB66800DDED53 /* UIImageView+Extension.swift in Sources */,
 				50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */,
+				509E2DFD2A77AE6700638F06 /* UIcolor+Extension.swift in Sources */,
 				50BB53822A6A8825000DE037 /* UIViewController+Extension.swift in Sources */,
 				50BB537B2A6A78CD000DE037 /* TrippiStoryboards.swift in Sources */,
 				50BB53902A6A9641000DE037 /* CitiesForYouTableViewCell.swift in Sources */,
@@ -904,6 +912,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		509E2DF92A77AB6E00638F06 /* XCRemoteSwiftPackageReference "Fastis" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simla-tech/Fastis.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		50C3D0AB2A6EBAFC00DDED53 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -915,6 +931,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		509E2DFA2A77AB6E00638F06 /* Fastis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 509E2DF92A77AB6E00638F06 /* XCRemoteSwiftPackageReference "Fastis" */;
+			productName = Fastis;
+		};
 		50C3D0AC2A6EBAFC00DDED53 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 50C3D0AB2A6EBAFC00DDED53 /* XCRemoteSwiftPackageReference "lottie-ios" */;
