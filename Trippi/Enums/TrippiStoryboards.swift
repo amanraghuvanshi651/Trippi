@@ -12,4 +12,5 @@ enum TrippiStoryboards: String {
     case home = "Home"
     case setting = "Setting"
     case createTrip = "CreateTrip"
+    case searchPlace = "SearchPlace"
 }

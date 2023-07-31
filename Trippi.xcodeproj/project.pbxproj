@@ -11,6 +11,8 @@
 		5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */; };
 		509E2DFB2A77AB6E00638F06 /* Fastis in Frameworks */ = {isa = PBXBuildFile; productRef = 509E2DFA2A77AB6E00638F06 /* Fastis */; };
 		509E2DFD2A77AE6700638F06 /* UIcolor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E2DFC2A77AE6700638F06 /* UIcolor+Extension.swift */; };
+		509E2E002A77C5AD00638F06 /* SearchPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509E2DFF2A77C5AD00638F06 /* SearchPlace.storyboard */; };
+		509E2E022A77C5C200638F06 /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E2E012A77C5C200638F06 /* SearchPlaceViewController.swift */; };
 		50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2C8402A7230920096850D /* CreateTripViewController.swift */; };
 		50A2C8432A72309E0096850D /* CreateTrip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A2C8422A72309E0096850D /* CreateTrip.storyboard */; };
 		50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */; };
@@ -72,6 +74,8 @@
 		5091A6EC2A7108820091197E /* CreateNewTripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTripTableViewCell.swift; sourceTree = "<group>"; };
 		5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewTripTableViewCell.xib; sourceTree = "<group>"; };
 		509E2DFC2A77AE6700638F06 /* UIcolor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIcolor+Extension.swift"; sourceTree = "<group>"; };
+		509E2DFF2A77C5AD00638F06 /* SearchPlace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchPlace.storyboard; sourceTree = "<group>"; };
+		509E2E012A77C5C200638F06 /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
 		50A2C8402A7230920096850D /* CreateTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
 		50A2C8422A72309E0096850D /* CreateTrip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateTrip.storyboard; sourceTree = "<group>"; };
 		50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -142,6 +146,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		509E2DFE2A77C59500638F06 /* SearchPlace */ = {
+			isa = PBXGroup;
+			children = (
+				509E2E012A77C5C200638F06 /* SearchPlaceViewController.swift */,
+			);
+			path = SearchPlace;
+			sourceTree = "<group>";
+		};
 		50A2C83F2A72307C0096850D /* CreateTrip */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +248,7 @@
 		50BB53702A6A729C000DE037 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				509E2DFE2A77C59500638F06 /* SearchPlace */,
 				78FDE5832A74474E00AA5C6E /* CustomTabBar */,
 				50A2C83F2A72307C0096850D /* CreateTrip */,
 				50C3D09C2A6E5FBA00DDED53 /* Setting */,
@@ -248,6 +261,7 @@
 		50BB53712A6A72A9000DE037 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				509E2DFF2A77C5AD00638F06 /* SearchPlace.storyboard */,
 				50BB53462A6A7289000DE037 /* OnBoarding.storyboard */,
 				50BB537C2A6A790C000DE037 /* Home.storyboard */,
 				50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */,
@@ -510,6 +524,7 @@
 				50BB537D2A6A790C000DE037 /* Home.storyboard in Resources */,
 				50BB534D2A6A728B000DE037 /* LaunchScreen.storyboard in Resources */,
 				5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */,
+				509E2E002A77C5AD00638F06 /* SearchPlace.storyboard in Resources */,
 				50BB53A12A6ABC1B000DE037 /* CityCollectionViewCell.xib in Resources */,
 				50BF32202A73C10400F7CD28 /* TopJourneysTableViewCell.xib in Resources */,
 				50BB534A2A6A728B000DE037 /* Assets.xcassets in Resources */,
@@ -554,6 +569,7 @@
 				50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */,
 				50AF64C52A701421005FFAB8 /* Animator.swift in Sources */,
 				50BF321F2A73C10400F7CD28 /* TopJourneysTableViewCell.swift in Sources */,
+				509E2E022A77C5C200638F06 /* SearchPlaceViewController.swift in Sources */,
 				50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */,
 				5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */,
 				50BB53782A6A781A000DE037 /* Constants.swift in Sources */,

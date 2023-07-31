@@ -2,7 +2,7 @@
 //  SettingViewController.swift
 //  Trippi
 //
-//  Created by macmini50 on 24/07/23.
+//  Created by Aman Raghuvanshi on 24/07/23.
 //
 
 import UIKit
@@ -50,6 +50,9 @@ class SettingViewController: UIViewController {
     
     //custom methods
     func setUpUI() {
+        badgeView.alpha = 0
+        profileButton.alpha = 0
+        
         profileButton.layer.cornerRadius = 24
         badgeView.layer.cornerRadius = 10
     }

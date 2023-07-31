@@ -2,7 +2,7 @@
 //  SettingsModel.swift
 //  Trippi
 //
-//  Created by macmini50 on 25/07/23.
+//  Created by Aman Raghuvanshi on 25/07/23.
 //
 
 import Foundation

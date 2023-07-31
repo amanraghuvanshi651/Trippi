@@ -2,7 +2,7 @@
 //  UIImageView+Extension.swift
 //  Trippi
 //
-//  Created by macmini50 on 24/07/23.
+//  Created by Aman Raghuvanshi on 24/07/23.
 //
 
 import UIKit

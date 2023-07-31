@@ -2,7 +2,7 @@
 //  Animator.swift
 //  Trippi
 //
-//  Created by macmini50 on 25/07/23.
+//  Created by Aman Raghuvanshi on 25/07/23.
 //
 
 import UIKit
@@ -16,27 +16,41 @@ enum PresentationType {
     }
 }
 
+protocol AnimatorDelegate: AnyObject {
+    func hideFromViewIfNeeded()
+    func unHideFromViewIfNeeded()
+    func hideToViewIfNeeded()
+    func unHideToViewIfNeeded()
+}
+
 final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
     
     static let duration: TimeInterval = 0.3
     
+    var imageViewSnapshot = UIView()
+    
     private let type: PresentationType
-    private let firstViewController: HomeViewController
-    private let secondViewController: SettingViewController
+    private let firstViewController: UIViewController
+    private let fromView: UIView
+    private let secondViewController: UIViewController
+    private let toView: UIView
     private let selectedCellImageViewSnapshot: UIView
     private let cellImageViewRect: CGRect
     
     private var isSettingVC = false
     
-    init?(type: PresentationType, firstViewController: HomeViewController, secondViewController: SettingViewController, selectedCellImageViewSnapshot: UIView) {
+    weak var delegate: AnimatorDelegate?
+    
+    init?(type: PresentationType, firstViewController: UIViewController, fromView: UIView, secondViewController: UIViewController, toView: UIView, selectedCellImageViewSnapshot: UIView) {
         self.type = type
         self.firstViewController = firstViewController
+        self.fromView = fromView
         self.secondViewController = secondViewController
+        self.toView = toView
         self.selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
         
-        guard let window = firstViewController.view.window ?? secondViewController.view.window,
-              let selectedCell = firstViewController.profileButtonContainerView
-        else { return nil }
+        guard let window = firstViewController.view.window ?? secondViewController.view.window else { return nil }
+        let selectedCell = fromView
         
         self.cellImageViewRect = selectedCell.convert(selectedCell.bounds, to: window)
     }
@@ -56,70 +70,62 @@ final class Animator: NSObject, UIViewControllerAnimatedTransitioning {
         
         let view = secondViewController.view ?? firstViewController.view ?? nil
         
-        guard let toView = view
+        guard let toViewControllersView = view
         else {
             transitionContext.completeTransition(false)
             return
         }
         
-        containerView.addSubview(toView)
+        containerView.addSubview(toViewControllersView)
         
         // deleted line: transitionContext.completeTransition(true)
         guard let window = firstViewController.view.window ?? secondViewController.view.window,
-              let cellImageSnapshot = firstViewController.profileButtonContainerView.snapshotView(afterScreenUpdates: false),
-              let controllerImageSnapshot = secondViewController.profileButton.snapshotView(afterScreenUpdates: true)
+              let cellImageSnapshot = fromView.snapshotView(afterScreenUpdates: false),
+              let controllerImageSnapshot = toView.snapshotView(afterScreenUpdates: true)
         else {
             transitionContext.completeTransition(true)
             return
         }
         
         let isPresenting = type.isPresenting
-        
-        let imageViewSnapshot: UIView
-        
+                
         if isPresenting {
             imageViewSnapshot = cellImageSnapshot
         } else {
             imageViewSnapshot = controllerImageSnapshot
         }
         
-        toView.alpha = 0
+        toViewControllersView.alpha = 0
         
         [imageViewSnapshot].forEach { containerView.addSubview($0) }
         
-        let controllerImageViewRect = secondViewController.profileButton.convert(secondViewController.profileButton.bounds, to: window)
+        let controllerImageViewRect = toView.convert(toView.bounds, to: window)
         
         [imageViewSnapshot].forEach {
             $0.frame = isPresenting ? cellImageViewRect : controllerImageViewRect
         }
         
         if isPresenting {
-            secondViewController.badgeView.alpha = 0
-            secondViewController.profileButton.alpha = 0
-            firstViewController.profileButtonContainerView.isHidden = true
+            delegate?.hideToViewIfNeeded()
+            delegate?.hideFromViewIfNeeded()
         }
         
         UIView.animateKeyframes(withDuration: Self.duration, delay: 0, options: .calculationModeCubic, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1) {
-                imageViewSnapshot.frame = isPresenting ? controllerImageViewRect : self.cellImageViewRect
+                self.imageViewSnapshot.frame = isPresenting ? controllerImageViewRect : self.cellImageViewRect
                 if self.isSettingVC {
-                    toView.alpha = 1
+                    toViewControllersView.alpha = 1
                 }
             }
         }, completion: { _ in
             
             if isPresenting {
-                UIView.animate(withDuration: 0.3) {
-                    if self.isSettingVC {
-                        self.secondViewController.badgeView.alpha = 1
-                        self.secondViewController.profileButton.alpha = 1
-                    }
-                } completion: { _ in
-                    imageViewSnapshot.removeFromSuperview()
+                if self.isSettingVC {
+                    self.delegate?.unHideToViewIfNeeded()
                 }
             } else {
-                toView.alpha = 1
-                imageViewSnapshot.removeFromSuperview()
+                toViewControllersView.alpha = 1
+                self.imageViewSnapshot.removeFromSuperview()
             }
             
             transitionContext.completeTransition(true)

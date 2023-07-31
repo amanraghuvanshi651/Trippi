@@ -2,7 +2,7 @@
 //  CreateNewTripTableViewCell.swift
 //  Trippi
 //
-//  Created by macmini50 on 26/07/23.
+//  Created by Aman Raghuvanshi on 26/07/23.
 //
 
 import UIKit

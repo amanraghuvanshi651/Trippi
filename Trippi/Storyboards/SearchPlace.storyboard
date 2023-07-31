@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-VariableFont_wght.ttf">
+            <string>MontserratRoman-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Search Place View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SearchPlaceViewController" modalPresentationStyle="overFullScreen" id="Y6W-OH-hqX" customClass="SearchPlaceViewController" customModule="Trippi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tv7-9O-bnm">
+                                <rect key="frame" x="20" y="139" width="353" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="txT-cC-Qi6">
+                                        <rect key="frame" x="20" y="10.999999999999996" width="30" height="28.333333333333332"/>
+                                        <color key="tintColor" red="0.51372549020000002" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="POg-Jo-tJA"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where do you want to go" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ijk-Mb-rQc">
+                                        <rect key="frame" x="60" y="0.0" width="283" height="50"/>
+                                        <color key="textColor" name="TextColor"/>
+                                        <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Ijk-Mb-rQc" secondAttribute="bottom" id="5v4-Zp-zQL"/>
+                                    <constraint firstItem="txT-cC-Qi6" firstAttribute="leading" secondItem="Tv7-9O-bnm" secondAttribute="leading" constant="20" id="BeD-kN-7gT"/>
+                                    <constraint firstItem="Ijk-Mb-rQc" firstAttribute="top" secondItem="Tv7-9O-bnm" secondAttribute="top" id="EcL-R2-NSA"/>
+                                    <constraint firstItem="Ijk-Mb-rQc" firstAttribute="leading" secondItem="txT-cC-Qi6" secondAttribute="trailing" constant="10" id="MB5-qg-4AN"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ijk-Mb-rQc" secondAttribute="trailing" constant="10" id="NTe-Le-m3Y"/>
+                                    <constraint firstItem="txT-cC-Qi6" firstAttribute="top" secondItem="Tv7-9O-bnm" secondAttribute="top" constant="10" id="OKo-oc-und"/>
+                                    <constraint firstAttribute="bottom" secondItem="txT-cC-Qi6" secondAttribute="bottom" constant="10" id="SjV-SL-scw"/>
+                                    <constraint firstAttribute="height" constant="50" id="r2M-AT-h3T"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELd-aF-u4r">
+                                <rect key="frame" x="20" y="79" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="AB9-lI-0b2"/>
+                                    <constraint firstAttribute="width" constant="40" id="BeZ-IY-Byr"/>
+                                </constraints>
+                                <color key="tintColor" name="TextColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickCross:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xPl-dT-Xvh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Tv7-9O-bnm" secondAttribute="trailing" constant="20" id="Aj4-gk-RXD"/>
+                            <constraint firstItem="Tv7-9O-bnm" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="20" id="Vpv-2m-mz9"/>
+                            <constraint firstItem="Tv7-9O-bnm" firstAttribute="top" secondItem="ELd-aF-u4r" secondAttribute="bottom" constant="20" id="fcI-Qj-igg"/>
+                            <constraint firstItem="ELd-aF-u4r" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="mAC-lS-gak"/>
+                            <constraint firstItem="ELd-aF-u4r" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="mdu-bb-kh4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchTextFieldContainerView" destination="Tv7-9O-bnm" id="Lt3-WE-eWz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="AppBackground">
+            <color red="0.92900002002716064" green="0.94099998474121094" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

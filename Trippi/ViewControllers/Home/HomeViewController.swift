@@ -35,6 +35,12 @@ class HomeViewController: UIViewController {
     var animator: Animator?
     var selectedCellImageViewSnapshot: UIView?
     
+    var settingVC: SettingViewController?
+    var searchVC: SearchPlaceViewController?
+    
+    var isTranformingSearch = false
+    var searchStateSmall = false
+    
     //MARK: - Outlets
     @IBOutlet weak var discoveryLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -60,6 +66,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var profileButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var profileButtonBottomConstraint: NSLayoutConstraint!
     
+    //search
+    @IBOutlet weak var searchIconWidthConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
@@ -68,24 +77,35 @@ class HomeViewController: UIViewController {
         registerCell()
         viewModel.getCurrentLocation()
         
+        //init vc
+        settingVC = getVC(storyboard: .setting, vc: SettingViewController.identifier) as? SettingViewController
+        searchVC = getVC(storyboard: .searchPlace, vc: SearchPlaceViewController.identifier) as? SearchPlaceViewController
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapBackGroundView))
         view.addGestureRecognizer(tapGesture)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        selectedCellImageViewSnapshot = profileButtonContainerView.snapshotView(afterScreenUpdates: true)
+//        selectedCellImageViewSnapshot = profileButtonContainerView.snapshotView(afterScreenUpdates: true)
     }
     
     //MARK: - Actions
     @IBAction func onClickProfileButton(_ sender: Any) {
-        let vc = getVC(storyboard: .setting, vc: SettingViewController.identifier) as! SettingViewController
+        isTranformingSearch = false
+        guard let vc = settingVC else { return }
+        vc.transitioningDelegate = self
+        self.presentVC(vc: vc)
+    }
+    
+    @IBAction func onClickSearch(_ sender: Any) {
+        isTranformingSearch = true
+        guard let vc = searchVC else { return }
         vc.transitioningDelegate = self
         self.presentVC(vc: vc)
     }
     
     //MARK: - Custom Methods
-    
     @objc func didTapBackGroundView() {
         view.endEditing(true)
     }
@@ -133,6 +153,8 @@ class HomeViewController: UIViewController {
             guard let self = self else { return }
             UIView.animate(withDuration: 0.2) { [weak self] in
                 guard let self = self else { return }
+                
+                self.searchTextField.font = UIFont(name: "Montserrat Thin Regular", size: 14)
                 self.profileButtonHeightConstraint.constant = self.largeProfileButtonHeight
                 self.profileButtonWidthConstraint.constant = self.largeProfileButtonHeight
                 self.profileButtonBottomConstraint.constant = self.largeProfileBottomConstraint
@@ -143,6 +165,8 @@ class HomeViewController: UIViewController {
                 self.badgeView.layer.cornerRadius = 6
                 
                 self.searchTextFieldContainerStackTrailingConstraint.constant = self.largeSearchTrailingConstant
+                
+                self.searchIconWidthConstraint.constant = 30
                 
                 self.stickyHeaderHeightConstraint.constant = self.maxHeaderHeight
                 self.view.layoutIfNeeded()
@@ -155,12 +179,16 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.2) { [weak self] in
                 guard let self = self else { return }
+                self.searchTextField.font = UIFont(name: "Montserrat Thin Regular", size: 13)
+                
                 self.searchTextFieldContainerStackTrailingConstraint.constant = self.smallSearchTrailingConstant
                 self.searchTextFieldContainerStackTrailingConstraint.constant = self.smallSearchTrailingConstant
                 
                 self.profileButtonHeightConstraint.constant = self.smallProfileButtonHeight
                 self.profileButtonWidthConstraint.constant = self.smallProfileButtonHeight
                 self.profileButtonBottomConstraint.constant = self.smallProfileBottomConstraint
+                
+                self.searchIconWidthConstraint.constant = 25
                 
                 self.profileButton.layer.cornerRadius = 12
                 self.badgeViewHeightConstriant.constant = 11
@@ -277,11 +305,16 @@ extension HomeViewController: CreateNewTripTableViewCellDelegate {
 //MARK: - Transitioning Delegate
 extension HomeViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard let secondViewController = presented as? SettingViewController,
-              let selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
-        else { return nil }
+        if let settingViewController = presented as? SettingViewController {
+            selectedCellImageViewSnapshot = profileButtonContainerView.snapshotView(afterScreenUpdates: true)
+            animator = Animator(type: .present, firstViewController: self, fromView: profileButtonContainerView, secondViewController: settingViewController, toView: settingViewController.profileButton, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot ?? UIView())
+        } else if let searchViewController = presented as? SearchPlaceViewController {
+            selectedCellImageViewSnapshot = searchTextFieldContainerView.snapshotView(afterScreenUpdates: true)
+            searchViewController.loadView()
+            animator = Animator(type: .present, firstViewController: self, fromView: searchTextFieldContainerView, secondViewController: searchViewController, toView: searchViewController.searchTextFieldContainerView, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot ?? UIView())
+        }
         
-        animator = Animator(type: .present, firstViewController: self, secondViewController: secondViewController, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot)
+        animator?.delegate = self
         return animator
     }
     
@@ -290,10 +323,49 @@ extension HomeViewController: UIViewControllerTransitioningDelegate {
               let selectedCellImageViewSnapshot = selectedCellImageViewSnapshot
         else { return nil }
         
-        animator = Animator(type: .dismiss, firstViewController: self, secondViewController: secondViewController, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot)
-        
+        animator = Animator(type: .dismiss, firstViewController: self, fromView: self.profileButtonContainerView, secondViewController: secondViewController, toView: secondViewController.profileButton, selectedCellImageViewSnapshot: selectedCellImageViewSnapshot)
+        animator?.delegate = self
         profileButtonContainerView.isHidden = false
         return nil
+    }
+}
+
+//MARK: - Animator Delegate
+extension HomeViewController: AnimatorDelegate {
+    func hideFromViewIfNeeded() {
+        if !isTranformingSearch {
+            profileButtonContainerView.isHidden = true
+        }
+    }
+    
+    func unHideFromViewIfNeeded() {
+    }
+    
+    func hideToViewIfNeeded() {
+        if !isTranformingSearch {
+            self.settingVC?.badgeView.alpha = 0
+            self.settingVC?.profileButton.alpha = 0
+        } else {
+            searchVC?.searchTextFieldContainerView.alpha = 0
+        }
+    }
+    
+    func unHideToViewIfNeeded() {
+        if !isTranformingSearch {
+            UIView.animate(withDuration: 0.3) {
+                self.settingVC?.badgeView.alpha = 1
+                self.settingVC?.profileButton.alpha = 1
+            } completion: { _ in
+                self.animator?.imageViewSnapshot.removeFromSuperview()
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.searchVC?.searchTextFieldContainerView.layer.cornerRadius = 15
+                self.searchVC?.searchTextFieldContainerView.alpha = 1
+            } completion: { _ in
+                self.animator?.imageViewSnapshot.removeFromSuperview()
+            }
+        }
     }
 }
 
