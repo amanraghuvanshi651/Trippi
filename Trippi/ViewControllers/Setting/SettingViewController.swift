@@ -8,7 +8,6 @@
 import UIKit
 
 class SettingViewController: UIViewController {
-    static let identifier = "SettingViewController"
     
     //MARK: - Outlets
     @IBOutlet weak var badgeView: UIView!

@@ -8,7 +8,6 @@
 import UIKit
 
 class SettingTableViewCell: UITableViewCell {
-    static let identifier = "SettingTableViewCell"
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var settingImageView: UIImageView!

@@ -8,7 +8,6 @@
 import UIKit
 
 class CityCollectionViewCell: UICollectionViewCell {
-    static let identifier = "CityCollectionViewCell"
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var cityImageView: UIImageView!

@@ -10,7 +10,6 @@ import CoreLocation
 import Lottie
 
 class HomeViewController: UIViewController {
-    static let identifier = "HomeViewController"
     
     private var viewModel = HomeViewModel()
     
@@ -87,7 +86,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        selectedCellImageViewSnapshot = profileButtonContainerView.snapshotView(afterScreenUpdates: true)
     }
     
     //MARK: - Actions
@@ -145,6 +143,7 @@ class HomeViewController: UIViewController {
         tableView.register(UINib(nibName: CitiesForYouTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CitiesForYouTableViewCell.identifier)
         tableView.register(UINib(nibName: CreateNewTripTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CreateNewTripTableViewCell.identifier)
         tableView.register(UINib(nibName: TopJourneysTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TopJourneysTableViewCell.identifier)
+        tableView.register(UINib(nibName: MomentTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: MomentTableViewCell.identifier)
     }
     
     //MARK: Header UI
@@ -230,7 +229,7 @@ extension HomeViewController: HomeViewModelDelegate {
 //MARK: - TableView Delegate and DataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -258,12 +257,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.collectionView.reloadData()
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: CitiesForYouTableViewCell.identifier, for: indexPath) as! CitiesForYouTableViewCell
-            cell.selectionStyle = .none
-            cell.frame = tableView.bounds
-            cell.layoutIfNeeded()
-            cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.8
-            cell.collectionView.reloadData()
+            let cell = tableView.dequeueReusableCell(withIdentifier: MomentTableViewCell.identifier, for: indexPath) as! MomentTableViewCell
+            cell.configure(imageHeight: tableView.bounds.width + 50)
             return cell
         }
     }

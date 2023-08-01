@@ -12,7 +12,6 @@ protocol CitiesForYouTableViewCellDelegate: AnyObject {
 }
 
 class CitiesForYouTableViewCell: UITableViewCell {
-    static let identifier = "CitiesForYouTableViewCell"
     
     weak var delegate: CitiesForYouTableViewCellDelegate?
         

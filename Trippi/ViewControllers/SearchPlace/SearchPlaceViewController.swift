@@ -8,7 +8,6 @@
 import UIKit
 
 class SearchPlaceViewController: UIViewController {
-    static let identifier = "SearchPlaceViewController"
 
     @IBOutlet weak var searchTextFieldContainerView: UIView!
     

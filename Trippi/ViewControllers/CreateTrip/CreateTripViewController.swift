@@ -9,8 +9,7 @@ import UIKit
 import Fastis
 
 class CreateTripViewController: UIViewController {
-    static let identifier = "CreateTripViewController"
-
+    
     var dateFormatter = DateFormatter()
     
     var startDate = Date()

@@ -39,6 +39,10 @@
 		50BB53912A6A9641000DE037 /* CitiesForYouTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BB538F2A6A9641000DE037 /* CitiesForYouTableViewCell.xib */; };
 		50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB539E2A6ABC1B000DE037 /* CityCollectionViewCell.swift */; };
 		50BB53A12A6ABC1B000DE037 /* CityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BB539F2A6ABC1B000DE037 /* CityCollectionViewCell.xib */; };
+		50BE53042A79319600B445BB /* MomentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BE53022A79319600B445BB /* MomentTableViewCell.swift */; };
+		50BE53052A79319600B445BB /* MomentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BE53032A79319600B445BB /* MomentTableViewCell.xib */; };
+		50BE53072A7946D600B445BB /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BE53062A7946D600B445BB /* NSObject+Extension.swift */; };
+		50BE53092A794A7B00B445BB /* likeAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 50BE53082A794A7B00B445BB /* likeAnimation.json */; };
 		50BF321F2A73C10400F7CD28 /* TopJourneysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BF321D2A73C10400F7CD28 /* TopJourneysTableViewCell.swift */; };
 		50BF32202A73C10400F7CD28 /* TopJourneysTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BF321E2A73C10400F7CD28 /* TopJourneysTableViewCell.xib */; };
 		50BF32232A73CB4900F7CD28 /* TopJourneysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BF32212A73CB4900F7CD28 /* TopJourneysCollectionViewCell.swift */; };
@@ -106,6 +110,10 @@
 		50BB538F2A6A9641000DE037 /* CitiesForYouTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CitiesForYouTableViewCell.xib; sourceTree = "<group>"; };
 		50BB539E2A6ABC1B000DE037 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
 		50BB539F2A6ABC1B000DE037 /* CityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCollectionViewCell.xib; sourceTree = "<group>"; };
+		50BE53022A79319600B445BB /* MomentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentTableViewCell.swift; sourceTree = "<group>"; };
+		50BE53032A79319600B445BB /* MomentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MomentTableViewCell.xib; sourceTree = "<group>"; };
+		50BE53062A7946D600B445BB /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		50BE53082A794A7B00B445BB /* likeAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = likeAnimation.json; sourceTree = "<group>"; };
 		50BF321D2A73C10400F7CD28 /* TopJourneysTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopJourneysTableViewCell.swift; sourceTree = "<group>"; };
 		50BF321E2A73C10400F7CD28 /* TopJourneysTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopJourneysTableViewCell.xib; sourceTree = "<group>"; };
 		50BF32212A73CB4900F7CD28 /* TopJourneysCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopJourneysCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -341,6 +349,8 @@
 				5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */,
 				50BF321D2A73C10400F7CD28 /* TopJourneysTableViewCell.swift */,
 				50BF321E2A73C10400F7CD28 /* TopJourneysTableViewCell.xib */,
+				50BE53022A79319600B445BB /* MomentTableViewCell.swift */,
+				50BE53032A79319600B445BB /* MomentTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -361,6 +371,7 @@
 			children = (
 				50AF64C42A701421005FFAB8 /* Animator.swift */,
 				509E2DFC2A77AE6700638F06 /* UIcolor+Extension.swift */,
+				50BE53062A7946D600B445BB /* NSObject+Extension.swift */,
 			);
 			path = ExtraClasses;
 			sourceTree = "<group>";
@@ -394,6 +405,7 @@
 		50C3D0AE2A6EBB2C00DDED53 /* LottieJSON */ = {
 			isa = PBXGroup;
 			children = (
+				50BE53082A794A7B00B445BB /* likeAnimation.json */,
 				50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */,
 			);
 			path = LottieJSON;
@@ -526,11 +538,13 @@
 				5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */,
 				509E2E002A77C5AD00638F06 /* SearchPlace.storyboard in Resources */,
 				50BB53A12A6ABC1B000DE037 /* CityCollectionViewCell.xib in Resources */,
+				50BE53092A794A7B00B445BB /* likeAnimation.json in Resources */,
 				50BF32202A73C10400F7CD28 /* TopJourneysTableViewCell.xib in Resources */,
 				50BB534A2A6A728B000DE037 /* Assets.xcassets in Resources */,
 				50C3D0B02A6EBB3B00DDED53 /* unknownLocation.json in Resources */,
 				50BB53912A6A9641000DE037 /* CitiesForYouTableViewCell.xib in Resources */,
 				50C3D09E2A6E5FFA00DDED53 /* Setting.storyboard in Resources */,
+				50BE53052A79319600B445BB /* MomentTableViewCell.xib in Resources */,
 				50BB53482A6A7289000DE037 /* OnBoarding.storyboard in Resources */,
 				50A2C8432A72309E0096850D /* CreateTrip.storyboard in Resources */,
 				78FDE5852A744DC800AA5C6E /* SignUp.storyboard in Resources */,
@@ -560,6 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50BB53452A6A7289000DE037 /* OnBoardingViewController.swift in Sources */,
+				50BE53042A79319600B445BB /* MomentTableViewCell.swift in Sources */,
 				50AF64C12A6FFD7E005FFAB8 /* SettingsModel.swift in Sources */,
 				50C3D0A32A6EADCA00DDED53 /* ReversedGeoLocation.swift in Sources */,
 				50BB53412A6A7289000DE037 /* AppDelegate.swift in Sources */,
@@ -569,6 +584,7 @@
 				50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */,
 				50AF64C52A701421005FFAB8 /* Animator.swift in Sources */,
 				50BF321F2A73C10400F7CD28 /* TopJourneysTableViewCell.swift in Sources */,
+				50BE53072A7946D600B445BB /* NSObject+Extension.swift in Sources */,
 				509E2E022A77C5C200638F06 /* SearchPlaceViewController.swift in Sources */,
 				50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */,
 				5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */,

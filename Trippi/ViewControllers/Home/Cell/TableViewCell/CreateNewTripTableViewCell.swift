@@ -12,7 +12,6 @@ protocol CreateNewTripTableViewCellDelegate: AnyObject {
 }
 
 class CreateNewTripTableViewCell: UITableViewCell {
-    static let identifier = "CreateNewTripTableViewCell"
 
     weak var delegate: CreateNewTripTableViewCellDelegate?
     

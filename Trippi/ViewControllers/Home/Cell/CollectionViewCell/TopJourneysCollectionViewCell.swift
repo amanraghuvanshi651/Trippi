@@ -8,7 +8,6 @@
 import UIKit
 
 class TopJourneysCollectionViewCell: UICollectionViewCell {
-    static let identifier = "TopJourneysCollectionViewCell"
     
     //MARK: - Outlet's
     @IBOutlet weak var containerView: UIView!
