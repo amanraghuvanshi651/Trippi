@@ -11,6 +11,7 @@
         <array key="Montserrat-VariableFont_wght.ttf">
             <string>MontserratRoman-Medium</string>
             <string>MontserratRoman-Regular</string>
+            <string>MontserratRoman-SemiBold</string>
         </array>
     </customFonts>
     <objects>
@@ -30,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="391" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oCx-SA-pNQ">
-                                        <rect key="frame" x="10" y="10" width="121" height="40"/>
+                                        <rect key="frame" x="10" y="10" width="133.33333333333334" height="40"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="QsW-QO-dIk">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -40,8 +41,8 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hr-h3-qNv">
-                                                <rect key="frame" x="50" y="0.0" width="71" height="40"/>
-                                                <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="16"/>
+                                                <rect key="frame" x="49.999999999999993" y="0.0" width="83.333333333333314" height="40"/>
+                                                <fontDescription key="fontDescription" name="MontserratRoman-SemiBold" family="Montserrat" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -74,7 +75,9 @@
                                                 </constraints>
                                                 <color key="tintColor" name="TextColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="testMainThreadRenderingEngine.LottieFiles-loading_dots_3-75.png"/>
+                                                <state key="normal" image="ThreeDots">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="onClickOptionButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cCp-rK-r23"/>
                                                 </connections>
@@ -92,12 +95,19 @@
                                     <constraint firstItem="zl5-As-7UU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oCx-SA-pNQ" secondAttribute="trailing" constant="10" id="yBR-gZ-Yeq"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SunSet" translatesAutoresizingMaskIntoConstraints="NO" id="2TY-Cs-hFY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2TY-Cs-hFY">
                                 <rect key="frame" x="0.0" y="70" width="391" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="fRw-c6-3CO"/>
                                 </constraints>
                             </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWc-Le-T14" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="70" y="140" width="251" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="likeAnimation"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9of-7X-Ubn">
                                 <rect key="frame" x="10" y="280" width="371" height="40"/>
                                 <subviews>
@@ -159,26 +169,24 @@
                                     <constraint firstAttribute="height" constant="40" id="0qI-wn-zQF"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ho4-YS-2Oa">
-                                <rect key="frame" x="10" y="330" width="371" height="16.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ho4-YS-2Oa">
+                                <rect key="frame" x="10" y="330" width="371" height="17.333333333333314"/>
                                 <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ro-9H-hTc">
-                                <rect key="frame" x="25" y="366.33333333333331" width="341" height="1"/>
+                                <rect key="frame" x="25" y="367.33333333333331" width="341" height="1"/>
                                 <color key="backgroundColor" name="SeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="WW6-3g-237"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWc-Le-T14" customClass="LottieAnimationView" customModule="Lottie">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrM-en-ecS">
                                 <rect key="frame" x="0.0" y="70" width="391" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="likeAnimation"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -186,22 +194,26 @@
                             <constraint firstItem="sk8-Y1-hXH" firstAttribute="top" secondItem="jAh-U9-1UN" secondAttribute="top" id="7ev-kD-THN"/>
                             <constraint firstItem="5Ro-9H-hTc" firstAttribute="top" secondItem="Ho4-YS-2Oa" secondAttribute="bottom" constant="20" id="Cka-Oy-XxT"/>
                             <constraint firstItem="9of-7X-Ubn" firstAttribute="top" secondItem="2TY-Cs-hFY" secondAttribute="bottom" constant="10" id="Cpw-ig-bcN"/>
+                            <constraint firstItem="DrM-en-ecS" firstAttribute="leading" secondItem="2TY-Cs-hFY" secondAttribute="leading" id="EKd-MQ-Zhj"/>
                             <constraint firstAttribute="trailing" secondItem="Ho4-YS-2Oa" secondAttribute="trailing" constant="10" id="GVl-gF-sae"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5Ro-9H-hTc" secondAttribute="bottom" constant="10" id="LDn-xJ-761"/>
                             <constraint firstAttribute="trailing" secondItem="sk8-Y1-hXH" secondAttribute="trailing" id="Nl6-Zp-JEM"/>
                             <constraint firstItem="2TY-Cs-hFY" firstAttribute="top" secondItem="sk8-Y1-hXH" secondAttribute="bottom" constant="10" id="OOf-JY-zuh"/>
                             <constraint firstItem="sk8-Y1-hXH" firstAttribute="leading" secondItem="jAh-U9-1UN" secondAttribute="leading" id="QyY-rj-Kqo"/>
                             <constraint firstAttribute="trailing" secondItem="9of-7X-Ubn" secondAttribute="trailing" constant="10" id="Sji-Q7-EHp"/>
-                            <constraint firstItem="PWc-Le-T14" firstAttribute="bottom" secondItem="2TY-Cs-hFY" secondAttribute="bottom" id="U0m-va-XYm"/>
+                            <constraint firstItem="PWc-Le-T14" firstAttribute="bottom" secondItem="2TY-Cs-hFY" secondAttribute="bottom" constant="-70" id="U0m-va-XYm"/>
                             <constraint firstItem="9of-7X-Ubn" firstAttribute="leading" secondItem="jAh-U9-1UN" secondAttribute="leading" constant="10" id="UIB-gT-cUB"/>
-                            <constraint firstItem="PWc-Le-T14" firstAttribute="leading" secondItem="2TY-Cs-hFY" secondAttribute="leading" id="Ui2-sc-zcj"/>
+                            <constraint firstItem="PWc-Le-T14" firstAttribute="leading" secondItem="2TY-Cs-hFY" secondAttribute="leading" constant="70" id="Ui2-sc-zcj"/>
                             <constraint firstItem="Ho4-YS-2Oa" firstAttribute="top" secondItem="9of-7X-Ubn" secondAttribute="bottom" constant="10" id="V0Z-WL-8Cr"/>
                             <constraint firstItem="5Ro-9H-hTc" firstAttribute="leading" secondItem="jAh-U9-1UN" secondAttribute="leading" constant="25" id="WR4-0I-Wdy"/>
+                            <constraint firstItem="DrM-en-ecS" firstAttribute="bottom" secondItem="2TY-Cs-hFY" secondAttribute="bottom" id="Xvf-19-2dg"/>
                             <constraint firstAttribute="trailing" secondItem="2TY-Cs-hFY" secondAttribute="trailing" id="aYB-ej-j4f"/>
                             <constraint firstItem="Ho4-YS-2Oa" firstAttribute="leading" secondItem="jAh-U9-1UN" secondAttribute="leading" constant="10" id="brV-TC-e5A"/>
-                            <constraint firstItem="PWc-Le-T14" firstAttribute="trailing" secondItem="2TY-Cs-hFY" secondAttribute="trailing" id="ph5-S6-KO2"/>
-                            <constraint firstItem="PWc-Le-T14" firstAttribute="top" secondItem="2TY-Cs-hFY" secondAttribute="top" id="vIJ-0R-4YP"/>
+                            <constraint firstItem="DrM-en-ecS" firstAttribute="trailing" secondItem="2TY-Cs-hFY" secondAttribute="trailing" id="mz6-Np-mL2"/>
+                            <constraint firstItem="PWc-Le-T14" firstAttribute="trailing" secondItem="2TY-Cs-hFY" secondAttribute="trailing" constant="-70" id="ph5-S6-KO2"/>
+                            <constraint firstItem="PWc-Le-T14" firstAttribute="top" secondItem="2TY-Cs-hFY" secondAttribute="top" constant="70" id="vIJ-0R-4YP"/>
                             <constraint firstAttribute="trailing" secondItem="5Ro-9H-hTc" secondAttribute="trailing" constant="25" id="yNF-Um-I0b"/>
+                            <constraint firstItem="DrM-en-ecS" firstAttribute="top" secondItem="2TY-Cs-hFY" secondAttribute="top" id="yOj-eL-Uhv"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -215,6 +227,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="doubleTapButton" destination="DrM-en-ecS" id="KMJ-Pa-t11"/>
                 <outlet property="followButton" destination="z0K-JY-gij" id="jx9-JY-8ve"/>
                 <outlet property="likeAnimationView" destination="PWc-Le-T14" id="zwW-dK-LWw"/>
                 <outlet property="momentImageView" destination="2TY-Cs-hFY" id="6ae-SG-sTg"/>
@@ -227,13 +240,12 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="SunSet" width="94.666664123535156" height="59"/>
+        <image name="ThreeDots" width="21.333333969116211" height="21.333333969116211"/>
         <image name="User" width="300" height="300"/>
         <image name="heartGrey" width="21.333333969116211" height="21.333333969116211"/>
         <image name="messageGray" width="21.333333969116211" height="21.333333969116211"/>
         <image name="saveGray" width="21.333333969116211" height="21.333333969116211"/>
         <image name="shareGray" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="testMainThreadRenderingEngine.LottieFiles-loading_dots_3-75.png" width="300" height="300"/>
         <namedColor name="AppBackground">
             <color red="0.92900002002716064" green="0.94099998474121094" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -241,7 +253,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SeparatorColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color white="0.0" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <namedColor name="TextColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

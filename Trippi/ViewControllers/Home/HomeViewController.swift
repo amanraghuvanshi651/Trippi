@@ -40,6 +40,42 @@ class HomeViewController: UIViewController {
     var isTranformingSearch = false
     var searchStateSmall = false
     
+    //static data
+    var homeData = [HomeDataModel]()
+    
+    var cities = [
+        HomeCityModel(image: "NewYork", city: "New York", country: "USA"),
+        HomeCityModel(image: "Pairs", city: "Pairs", country: "France"),
+        HomeCityModel(image: "Moscow", city: "Moscow", country: "Russia"),
+        HomeCityModel(image: "Delhi", city: "Delhi", country: "India"),
+        HomeCityModel(image: "Seoul", city: "Seoul", country: "South Korea")
+    ]
+    
+    var topJourneys = [
+        TopTripModel(image: "TripImage1", title: "Wanderlust Whispers: A Journey through Time and Nature", description: "Embark on an enchanting odyssey, traversing ancient realms and unspoiled landscapes, as history unfolds and nature's wonders beckon.", isLiked: false, isSaved: false),
+        TopTripModel(image: "TripImage2", title: "Cosmic Trails: Exploring the Universe's Hidden Gems", description: "Venture beyond the celestial veil, gazing at stars and galaxies, uncovering cosmic secrets in a quest of astronomical exploration.", isLiked: false, isSaved: false),
+        TopTripModel(image: "TripImage3", title: "Dreamscapes Unveiled: Adventures Beyond Imagination"
+                     , description: "Unravel surreal vistas, where dreams take form and reality blurs, igniting an unforgettable expedition through the ethereal.", isLiked: false, isSaved: false),
+        TopTripModel(image: "TripImage4", title: "Pathways of Serenity: Escaping to Tranquil Havens"
+                     , description: "Embrace serene sanctuaries, where time stands still, and the soul finds solace amidst nature's tranquil embrace.", isLiked: false, isSaved: false),
+        TopTripModel(image: "TripImage5", title: "Cultural Kaleidoscope: Diverse Encounters Worldwide"
+                     , description: "Embrace vibrant cultures and traditions, as diverse landscapes interweave with captivating stories of humanity's heritage.", isLiked: false, isSaved: false),
+        TopTripModel(image: "TripImage6", title: "Enchanted Escapades: Unraveling Mystical Destinations"
+                     , description: "Step into realms of magic and myth, where legends come alive and enchantment awaits at every turn.", isLiked: false, isSaved: false)
+    ]
+    
+    var moments = [
+        MomentModel(image: "Moment1", userPic: "User", username: "teddy_yo", description: "🎭 Immerse in cultural festivities, vibrant traditions, and celebratory spirits. #CulturalDiversity #FestiveVibes 🎉", isFollowing: false, isLiked: false, isSaved: false),
+        MomentModel(image: "Moment2", userPic: "User", username: "spy.me", description: "🌴 Tropical Paradise Found! Join us for sun-soaked days and island adventures. #Wanderlust #TravelGoals 🏝️", isFollowing: false, isLiked: false, isSaved: false),
+        MomentModel(image: "Moment3", userPic: "User", username: "angry.guy", description: "🏔️ Calling all thrill-seekers! Conquer mountains and discover breathtaking vistas. #AdventureAwaits #NatureLover 🚵‍♂️", isFollowing: false, isLiked: false, isSaved: false),
+        MomentModel(image: "Moment4", userPic: "User", username: "sam.the.boi", description: "🏰 Step back in time and explore ancient ruins. History buffs, this one's for you! #TimeTravel #CulturalHeritage 🗿", isFollowing: false, isLiked: false, isSaved: false),
+        MomentModel(image: "Moment5", userPic: "User", username: "someone.in.the.game", description: "🌊 Dive into crystal waters, swim with marine life, and witness ocean magic. 🐠🐢 #UnderwaterAdventure #ScubaDiving 🌊", isFollowing: false, isLiked: false, isSaved: false),
+        MomentModel(image: "Moment6", userPic: "User", username: "theridingboots", description: "🍽️ Foodie's delight! Savor local cuisines, culinary wonders, and mouthwatering delicacies. #FoodAdventures #GourmetEats 🍲", isFollowing: false, isLiked: false, isSaved: false),
+        MomentModel(image: "Moment7", userPic: "User", username: "capture.view", description: "🏛️ Marvel at architectural wonders that stand the test of time. Explore the world's heritage. #ArchitecturalMarvels #TravelHistory 🏛️", isFollowing: false, isLiked: false, isSaved: false),
+        MomentModel(image: "Moment8", userPic: "User", username: "crazy.guy", description: "🛶 Paddle through serene waters, escape to hidden coves, and embrace nature's tranquility. #Kayaking #NatureEscape 🌿", isFollowing: false, isLiked: false, isSaved: false),
+        MomentModel(image: "Moment9", userPic: "User", username: "guy.com", description: "🌌 Stargazers unite! Experience the cosmos in all its brilliance. #AstronomyLovers #StarryNights ✨", isFollowing: false, isLiked: false, isSaved: false)
+    ]
+    
     //MARK: - Outlets
     @IBOutlet weak var discoveryLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -72,6 +108,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         
+        setUpHomeData(moments: moments, cities: cities, topJourneys: topJourneys)
         setUpUI()
         registerCell()
         viewModel.getCurrentLocation()
@@ -86,6 +123,42 @@ class HomeViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+    
+    func setUpHomeData(moments: [MomentModel], cities: [HomeCityModel], topJourneys: [TopTripModel]) {
+        //appending 2 moments
+        if moments.count > 2 {
+            for idx in 0..<2 {
+                homeData.append(HomeDataModel(type: .moment, data: moments[idx]))
+            }
+        }
+        
+        //appending cities data
+        homeData.append(HomeDataModel(type: .city, data: cities))
+        
+        //appending 2 moments
+        if moments.count > 4 {
+            for idx in 2..<4 {
+                homeData.append(HomeDataModel(type: .moment, data: moments[idx]))
+            }
+        }
+        
+        //appending top journeys data
+        homeData.append(HomeDataModel(type: .topJourney, data: topJourneys))
+        
+        //appending remaining moments
+        for idx in 4..<moments.count {
+            homeData.append(HomeDataModel(type: .moment, data: moments[idx]))
+        }
+        
+        reloadTableView()
+    }
+    
+    func reloadTableView() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+        }
     }
     
     //MARK: - Actions
@@ -229,38 +302,42 @@ extension HomeViewController: HomeViewModelDelegate {
 //MARK: - TableView Delegate and DataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return homeData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: CitiesForYouTableViewCell.identifier, for: indexPath) as! CitiesForYouTableViewCell
-            cell.selectionStyle = .none
-            cell.frame = tableView.bounds
-            cell.layoutIfNeeded()
-            cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.8
-            cell.collectionView.reloadData()
-            return cell
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: CreateNewTripTableViewCell.identifier) as! CreateNewTripTableViewCell
-            cell.selectionStyle = .none
-            cell.delegate = self
-            return cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TopJourneysTableViewCell.identifier) as! TopJourneysTableViewCell
-            cell.selectionStyle = .none
-            cell.selectionStyle = .none
-            cell.frame = tableView.bounds
-            cell.layoutIfNeeded()
-            cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.5
-            cell.collectionView.reloadData()
-            return cell
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: MomentTableViewCell.identifier, for: indexPath) as! MomentTableViewCell
-            cell.configure(imageHeight: tableView.bounds.width + 50)
-            return cell
+        let data = homeData[indexPath.row]
+        
+        switch data.type {
+        case .city:
+            if let citiesData = data.data as? [HomeCityModel] {
+                let cell = tableView.dequeueReusableCell(withIdentifier: CitiesForYouTableViewCell.identifier, for: indexPath) as! CitiesForYouTableViewCell
+                cell.selectionStyle = .none
+                cell.frame = tableView.bounds
+                cell.layoutIfNeeded()
+                cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.8
+                cell.collectionView.reloadData()
+                return cell
+            }
+        case .topJourney:
+            if let citiesDtopJourneysata = data.data as? [TopTripModel] {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TopJourneysTableViewCell.identifier) as! TopJourneysTableViewCell
+                cell.selectionStyle = .none
+                cell.frame = tableView.bounds
+                cell.layoutIfNeeded()
+                cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.5
+                cell.collectionView.reloadData()
+                return cell
+            }
+        case .moment:
+            if let moment = data.data as? MomentModel {
+                let cell = tableView.dequeueReusableCell(withIdentifier: MomentTableViewCell.identifier, for: indexPath) as! MomentTableViewCell
+                cell.configure(moment: moment,imageHeight: tableView.bounds.width + 50)
+                return cell
+            }
         }
+        
+        return UITableViewCell()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

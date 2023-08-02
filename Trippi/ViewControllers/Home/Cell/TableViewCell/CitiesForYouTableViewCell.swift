@@ -14,6 +14,7 @@ protocol CitiesForYouTableViewCellDelegate: AnyObject {
 class CitiesForYouTableViewCell: UITableViewCell {
     
     weak var delegate: CitiesForYouTableViewCellDelegate?
+    var cities = [HomeCityModel]()
         
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -28,6 +29,10 @@ class CitiesForYouTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func configure(cities: [HomeCityModel]) {
+        
     }
     
     //MARK: - Actions

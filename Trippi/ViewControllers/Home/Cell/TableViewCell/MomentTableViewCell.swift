@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import Kingfisher
 
 class MomentTableViewCell: UITableViewCell {
     
@@ -18,6 +19,7 @@ class MomentTableViewCell: UITableViewCell {
     @IBOutlet weak var momentImageView: UIImageView!
     @IBOutlet weak var postDescriptionLabel: UILabel!
     
+    @IBOutlet weak var doubleTapButton: UIButton!
     @IBOutlet weak var likeAnimationView: LottieAnimationView!
     
     @IBOutlet weak var momentImageViewHeightConstraint: NSLayoutConstraint!
@@ -26,14 +28,38 @@ class MomentTableViewCell: UITableViewCell {
         super.awakeFromNib()
         followButton.layer.cornerRadius = 10
         userImageView.layer.cornerRadius = 10
+        
+        let doubleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
+        doubleTap.numberOfTapsRequired = 2
+        doubleTapButton.addGestureRecognizer(doubleTap)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+        
+    func configure(moment: MomentModel, imageHeight: Double) {
+        self.userImageView.image = UIImage(named: moment.userPic)
+        self.usernameLabel.text = moment.username
+        self.postDescriptionLabel.text = moment.description
+        self.momentImageViewHeightConstraint.constant = CGFloat(imageHeight)
+        guard let imageURL = Bundle.main.url(forResource: moment.image, withExtension: "jpg") else {return}
+        momentImageView.kf.setImage(with: imageURL)
+    }
     
-    func configure(imageHeight: Double) {
-        momentImageViewHeightConstraint.constant = CGFloat(imageHeight)
+    @objc func handleDoubleTap(sender: AnyObject?) {
+        likeAnimationView.isHidden = false
+        likeAnimationView.alpha = 1
+        likeAnimationView.animationSpeed = 1.2
+        likeAnimationView.loopMode = .playOnce
+        likeAnimationView.backgroundColor = .clear
+        likeAnimationView.play() { _ in
+            UIView.animate(withDuration: 0.3) {
+                self.likeAnimationView.alpha = 0
+            } completion: { _ in
+                self.likeAnimationView.isHidden = true
+            }
+        }
     }
     
     //MARK: - Actions
@@ -42,7 +68,6 @@ class MomentTableViewCell: UITableViewCell {
     
     @IBAction func onClickOptionButton(_ sender: Any) {
     }
-    
     
     @IBAction func onClickLikeButton(_ sender: Any) {
     }

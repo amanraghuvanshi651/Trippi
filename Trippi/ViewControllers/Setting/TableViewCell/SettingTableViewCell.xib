@@ -24,7 +24,7 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TTJ-12-nWZ">
                         <rect key="frame" x="20" y="20.333333333333332" width="25" height="24.333333333333339"/>
-                        <color key="tintColor" name="ButtonTextColor"/>
+                        <color key="tintColor" name="TextColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="5DD-Uu-GNj"/>
                             <constraint firstAttribute="height" constant="25" id="gmz-bp-scA"/>
@@ -58,7 +58,7 @@
     </objects>
     <resources>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
-        <namedColor name="ButtonTextColor">
+        <namedColor name="TextColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
