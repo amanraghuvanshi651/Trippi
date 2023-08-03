@@ -14,7 +14,7 @@ class CityCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     
-    @IBOutlet weak var cityImageViewHeightConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var cityImageViewHeightConstraint: NSLayoutConstraint!
     
     
     override func awakeFromNib() {
@@ -24,4 +24,12 @@ class CityCollectionViewCell: UICollectionViewCell {
         cityImageView.layer.cornerRadius = 20
     }
 
+    func configure(city: HomeCityModel) {
+        cityLabel.text = city.city
+        countryLabel.text = city.country
+        
+        guard let imageURL = Bundle.main.url(forResource: city.image, withExtension: "jpg") else {return}
+        cityImageView.kf.setImage(with: imageURL)
+    }
+    
 }

@@ -32,7 +32,10 @@ class CitiesForYouTableViewCell: UITableViewCell {
     }
     
     func configure(cities: [HomeCityModel]) {
-        
+        self.cities = cities
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
     
     //MARK: - Actions
@@ -44,17 +47,17 @@ class CitiesForYouTableViewCell: UITableViewCell {
 //MARK: - CollectionView delegate and dataSource
 extension CitiesForYouTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return cities.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CityCollectionViewCell.identifier, for: indexPath) as! CityCollectionViewCell
-        cell.cityImageViewHeightConstraint.constant = collectionView.frame.size.width / 2 - 80
+        cell.configure(city: cities[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width / 2 - 60 , height: collectionView.frame.size.width / 1.8)
+        return CGSize(width: collectionView.frame.size.width / 2 - 60 , height: collectionView.frame.size.width / 2)
     }
     
 }

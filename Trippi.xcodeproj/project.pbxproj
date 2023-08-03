@@ -42,6 +42,8 @@
 		509E2E022A77C5C200638F06 /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E2E012A77C5C200638F06 /* SearchPlaceViewController.swift */; };
 		50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2C8402A7230920096850D /* CreateTripViewController.swift */; };
 		50A2C8432A72309E0096850D /* CreateTrip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A2C8422A72309E0096850D /* CreateTrip.storyboard */; };
+		50A4027D2A7BA36F0019F8EC /* HasButtonVibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4027C2A7BA36F0019F8EC /* HasButtonVibration.swift */; };
+		50A4027F2A7BB4990019F8EC /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4027E2A7BB4990019F8EC /* UIButtonExtension.swift */; };
 		50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */; };
 		50AF64BF2A6FC5AE005FFAB8 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50AF64BD2A6FC5AE005FFAB8 /* SettingTableViewCell.xib */; };
 		50AF64C12A6FFD7E005FFAB8 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64C02A6FFD7E005FFAB8 /* SettingsModel.swift */; };
@@ -134,6 +136,8 @@
 		509E2E012A77C5C200638F06 /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
 		50A2C8402A7230920096850D /* CreateTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
 		50A2C8422A72309E0096850D /* CreateTrip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateTrip.storyboard; sourceTree = "<group>"; };
+		50A4027C2A7BA36F0019F8EC /* HasButtonVibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasButtonVibration.swift; sourceTree = "<group>"; };
+		50A4027E2A7BB4990019F8EC /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		50AF64BD2A6FC5AE005FFAB8 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		50AF64C02A6FFD7E005FFAB8 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
@@ -282,6 +286,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		50A4027B2A7BA30F0019F8EC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				50A4027C2A7BA36F0019F8EC /* HasButtonVibration.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		50AF64BB2A6FC588005FFAB8 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +326,7 @@
 		50BB533F2A6A7289000DE037 /* Trippi */ = {
 			isa = PBXGroup;
 			children = (
+				50A4027B2A7BA30F0019F8EC /* Protocols */,
 				50C3D0AE2A6EBB2C00DDED53 /* LottieJSON */,
 				50C3D0A62A6EB69600DDED53 /* Images */,
 				50C3D0A12A6EADAF00DDED53 /* Models */,
@@ -404,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				50BB53812A6A8825000DE037 /* UIViewController+Extension.swift */,
+				50A4027E2A7BB4990019F8EC /* UIButtonExtension.swift */,
 				50C3D0A42A6EB66800DDED53 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
@@ -725,6 +739,8 @@
 				50BB537B2A6A78CD000DE037 /* TrippiStoryboards.swift in Sources */,
 				50BB53902A6A9641000DE037 /* CitiesForYouTableViewCell.swift in Sources */,
 				50BB537F2A6A7CB9000DE037 /* HomeViewController.swift in Sources */,
+				50A4027D2A7BA36F0019F8EC /* HasButtonVibration.swift in Sources */,
+				50A4027F2A7BB4990019F8EC /* UIButtonExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

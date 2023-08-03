@@ -312,16 +312,22 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .city:
             if let citiesData = data.data as? [HomeCityModel] {
                 let cell = tableView.dequeueReusableCell(withIdentifier: CitiesForYouTableViewCell.identifier, for: indexPath) as! CitiesForYouTableViewCell
+                cell.configure(cities: citiesData)
+                
                 cell.selectionStyle = .none
                 cell.frame = tableView.bounds
                 cell.layoutIfNeeded()
-                cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 1.8
+                cell.collectionViewHeightConstraint.constant = cell.collectionView.bounds.width / 2
                 cell.collectionView.reloadData()
                 return cell
             }
         case .topJourney:
-            if let citiesDtopJourneysata = data.data as? [TopTripModel] {
+            if let topJourneysData = data.data as? [TopTripModel] {
                 let cell = tableView.dequeueReusableCell(withIdentifier: TopJourneysTableViewCell.identifier) as! TopJourneysTableViewCell
+                cell.indexPath = indexPath
+                cell.configure(topJourneys: topJourneysData)
+                cell.delegate = self
+                
                 cell.selectionStyle = .none
                 cell.frame = tableView.bounds
                 cell.layoutIfNeeded()
@@ -332,11 +338,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .moment:
             if let moment = data.data as? MomentModel {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MomentTableViewCell.identifier, for: indexPath) as! MomentTableViewCell
+                cell.delegate = self
                 cell.configure(moment: moment,imageHeight: tableView.bounds.width + 50)
                 return cell
             }
         }
-        
         return UITableViewCell()
     }
     
@@ -354,7 +360,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if scrollView.contentOffset.y == 0 && stickyHeaderHeightConstraint.constant <= maxHeaderHeight {
             setUpLargeHeaderUI()
         } else if !self.locationLabel.isHidden && self.locationLabel.alpha == 1 {
-            print(scrollView.contentOffset.y)
             setUpSmallHeaderUI()
         }
         
@@ -363,6 +368,43 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         previousScrollOffset = scrollView.contentOffset.y
+    }
+}
+
+//MARK: - Top Journey Cell Delegate
+extension HomeViewController: TopJourneysTableViewCellDelegate {
+    func onClickLikeTopJourney(indexPath: IndexPath, subCellIndexPath: IndexPath) {
+        let data = homeData[indexPath.row]
+        var topJourneysData = data.data as? [TopTripModel]
+        let isLiked = topJourneysData?[subCellIndexPath.row].isLiked ?? false
+        topJourneysData?[subCellIndexPath.row].isLiked = !isLiked
+        homeData[indexPath.row].data = topJourneysData ?? [TopTripModel]()
+    }
+    
+    func onClickSaveTopJourney(indexPath: IndexPath, subCellIndexPath: IndexPath) {
+        let data = homeData[indexPath.row]
+        var topJourneysData = data.data as? [TopTripModel]
+        let isSaved = topJourneysData?[subCellIndexPath.row].isSaved ?? false
+        topJourneysData?[subCellIndexPath.row].isSaved = !isSaved
+        homeData[indexPath.row].data = topJourneysData ?? [TopTripModel]()
+    }
+}
+
+//MARK: - Moment Cell Delegate
+extension HomeViewController: MomentTableViewCellDelegate {
+    func onClickFollow() {
+    }
+    
+    func onClickMomentLike() {
+    }
+    
+    func onClickMomentSave() {
+    }
+    
+    func onClickMomentShare() {
+    }
+    
+    func onClickMomentComments() {
     }
 }
 

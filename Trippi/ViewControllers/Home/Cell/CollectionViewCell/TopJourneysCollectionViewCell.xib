@@ -17,20 +17,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TopJourneysCollectionViewCell" customModule="Trippi" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="368" height="259"/>
+            <rect key="frame" x="0.0" y="0.0" width="368" height="290"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="368" height="259"/>
+                <rect key="frame" x="0.0" y="0.0" width="368" height="290"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swF-yG-LRI">
-                        <rect key="frame" x="0.0" y="0.0" width="368" height="259"/>
+                        <rect key="frame" x="0.0" y="0.0" width="368" height="290"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SunSet" translatesAutoresizingMaskIntoConstraints="NO" id="l3u-u5-BwB">
-                                <rect key="frame" x="10" y="10" width="348" height="149"/>
+                                <rect key="frame" x="10" y="10" width="348" height="174"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="l3u-u5-BwB" secondAttribute="height" multiplier="3:1.5" id="Eti-uV-flU"/>
+                                </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wfp-tN-qy7">
-                                <rect key="frame" x="20" y="169" width="328" height="80"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wfp-tN-qy7">
+                                <rect key="frame" x="20" y="194" width="328" height="73"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="cY4-xt-vd1">
                                         <rect key="frame" x="0.0" y="0.0" width="328" height="20"/>
@@ -44,7 +47,7 @@
                                                             <constraint firstAttribute="width" constant="20" id="ZPo-CI-gpv"/>
                                                         </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" image="heartGrey"/>
+                                                        <state key="normal" image="heartGray"/>
                                                         <connections>
                                                             <action selector="onClickLikeButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="uD0-uK-lab"/>
                                                         </connections>
@@ -89,16 +92,16 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehu-tY-Pth">
-                                        <rect key="frame" x="0.0" y="30" width="328" height="20"/>
-                                        <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehu-tY-Pth">
+                                        <rect key="frame" x="0.0" y="25" width="328" height="18.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="15"/>
                                         <color key="textColor" name="TextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fq-pw-9SL">
-                                        <rect key="frame" x="0.0" y="60" width="328" height="20"/>
+                                        <rect key="frame" x="0.0" y="48.333333333333343" width="328" height="24.666666666666671"/>
                                         <string key="text">DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</string>
-                                        <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="10"/>
                                         <color key="textColor" name="SecondaryTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -109,10 +112,10 @@
                         <constraints>
                             <constraint firstItem="wfp-tN-qy7" firstAttribute="leading" secondItem="l3u-u5-BwB" secondAttribute="leading" constant="10" id="5qq-Yc-50P"/>
                             <constraint firstAttribute="trailing" secondItem="l3u-u5-BwB" secondAttribute="trailing" constant="10" id="6TJ-Ut-D0I"/>
+                            <constraint firstItem="wfp-tN-qy7" firstAttribute="top" secondItem="l3u-u5-BwB" secondAttribute="bottom" constant="10" id="FoK-OT-huA"/>
                             <constraint firstItem="l3u-u5-BwB" firstAttribute="leading" secondItem="swF-yG-LRI" secondAttribute="leading" constant="10" id="OW8-xb-k08"/>
                             <constraint firstItem="l3u-u5-BwB" firstAttribute="top" secondItem="swF-yG-LRI" secondAttribute="top" constant="10" id="g0x-P3-D3n"/>
-                            <constraint firstItem="wfp-tN-qy7" firstAttribute="top" secondItem="l3u-u5-BwB" secondAttribute="bottom" constant="10" id="mv6-68-jYP"/>
-                            <constraint firstAttribute="bottom" secondItem="wfp-tN-qy7" secondAttribute="bottom" constant="10" id="nhV-nW-hnb"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wfp-tN-qy7" secondAttribute="bottom" constant="10" id="nhV-nW-hnb"/>
                             <constraint firstItem="wfp-tN-qy7" firstAttribute="trailing" secondItem="l3u-u5-BwB" secondAttribute="trailing" constant="-10" id="oAI-OB-qgI"/>
                         </constraints>
                     </view>
@@ -125,7 +128,7 @@
                 <constraint firstItem="swF-yG-LRI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="e27-3B-60X"/>
                 <constraint firstItem="swF-yG-LRI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wvD-uZ-Ynx"/>
             </constraints>
-            <size key="customSize" width="368" height="259"/>
+            <size key="customSize" width="368" height="290"/>
             <connections>
                 <outlet property="chatButton" destination="cRA-K2-GuN" id="Plt-sp-848"/>
                 <outlet property="containerView" destination="swF-yG-LRI" id="T9o-0s-WVI"/>
@@ -136,12 +139,12 @@
                 <outlet property="titleLabel" destination="ehu-tY-Pth" id="LbT-L4-M9N"/>
                 <outlet property="tripImageView" destination="l3u-u5-BwB" id="GBb-rQ-hIa"/>
             </connections>
-            <point key="canvasLocation" x="308.39694656488547" y="62.323943661971832"/>
+            <point key="canvasLocation" x="308.39694656488547" y="73.239436619718319"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="SunSet" width="94.666664123535156" height="59"/>
-        <image name="heartGrey" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="heartGray" width="21.333333969116211" height="21.333333969116211"/>
         <image name="messageGray" width="21.333333969116211" height="21.333333969116211"/>
         <image name="saveGray" width="21.333333969116211" height="21.333333969116211"/>
         <image name="shareGray" width="21.333333969116211" height="21.333333969116211"/>

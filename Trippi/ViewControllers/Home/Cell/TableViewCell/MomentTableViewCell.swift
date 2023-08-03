@@ -9,12 +9,25 @@ import UIKit
 import Lottie
 import Kingfisher
 
-class MomentTableViewCell: UITableViewCell {
+protocol MomentTableViewCellDelegate: AnyObject {
+    func onClickFollow()
+    func onClickMomentLike()
+    func onClickMomentSave()
+    func onClickMomentShare()
+    func onClickMomentComments()
+}
+
+class MomentTableViewCell: UITableViewCell, HasButtonVibration {
+    var moment: MomentModel?
+    weak var delegate: MomentTableViewCellDelegate?
     
     //MARK: - Outlets
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+    
     @IBOutlet weak var followButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     
     @IBOutlet weak var momentImageView: UIImageView!
     @IBOutlet weak var postDescriptionLabel: UILabel!
@@ -39,6 +52,7 @@ class MomentTableViewCell: UITableViewCell {
     }
         
     func configure(moment: MomentModel, imageHeight: Double) {
+        self.moment = moment
         self.userImageView.image = UIImage(named: moment.userPic)
         self.usernameLabel.text = moment.username
         self.postDescriptionLabel.text = moment.description
@@ -60,24 +74,49 @@ class MomentTableViewCell: UITableViewCell {
                 self.likeAnimationView.isHidden = true
             }
         }
+        likeButtonClicked(isSingleTap: false)
+    }
+    
+    func likeButtonClicked(isSingleTap: Bool) {
+        likeVibration()
+        likeButton.bounceAnimation()
+        moment?.isLiked.toggle()
+        if isSingleTap {
+            likeButton.setImage(moment?.isLiked ?? false ? UIImage(named: "heartRed") : UIImage(named: "heartGray"), for: .normal)
+        } else {
+            likeButton.setImage(UIImage(named: "heartRed"), for: .normal)
+        }
+        delegate?.onClickMomentLike()
     }
     
     //MARK: - Actions
     @IBAction func onClickFollowButton(_ sender: Any) {
+        followButton.bounceAnimation()
+        delegate?.onClickFollow()
     }
     
     @IBAction func onClickOptionButton(_ sender: Any) {
+        
     }
     
     @IBAction func onClickLikeButton(_ sender: Any) {
+        likeButtonClicked(isSingleTap: true)
     }
     
     @IBAction func onClickCommentButton(_ sender: Any) {
+        delegate?.onClickMomentComments()
     }
     
     @IBAction func onClickShareButton(_ sender: Any) {
+        delegate?.onClickMomentShare()
     }
     
     @IBAction func onClickSaveButton(_ sender: Any) {
+        saveButton.bounceAnimation()
+        likeVibration()
+        saveButton.bounceAnimation()
+        moment?.isSaved.toggle()
+        saveButton.setImage(moment?.isSaved ?? false ? UIImage(named: "saveYellow") : UIImage(named: "saveGray"), for: .normal)
+        delegate?.onClickMomentSave()
     }
 }

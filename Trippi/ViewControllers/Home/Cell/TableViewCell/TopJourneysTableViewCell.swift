@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol TopJourneysTableViewCellDelegate: AnyObject {
+    func onClickLikeTopJourney(indexPath: IndexPath, subCellIndexPath: IndexPath)
+    func onClickSaveTopJourney(indexPath: IndexPath, subCellIndexPath: IndexPath)
+}
+
 class TopJourneysTableViewCell: UITableViewCell {
+    
+    var topJourneys = [TopTripModel]()
+    weak var delegate: TopJourneysTableViewCellDelegate?
+    
+    var indexPath = IndexPath()
 
     //MARK: - Outlet's
     @IBOutlet weak var collectionView: UICollectionView!
@@ -24,6 +34,13 @@ class TopJourneysTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func configure(topJourneys: [TopTripModel]) {
+        self.topJourneys = topJourneys
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+    
     //MARK: - Actions
     @IBAction func onClickSeeAll(_ sender: Any) {
     }
@@ -32,16 +49,31 @@ class TopJourneysTableViewCell: UITableViewCell {
 //MARK: - collection view delegate and datasource
 extension TopJourneysTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return topJourneys.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TopJourneysCollectionViewCell.identifier, for: indexPath) as! TopJourneysCollectionViewCell
+        cell.delegate = self
+        cell.indexPath = indexPath
+        cell.configure(topJourney: topJourneys[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width / 1.3, height: collectionView.frame.width / 1.5)
     }
+}
+
+//MARK: - Collection View cell delegate
+extension TopJourneysTableViewCell: TopJourneysCollectionViewCellDelegate {
+    func onClickLike(indexPath: IndexPath) {
+        self.topJourneys[indexPath.row].isLiked = !self.topJourneys[indexPath.row].isLiked
+        delegate?.onClickLikeTopJourney(indexPath: self.indexPath, subCellIndexPath: indexPath)
+    }
     
+    func onClickSave(indexPath: IndexPath) {
+        self.topJourneys[indexPath.row].isSaved = !self.topJourneys[indexPath.row].isSaved
+        delegate?.onClickSaveTopJourney(indexPath: self.indexPath, subCellIndexPath: indexPath)
+    }
 }
