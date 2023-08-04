@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIButton {
-    func bounceAnimation() {
+    func bounceAnimation(bounceScale: Double) {
         UIView.animate(withDuration: 0.5) { [weak self] in
             guard let self = self else { return }
             self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)

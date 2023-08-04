@@ -14,22 +14,22 @@ class OnBoardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let _ = UserDefaults.standard.value(forKey: FIRST_TIME_USER) {
-            navigateToHomeVC()
-        }
+//        if let _ = UserDefaults.standard.value(forKey: FIRST_TIME_USER) {
+//            navigateToTrippiTabBarVC()
+//        }
         getStartedButton.layer.cornerRadius = 25
     }
     
     //methods
-    func navigateToHomeVC() {
-        let vc = getVC(storyboard: .home, vc: HomeViewController.identifier) as! HomeViewController
+    func navigateToTrippiTabBarVC() {
+        let vc = getVC(storyboard: .trippiTabBar, vc: TrippiTabBarViewController.identifier) as! TrippiTabBarViewController
         self.pushVC(vc: vc, isAnimated: true)
     }
 
     //MARK: - Antions
     @IBAction func onClickGetStarted(_ sender: Any) {
         UserDefaults.standard.set(true, forKey: FIRST_TIME_USER)
-        navigateToHomeVC()
+        navigateToTrippiTabBarVC()
     }
 }
 

@@ -108,6 +108,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
+        
         setUpHomeData(moments: moments, cities: cities, topJourneys: topJourneys)
         setUpUI()
         registerCell()

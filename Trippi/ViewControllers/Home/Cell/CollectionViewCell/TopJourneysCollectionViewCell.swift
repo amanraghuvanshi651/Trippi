@@ -62,7 +62,7 @@ class TopJourneysCollectionViewCell: UICollectionViewCell, HasButtonVibration {
     @IBAction func onClickLikeButton(_ sender: Any) {
         delegate?.onClickLike(indexPath: indexPath)
         likeVibration()
-        likeButton.bounceAnimation()
+        likeButton.bounceAnimation(bounceScale: 0.5)
         topJourney?.isLiked.toggle()
         likeButton.setImage(topJourney?.isLiked ?? false ? UIImage(named: "heartRed") : UIImage(named: "heartGray"), for: .normal)
 //        UIView.animate(withDuration: 0.5) { [weak self] in
@@ -89,7 +89,7 @@ class TopJourneysCollectionViewCell: UICollectionViewCell, HasButtonVibration {
     @IBAction func onClickSaveButton(_ sender: Any) {
         saveVibration()
         delegate?.onClickSave(indexPath: indexPath)
-        saveButton.bounceAnimation()
+        saveButton.bounceAnimation(bounceScale: 0.5)
         topJourney?.isSaved.toggle()
         saveButton.setImage(topJourney?.isSaved ?? false ? UIImage(named: "saveYellow") : UIImage(named: "saveGray"), for: .normal)
         

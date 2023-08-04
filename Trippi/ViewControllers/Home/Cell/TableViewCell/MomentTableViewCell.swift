@@ -79,7 +79,7 @@ class MomentTableViewCell: UITableViewCell, HasButtonVibration {
     
     func likeButtonClicked(isSingleTap: Bool) {
         likeVibration()
-        likeButton.bounceAnimation()
+        likeButton.bounceAnimation(bounceScale: 0.5)
         moment?.isLiked.toggle()
         if isSingleTap {
             likeButton.setImage(moment?.isLiked ?? false ? UIImage(named: "heartRed") : UIImage(named: "heartGray"), for: .normal)
@@ -91,7 +91,7 @@ class MomentTableViewCell: UITableViewCell, HasButtonVibration {
     
     //MARK: - Actions
     @IBAction func onClickFollowButton(_ sender: Any) {
-        followButton.bounceAnimation()
+        followButton.bounceAnimation(bounceScale: 0.5)
         delegate?.onClickFollow()
     }
     
@@ -112,9 +112,8 @@ class MomentTableViewCell: UITableViewCell, HasButtonVibration {
     }
     
     @IBAction func onClickSaveButton(_ sender: Any) {
-        saveButton.bounceAnimation()
         likeVibration()
-        saveButton.bounceAnimation()
+        saveButton.bounceAnimation(bounceScale: 0.5)
         moment?.isSaved.toggle()
         saveButton.setImage(moment?.isSaved ?? false ? UIImage(named: "saveYellow") : UIImage(named: "saveGray"), for: .normal)
         delegate?.onClickMomentSave()

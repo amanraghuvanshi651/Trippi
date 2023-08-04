@@ -36,6 +36,18 @@
 		5091CDA62A7AA2BA005D9A28 /* TripImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5091CDA02A7AA2BA005D9A28 /* TripImage1.jpg */; };
 		5091CDA72A7AA2BA005D9A28 /* TripImage5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5091CDA12A7AA2BA005D9A28 /* TripImage5.jpg */; };
 		5091CDA82A7AA2BA005D9A28 /* TripImage6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5091CDA22A7AA2BA005D9A28 /* TripImage6.jpg */; };
+		509921F22A7CDC8A004B0BD1 /* TrippiTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509921F12A7CDC8A004B0BD1 /* TrippiTabBarViewController.swift */; };
+		509921F42A7CDC9A004B0BD1 /* TrippiTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509921F32A7CDC9A004B0BD1 /* TrippiTabBar.storyboard */; };
+		509921F82A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509921F62A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.swift */; };
+		509921F92A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 509921F72A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.xib */; };
+		509921FB2A7CFDCA004B0BD1 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509921FA2A7CFDCA004B0BD1 /* Dashboard.storyboard */; };
+		509921FE2A7CFDE8004B0BD1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509921FD2A7CFDE8004B0BD1 /* DashboardViewController.swift */; };
+		509922002A7CFE0D004B0BD1 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509921FF2A7CFE0D004B0BD1 /* Profile.storyboard */; };
+		509922022A7CFE1F004B0BD1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509922012A7CFE1F004B0BD1 /* ProfileViewController.swift */; };
+		509922052A7D0AD3004B0BD1 /* TrippiTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509922042A7D0AD3004B0BD1 /* TrippiTabBarItem.swift */; };
+		509922062A7D0C67004B0BD1 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50BB53742A6A7595000DE037 /* Montserrat-VariableFont_wght.ttf */; };
+		5099220B2A7D2A15004B0BD1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5099220A2A7D2A15004B0BD1 /* SplashViewController.swift */; };
+		5099220D2A7D2AA1004B0BD1 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5099220C2A7D2AA1004B0BD1 /* Splash.storyboard */; };
 		509E2DFB2A77AB6E00638F06 /* Fastis in Frameworks */ = {isa = PBXBuildFile; productRef = 509E2DFA2A77AB6E00638F06 /* Fastis */; };
 		509E2DFD2A77AE6700638F06 /* UIcolor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E2DFC2A77AE6700638F06 /* UIcolor+Extension.swift */; };
 		509E2E002A77C5AD00638F06 /* SearchPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509E2DFF2A77C5AD00638F06 /* SearchPlace.storyboard */; };
@@ -57,12 +69,11 @@
 		50BB53582A6A728B000DE037 /* TrippiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53572A6A728B000DE037 /* TrippiTests.swift */; };
 		50BB53622A6A728B000DE037 /* TrippiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53612A6A728B000DE037 /* TrippiUITests.swift */; };
 		50BB53642A6A728B000DE037 /* TrippiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53632A6A728B000DE037 /* TrippiUITestsLaunchTests.swift */; };
-		50BB53752A6A759A000DE037 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50BB53742A6A7595000DE037 /* Montserrat-VariableFont_wght.ttf */; };
 		50BB53782A6A781A000DE037 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53772A6A781A000DE037 /* Constants.swift */; };
 		50BB537B2A6A78CD000DE037 /* TrippiStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB537A2A6A78CD000DE037 /* TrippiStoryboards.swift */; };
 		50BB537D2A6A790C000DE037 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50BB537C2A6A790C000DE037 /* Home.storyboard */; };
 		50BB537F2A6A7CB9000DE037 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB537E2A6A7CB9000DE037 /* HomeViewController.swift */; };
-		50BB53822A6A8825000DE037 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53812A6A8825000DE037 /* UIViewController+Extension.swift */; };
+		50BB53822A6A8825000DE037 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53812A6A8825000DE037 /* UIViewControllerExtension.swift */; };
 		50BB53862A6A8C1F000DE037 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB53852A6A8C1F000DE037 /* HomeViewModel.swift */; };
 		50BB53902A6A9641000DE037 /* CitiesForYouTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BB538E2A6A9641000DE037 /* CitiesForYouTableViewCell.swift */; };
 		50BB53912A6A9641000DE037 /* CitiesForYouTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BB538F2A6A9641000DE037 /* CitiesForYouTableViewCell.xib */; };
@@ -79,7 +90,7 @@
 		50C3D09E2A6E5FFA00DDED53 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */; };
 		50C3D0A02A6E613800DDED53 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D09F2A6E613800DDED53 /* SettingViewController.swift */; };
 		50C3D0A32A6EADCA00DDED53 /* ReversedGeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D0A22A6EADCA00DDED53 /* ReversedGeoLocation.swift */; };
-		50C3D0A52A6EB66800DDED53 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D0A42A6EB66800DDED53 /* UIImageView+Extension.swift */; };
+		50C3D0A52A6EB66800DDED53 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D0A42A6EB66800DDED53 /* UIImageViewExtension.swift */; };
 		50C3D0AD2A6EBAFC00DDED53 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 50C3D0AC2A6EBAFC00DDED53 /* Lottie */; };
 		50C3D0B02A6EBB3B00DDED53 /* unknownLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */; };
 		78FDE5852A744DC800AA5C6E /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FDE5842A744DC800AA5C6E /* SignUp.storyboard */; };
@@ -131,6 +142,17 @@
 		5091CDA02A7AA2BA005D9A28 /* TripImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TripImage1.jpg; sourceTree = "<group>"; };
 		5091CDA12A7AA2BA005D9A28 /* TripImage5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TripImage5.jpg; sourceTree = "<group>"; };
 		5091CDA22A7AA2BA005D9A28 /* TripImage6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TripImage6.jpg; sourceTree = "<group>"; };
+		509921F12A7CDC8A004B0BD1 /* TrippiTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippiTabBarViewController.swift; sourceTree = "<group>"; };
+		509921F32A7CDC9A004B0BD1 /* TrippiTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrippiTabBar.storyboard; sourceTree = "<group>"; };
+		509921F62A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippiTabBarItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		509921F72A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrippiTabBarItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		509921FA2A7CFDCA004B0BD1 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		509921FD2A7CFDE8004B0BD1 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		509921FF2A7CFE0D004B0BD1 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		509922012A7CFE1F004B0BD1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		509922042A7D0AD3004B0BD1 /* TrippiTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippiTabBarItem.swift; sourceTree = "<group>"; };
+		5099220A2A7D2A15004B0BD1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		5099220C2A7D2AA1004B0BD1 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		509E2DFC2A77AE6700638F06 /* UIcolor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIcolor+Extension.swift"; sourceTree = "<group>"; };
 		509E2DFF2A77C5AD00638F06 /* SearchPlace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchPlace.storyboard; sourceTree = "<group>"; };
 		509E2E012A77C5C200638F06 /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
@@ -160,7 +182,7 @@
 		50BB537A2A6A78CD000DE037 /* TrippiStoryboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippiStoryboards.swift; sourceTree = "<group>"; };
 		50BB537C2A6A790C000DE037 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		50BB537E2A6A7CB9000DE037 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		50BB53812A6A8825000DE037 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		50BB53812A6A8825000DE037 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		50BB53852A6A8C1F000DE037 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		50BB538E2A6A9641000DE037 /* CitiesForYouTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesForYouTableViewCell.swift; sourceTree = "<group>"; };
 		50BB538F2A6A9641000DE037 /* CitiesForYouTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CitiesForYouTableViewCell.xib; sourceTree = "<group>"; };
@@ -177,7 +199,7 @@
 		50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		50C3D09F2A6E613800DDED53 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		50C3D0A22A6EADCA00DDED53 /* ReversedGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversedGeoLocation.swift; sourceTree = "<group>"; };
-		50C3D0A42A6EB66800DDED53 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		50C3D0A42A6EB66800DDED53 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unknownLocation.json; sourceTree = "<group>"; };
 		78FDE5842A744DC800AA5C6E /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -249,6 +271,41 @@
 				5091CDA22A7AA2BA005D9A28 /* TripImage6.jpg */,
 			);
 			path = Trips;
+			sourceTree = "<group>";
+		};
+		509921F02A7CDC68004B0BD1 /* TrippiTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				509921F52A7CFC57004B0BD1 /* Cell */,
+				509921F12A7CDC8A004B0BD1 /* TrippiTabBarViewController.swift */,
+				509922042A7D0AD3004B0BD1 /* TrippiTabBarItem.swift */,
+			);
+			path = TrippiTabBar;
+			sourceTree = "<group>";
+		};
+		509921F52A7CFC57004B0BD1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				509921F62A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.swift */,
+				509921F72A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		509921FC2A7CFDD2004B0BD1 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				509921FD2A7CFDE8004B0BD1 /* DashboardViewController.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		509922032A7CFE2F004B0BD1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				509922012A7CFE1F004B0BD1 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		509E2DFE2A77C59500638F06 /* SearchPlace */ = {
@@ -366,12 +423,15 @@
 		50BB53702A6A729C000DE037 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				509922032A7CFE2F004B0BD1 /* Profile */,
+				509921FC2A7CFDD2004B0BD1 /* Dashboard */,
+				509921F02A7CDC68004B0BD1 /* TrippiTabBar */,
 				509E2DFE2A77C59500638F06 /* SearchPlace */,
-				78FDE5832A74474E00AA5C6E /* CustomTabBar */,
 				50A2C83F2A72307C0096850D /* CreateTrip */,
 				50C3D09C2A6E5FBA00DDED53 /* Setting */,
 				50BB53842A6A8C06000DE037 /* Home */,
 				50BB53832A6A8BF3000DE037 /* OnBoarding */,
+				5099220A2A7D2A15004B0BD1 /* SplashViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -379,12 +439,16 @@
 		50BB53712A6A72A9000DE037 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				509921F32A7CDC9A004B0BD1 /* TrippiTabBar.storyboard */,
+				50BB537C2A6A790C000DE037 /* Home.storyboard */,
+				509921FA2A7CFDCA004B0BD1 /* Dashboard.storyboard */,
+				509921FF2A7CFE0D004B0BD1 /* Profile.storyboard */,
 				509E2DFF2A77C5AD00638F06 /* SearchPlace.storyboard */,
 				50BB53462A6A7289000DE037 /* OnBoarding.storyboard */,
-				50BB537C2A6A790C000DE037 /* Home.storyboard */,
 				50C3D09D2A6E5FFA00DDED53 /* Setting.storyboard */,
 				50A2C8422A72309E0096850D /* CreateTrip.storyboard */,
 				78FDE5842A744DC800AA5C6E /* SignUp.storyboard */,
+				5099220C2A7D2AA1004B0BD1 /* Splash.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -416,9 +480,9 @@
 		50BB53802A6A8805000DE037 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				50BB53812A6A8825000DE037 /* UIViewController+Extension.swift */,
+				50BB53812A6A8825000DE037 /* UIViewControllerExtension.swift */,
 				50A4027E2A7BB4990019F8EC /* UIButtonExtension.swift */,
-				50C3D0A42A6EB66800DDED53 /* UIImageView+Extension.swift */,
+				50C3D0A42A6EB66800DDED53 /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -524,13 +588,6 @@
 				50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */,
 			);
 			path = LottieJSON;
-			sourceTree = "<group>";
-		};
-		78FDE5832A74474E00AA5C6E /* CustomTabBar */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -654,20 +711,23 @@
 				5091CD7A2A7A95A2005D9A28 /* likeAnimation.json in Resources */,
 				50BF32242A73CB4900F7CD28 /* TopJourneysCollectionViewCell.xib in Resources */,
 				5091CD8A2A7AA1A4005D9A28 /* Moment9.jpg in Resources */,
-				50BB53752A6A759A000DE037 /* Montserrat-VariableFont_wght.ttf in Resources */,
+				509921F92A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.xib in Resources */,
 				5091CDA82A7AA2BA005D9A28 /* TripImage6.jpg in Resources */,
 				5091CD8F2A7AA1A4005D9A28 /* Moment4.jpg in Resources */,
+				509921FB2A7CFDCA004B0BD1 /* Dashboard.storyboard in Resources */,
 				5091CDA62A7AA2BA005D9A28 /* TripImage1.jpg in Resources */,
 				5091CDA72A7AA2BA005D9A28 /* TripImage5.jpg in Resources */,
 				50BB537D2A6A790C000DE037 /* Home.storyboard in Resources */,
 				5091CD882A7AA1A4005D9A28 /* Moment7.jpg in Resources */,
 				50BB534D2A6A728B000DE037 /* LaunchScreen.storyboard in Resources */,
+				509922062A7D0C67004B0BD1 /* Montserrat-VariableFont_wght.ttf in Resources */,
 				5091CD872A7AA1A4005D9A28 /* Moment8.jpg in Resources */,
 				5091CD8D2A7AA1A4005D9A28 /* Moment1.jpg in Resources */,
 				5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */,
 				509E2E002A77C5AD00638F06 /* SearchPlace.storyboard in Resources */,
 				5091CDA42A7AA2BA005D9A28 /* TripImage2.jpg in Resources */,
 				50BB53A12A6ABC1B000DE037 /* CityCollectionViewCell.xib in Resources */,
+				5099220D2A7D2AA1004B0BD1 /* Splash.storyboard in Resources */,
 				50BE53092A794A7B00B445BB /* likeAnimation1.json in Resources */,
 				50BF32202A73C10400F7CD28 /* TopJourneysTableViewCell.xib in Resources */,
 				50BB534A2A6A728B000DE037 /* Assets.xcassets in Resources */,
@@ -679,8 +739,10 @@
 				5091CD8C2A7AA1A4005D9A28 /* Moment3.jpg in Resources */,
 				5091CD892A7AA1A4005D9A28 /* Moment2.jpg in Resources */,
 				5091CD8B2A7AA1A4005D9A28 /* Moment5.jpg in Resources */,
+				509922002A7CFE0D004B0BD1 /* Profile.storyboard in Resources */,
 				50C3D09E2A6E5FFA00DDED53 /* Setting.storyboard in Resources */,
 				50BE53052A79319600B445BB /* MomentTableViewCell.xib in Resources */,
+				509921F42A7CDC9A004B0BD1 /* TrippiTabBar.storyboard in Resources */,
 				5091CD9C2A7AA289005D9A28 /* Moscow.jpg in Resources */,
 				50BB53482A6A7289000DE037 /* OnBoarding.storyboard in Resources */,
 				50A2C8432A72309E0096850D /* CreateTrip.storyboard in Resources */,
@@ -713,6 +775,8 @@
 			files = (
 				5091CD722A7A3533005D9A28 /* HomeCityModel.swift in Sources */,
 				50BB53452A6A7289000DE037 /* OnBoardingViewController.swift in Sources */,
+				509921F22A7CDC8A004B0BD1 /* TrippiTabBarViewController.swift in Sources */,
+				5099220B2A7D2A15004B0BD1 /* SplashViewController.swift in Sources */,
 				50BE53042A79319600B445BB /* MomentTableViewCell.swift in Sources */,
 				50AF64C12A6FFD7E005FFAB8 /* SettingsModel.swift in Sources */,
 				50C3D0A32A6EADCA00DDED53 /* ReversedGeoLocation.swift in Sources */,
@@ -729,18 +793,22 @@
 				5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */,
 				50BB53782A6A781A000DE037 /* Constants.swift in Sources */,
 				50BF32232A73CB4900F7CD28 /* TopJourneysCollectionViewCell.swift in Sources */,
+				509921FE2A7CFDE8004B0BD1 /* DashboardViewController.swift in Sources */,
 				5091CD782A7A4A0E005D9A28 /* HomeDataModel.swift in Sources */,
 				5091CD762A7A3682005D9A28 /* MomentModel.swift in Sources */,
-				50C3D0A52A6EB66800DDED53 /* UIImageView+Extension.swift in Sources */,
+				50C3D0A52A6EB66800DDED53 /* UIImageViewExtension.swift in Sources */,
 				50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */,
+				509922022A7CFE1F004B0BD1 /* ProfileViewController.swift in Sources */,
 				5091CD742A7A35ED005D9A28 /* TopTripModel.swift in Sources */,
 				509E2DFD2A77AE6700638F06 /* UIcolor+Extension.swift in Sources */,
-				50BB53822A6A8825000DE037 /* UIViewController+Extension.swift in Sources */,
+				50BB53822A6A8825000DE037 /* UIViewControllerExtension.swift in Sources */,
 				50BB537B2A6A78CD000DE037 /* TrippiStoryboards.swift in Sources */,
 				50BB53902A6A9641000DE037 /* CitiesForYouTableViewCell.swift in Sources */,
 				50BB537F2A6A7CB9000DE037 /* HomeViewController.swift in Sources */,
+				509921F82A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.swift in Sources */,
 				50A4027D2A7BA36F0019F8EC /* HasButtonVibration.swift in Sources */,
 				50A4027F2A7BB4990019F8EC /* UIButtonExtension.swift in Sources */,
+				509922052A7D0AD3004B0BD1 /* TrippiTabBarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,7 +992,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your locaiton to personalize your experience.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = OnBoarding;
+				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -954,7 +1022,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your locaiton to personalize your experience.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = OnBoarding;
+				INFOPLIST_KEY_UIMainStoryboardFile = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
