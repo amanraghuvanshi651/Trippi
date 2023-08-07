@@ -9,9 +9,16 @@ import UIKit
 import CoreLocation
 import Lottie
 
+protocol HomeViewControllerDelegate: AnyObject {
+    func presentCreateTripVC()
+}
+
 class HomeViewController: UIViewController {
     
+    weak var delegate: HomeViewControllerDelegate?
     private var viewModel = HomeViewModel()
+    
+    var animationSpeed = 0.8
     
     //header
     let maxHeaderHeight: CGFloat = 170
@@ -87,6 +94,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var lottieAnimationView: LottieAnimationView!
     
+    @IBOutlet weak var shareImage: UIImageView!
+    
     @IBOutlet weak var stickyHeaderHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchTextFieldContainerStackTrailingConstraint: NSLayoutConstraint!
     
@@ -108,7 +117,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 120, right: 0)
         
         setUpHomeData(moments: moments, cities: cities, topJourneys: topJourneys)
         setUpUI()
@@ -341,7 +350,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             if let moment = data.data as? MomentModel {
                 let cell = tableView.dequeueReusableCell(withIdentifier: MomentTableViewCell.identifier, for: indexPath) as! MomentTableViewCell
                 cell.delegate = self
-                cell.configure(moment: moment,imageHeight: tableView.bounds.width + 50)
+                cell.configure(moment: moment,imageHeight: tableView.bounds.width + 50, indexPath: indexPath)
                 return cell
             }
         }
@@ -403,10 +412,44 @@ extension HomeViewController: MomentTableViewCellDelegate {
     func onClickMomentSave() {
     }
     
-    func onClickMomentShare() {
+    func onClickMomentShare(indexPath: IndexPath) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + (animationSpeed - 0.3)) {
+            self.delegate?.presentCreateTripVC()
+        }
+        let cell = self.tableView.cellForRow(at: indexPath) as! MomentTableViewCell
+        let imageRect = cell.shareButton.convert(cell.shareButton.bounds, to: self.view)
+        shareImage.frame = imageRect
+        shareImage.isHidden = false
+
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: shareImage.frame.midX, y: shareImage.frame.midY))
+        path.addQuadCurve(to: CGPoint(x: shareImage.frame.midX + 80, y: -50), controlPoint: CGPoint(x: shareImage.frame.midX + 80, y: shareImage.frame.midY))
+
+        let animation = CAKeyframeAnimation(keyPath: "position")
+        animation.path = path.cgPath
+        animation.repeatCount = 0
+        animation.duration = animationSpeed
+        animation.delegate = self
+
+        shareImage.layer.add(animation, forKey: "animate along path")
+        shareImage.center = CGPoint(x: shareImage.frame.midX + 80, y: -50)
+        
     }
     
     func onClickMomentComments() {
+    }
+}
+
+extension HomeViewController: CAAnimationDelegate {
+    func animationDidStart(_ anim: CAAnimation) {
+        UIView.animate(withDuration: animationSpeed) {
+            self.shareImage.transform = CGAffineTransformMakeScale(2.5, 2.5)
+            self.shareImage.transform = self.shareImage.transform.rotated(by: .pi * 1.8)
+        }
+    }
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        shareImage.isHidden = true
+        self.shareImage.transform = .identity
     }
 }
 

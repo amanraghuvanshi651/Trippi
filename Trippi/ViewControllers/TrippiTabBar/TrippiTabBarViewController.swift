@@ -78,6 +78,7 @@ class TrippiTabBarViewController: UIViewController {
     }
     
     func addHomeVC() {
+        home.delegate = self
         self.containerView.addSubview(self.home.view)
         self.home.accessibilityFrame = self.containerView.frame
         self.home.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -156,5 +157,13 @@ extension TrippiTabBarViewController: UICollectionViewDelegate, UICollectionView
         let selectedItemWidth = (collectionView.frame.width / Double(items.count)) + 50
         let defaultWidth = (collectionView.frame.width - selectedItemWidth) / Double(items.count - 1)
         return CGSize(width: selectedItem == indexPath.row ? selectedItemWidth : defaultWidth, height: collectionView.bounds.height)
+    }
+}
+
+//MARK: - Home Delegate
+extension TrippiTabBarViewController: HomeViewControllerDelegate {
+    func presentCreateTripVC() {
+        let vc = getVC(storyboard: .createTrip, vc: CreateTripViewController.identifier) as! CreateTripViewController
+        self.navigationController?.presentVC(vc: vc)
     }
 }

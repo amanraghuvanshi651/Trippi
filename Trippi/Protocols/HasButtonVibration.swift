@@ -8,36 +8,36 @@
 import UIKit
 
 protocol HasButtonVibration {
-    func likeVibration()
-    func saveVibration()
+    func mediumVibration()
+    func heavyVibration()
 }
 
 extension HasButtonVibration where Self: UIViewController {
-    func likeVibration() {
+    func mediumVibration() {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
     }
     
-    func saveVibration() {
-        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+    func heavyVibration() {
+        UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
     }
 }
 
 extension HasButtonVibration where Self: UICollectionViewCell {
-    func likeVibration() {
+    func mediumVibration() {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
     }
     
-    func saveVibration() {
+    func heavyVibration() {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
     }
 }
 
 extension HasButtonVibration where Self: UITableViewCell {
-    func likeVibration() {
+    func mediumVibration() {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
     }
     
-    func saveVibration() {
+    func heavyVibration() {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
     }
 }

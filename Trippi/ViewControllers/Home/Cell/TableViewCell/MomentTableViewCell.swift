@@ -13,13 +13,15 @@ protocol MomentTableViewCellDelegate: AnyObject {
     func onClickFollow()
     func onClickMomentLike()
     func onClickMomentSave()
-    func onClickMomentShare()
+    func onClickMomentShare(indexPath: IndexPath)
     func onClickMomentComments()
 }
 
 class MomentTableViewCell: UITableViewCell, HasButtonVibration {
     var moment: MomentModel?
     weak var delegate: MomentTableViewCellDelegate?
+    
+    var indexPath = IndexPath()
     
     //MARK: - Outlets
     @IBOutlet weak var userImageView: UIImageView!
@@ -28,6 +30,7 @@ class MomentTableViewCell: UITableViewCell, HasButtonVibration {
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
     
     @IBOutlet weak var momentImageView: UIImageView!
     @IBOutlet weak var postDescriptionLabel: UILabel!
@@ -51,7 +54,8 @@ class MomentTableViewCell: UITableViewCell, HasButtonVibration {
         super.setSelected(selected, animated: animated)
     }
         
-    func configure(moment: MomentModel, imageHeight: Double) {
+    func configure(moment: MomentModel, imageHeight: Double, indexPath: IndexPath) {
+        self.indexPath = indexPath
         self.moment = moment
         self.userImageView.image = UIImage(named: moment.userPic)
         self.usernameLabel.text = moment.username
@@ -78,8 +82,8 @@ class MomentTableViewCell: UITableViewCell, HasButtonVibration {
     }
     
     func likeButtonClicked(isSingleTap: Bool) {
-        likeVibration()
-        likeButton.bounceAnimation(bounceScale: 0.5)
+        mediumVibration()
+        likeButton.bounceAnimation(bounceScale: 0.8)
         moment?.isLiked.toggle()
         if isSingleTap {
             likeButton.setImage(moment?.isLiked ?? false ? UIImage(named: "heartRed") : UIImage(named: "heartGray"), for: .normal)
@@ -91,7 +95,8 @@ class MomentTableViewCell: UITableViewCell, HasButtonVibration {
     
     //MARK: - Actions
     @IBAction func onClickFollowButton(_ sender: Any) {
-        followButton.bounceAnimation(bounceScale: 0.5)
+        heavyVibration()
+        followButton.bounceAnimation(bounceScale: 0.95)
         delegate?.onClickFollow()
     }
     
@@ -108,12 +113,14 @@ class MomentTableViewCell: UITableViewCell, HasButtonVibration {
     }
     
     @IBAction func onClickShareButton(_ sender: Any) {
-        delegate?.onClickMomentShare()
+        print(shareButton.frame)
+        mediumVibration()
+        delegate?.onClickMomentShare(indexPath: indexPath)
     }
     
     @IBAction func onClickSaveButton(_ sender: Any) {
-        likeVibration()
-        saveButton.bounceAnimation(bounceScale: 0.5)
+        mediumVibration()
+        saveButton.bounceAnimation(bounceScale: 0.8)
         moment?.isSaved.toggle()
         saveButton.setImage(moment?.isSaved ?? false ? UIImage(named: "saveYellow") : UIImage(named: "saveGray"), for: .normal)
         delegate?.onClickMomentSave()

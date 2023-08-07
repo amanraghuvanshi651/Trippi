@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -75,7 +75,7 @@
                                                 </constraints>
                                                 <color key="tintColor" name="TextColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="ThreeDots">
+                                                <state key="normal" image="threeDots">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                 </state>
                                                 <connections>
@@ -109,7 +109,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9of-7X-Ubn">
-                                <rect key="frame" x="10" y="280" width="371" height="40"/>
+                                <rect key="frame" x="10" y="270" width="371" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ob-BZ-fe3">
                                         <rect key="frame" x="0.0" y="5" width="110" height="30"/>
@@ -170,13 +170,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ho4-YS-2Oa">
-                                <rect key="frame" x="10" y="330" width="371" height="17.333333333333314"/>
+                                <rect key="frame" x="10" y="320" width="371" height="17.333333333333314"/>
                                 <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ro-9H-hTc">
-                                <rect key="frame" x="25" y="367.33333333333331" width="341" height="1"/>
+                                <rect key="frame" x="25" y="357.33333333333331" width="341" height="1"/>
                                 <color key="backgroundColor" name="SeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="WW6-3g-237"/>
@@ -193,7 +193,7 @@
                             <constraint firstItem="2TY-Cs-hFY" firstAttribute="leading" secondItem="jAh-U9-1UN" secondAttribute="leading" id="1WC-LG-I6e"/>
                             <constraint firstItem="sk8-Y1-hXH" firstAttribute="top" secondItem="jAh-U9-1UN" secondAttribute="top" id="7ev-kD-THN"/>
                             <constraint firstItem="5Ro-9H-hTc" firstAttribute="top" secondItem="Ho4-YS-2Oa" secondAttribute="bottom" constant="20" id="Cka-Oy-XxT"/>
-                            <constraint firstItem="9of-7X-Ubn" firstAttribute="top" secondItem="2TY-Cs-hFY" secondAttribute="bottom" constant="10" id="Cpw-ig-bcN"/>
+                            <constraint firstItem="9of-7X-Ubn" firstAttribute="top" secondItem="2TY-Cs-hFY" secondAttribute="bottom" id="Cpw-ig-bcN"/>
                             <constraint firstItem="DrM-en-ecS" firstAttribute="leading" secondItem="2TY-Cs-hFY" secondAttribute="leading" id="EKd-MQ-Zhj"/>
                             <constraint firstAttribute="trailing" secondItem="Ho4-YS-2Oa" secondAttribute="trailing" constant="10" id="GVl-gF-sae"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5Ro-9H-hTc" secondAttribute="bottom" constant="10" id="LDn-xJ-761"/>
@@ -235,6 +235,7 @@
                 <outlet property="momentImageViewHeightConstraint" destination="fRw-c6-3CO" id="AaF-j4-Ge1"/>
                 <outlet property="postDescriptionLabel" destination="Ho4-YS-2Oa" id="AG6-Pu-aPQ"/>
                 <outlet property="saveButton" destination="vsH-6p-QH2" id="Zrh-Zl-WIb"/>
+                <outlet property="shareButton" destination="TSp-FB-H41" id="BRW-Ph-vD1"/>
                 <outlet property="userImageView" destination="QsW-QO-dIk" id="UJf-Yp-CI1"/>
                 <outlet property="usernameLabel" destination="2hr-h3-qNv" id="fEL-4I-J3u"/>
             </connections>
@@ -242,12 +243,12 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ThreeDots" width="21.333333969116211" height="21.333333969116211"/>
         <image name="User" width="300" height="300"/>
         <image name="heartGray" width="21.333333969116211" height="21.333333969116211"/>
         <image name="messageGray" width="21.333333969116211" height="21.333333969116211"/>
         <image name="saveGray" width="21.333333969116211" height="21.333333969116211"/>
         <image name="shareGray" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="threeDots" width="21.333333969116211" height="21.333333969116211"/>
         <namedColor name="AppBackground">
             <color red="0.92900002002716064" green="0.94099998474121094" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
