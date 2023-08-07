@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-VariableFont_wght.ttf">
+            <string>MontserratRoman-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShareToUserTableViewCell" rowHeight="217" id="KGk-i7-Jjw" customClass="ShareToUserTableViewCell" customModule="Trippi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="397" height="217"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="397" height="217"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="nJk-LF-ifE">
+                        <rect key="frame" x="10" y="10" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="dRo-Bs-7UZ"/>
+                            <constraint firstAttribute="width" constant="40" id="iN4-rH-uok"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNq-gz-lVK">
+                        <rect key="frame" x="60" y="21" width="297" height="18.333333333333329"/>
+                        <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wuw-Tg-nIt">
+                        <rect key="frame" x="367" y="21" width="20" height="18.666666666666671"/>
+                        <color key="tintColor" name="ButtonBackground"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="aPH-w6-Usk"/>
+                            <constraint firstAttribute="width" constant="20" id="nX1-RF-LVc"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="nJk-LF-ifE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ggs-tD-BSX"/>
+                    <constraint firstItem="wNq-gz-lVK" firstAttribute="centerY" secondItem="nJk-LF-ifE" secondAttribute="centerY" id="KU8-zF-mXC"/>
+                    <constraint firstItem="wuw-Tg-nIt" firstAttribute="leading" secondItem="wNq-gz-lVK" secondAttribute="trailing" constant="10" id="SKW-0a-Nxj"/>
+                    <constraint firstItem="wuw-Tg-nIt" firstAttribute="centerY" secondItem="nJk-LF-ifE" secondAttribute="centerY" id="YQ8-ef-TAR"/>
+                    <constraint firstItem="nJk-LF-ifE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="eyP-RG-GES"/>
+                    <constraint firstAttribute="trailing" secondItem="wuw-Tg-nIt" secondAttribute="trailing" constant="10" id="m1L-UQ-u8h"/>
+                    <constraint firstItem="wNq-gz-lVK" firstAttribute="leading" secondItem="nJk-LF-ifE" secondAttribute="trailing" constant="10" id="pee-c2-nAE"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nJk-LF-ifE" secondAttribute="bottom" constant="10" id="sZM-E3-tk1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="selectedImageView" destination="wuw-Tg-nIt" id="99e-y1-I6e"/>
+                <outlet property="userImageView" destination="nJk-LF-ifE" id="dhn-FW-FBN"/>
+                <outlet property="usernameLabel" destination="wNq-gz-lVK" id="oqn-Pc-cbc"/>
+            </connections>
+            <point key="canvasLocation" x="95.419847328244273" y="49.647887323943664"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="User" width="300" height="300"/>
+        <image name="circle" catalog="system" width="128" height="123"/>
+        <namedColor name="ButtonBackground">
+            <color red="0.98000001907348633" green="0.81599998474121094" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

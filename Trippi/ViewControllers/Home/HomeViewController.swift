@@ -413,7 +413,7 @@ extension HomeViewController: MomentTableViewCellDelegate {
     }
     
     func onClickMomentShare(indexPath: IndexPath) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + (animationSpeed - 0.3)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + (animationSpeed - 0.42)) {
             self.delegate?.presentCreateTripVC()
         }
         let cell = self.tableView.cellForRow(at: indexPath) as! MomentTableViewCell
