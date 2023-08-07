@@ -1,12 +1,48 @@
 {
   "pins" : [
     {
+      "identity" : "fastis",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simla-tech/Fastis.git",
+      "state" : {
+        "revision" : "3cf7095765443b185f6b8150759a38ddc79739e2",
+        "version" : "2.3.0"
+      }
+    },
+    {
+      "identity" : "jtapplecalendar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/patchthecode/JTAppleCalendar",
+      "state" : {
+        "revision" : "718f0ab68ba0fcd2bc134f6e9d30edc1b9b038e1",
+        "version" : "8.0.5"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "c75584ac759cbb16b204d0a7de3ebf53ea6b304d",
+        "version" : "7.9.0"
+      }
+    },
+    {
       "identity" : "lottie-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-ios.git",
       "state" : {
         "revision" : "d6feea26a370019b4d3a85f5984cb95a2734776f",
         "version" : "4.2.0"
+      }
+    },
+    {
+      "identity" : "prettycards",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ilia3546/PrettyCards",
+      "state" : {
+        "revision" : "3115edbd79c66090729dfb261dc4fbf7c6df0ac1",
+        "version" : "1.0.7"
       }
     }
   ],
