@@ -12,6 +12,8 @@ import Lottie
 protocol HomeViewControllerDelegate: AnyObject {
     func presentShareVC()
     func presentCommentsVC()
+    func hideAddButton()
+    func unHideAddButton()
 }
 
 class HomeViewController: UIViewController {
@@ -356,6 +358,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 == homeData.count {
+            delegate?.hideAddButton()
+        } else {
+            delegate?.unHideAddButton()
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

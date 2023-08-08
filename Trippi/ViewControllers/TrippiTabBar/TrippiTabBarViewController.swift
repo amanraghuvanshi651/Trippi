@@ -15,8 +15,8 @@ class TrippiTabBarViewController: UIViewController {
     var isInitialViewLoaded = false
     
     var items = [
-        TrippiTabBarItem(title: "Discovery", image: "TabBarDiscovery"),
         TrippiTabBarItem(title: "Dashboard", image: "TabBarDashboard"),
+        TrippiTabBarItem(title: "Discovery", image: "TabBarDiscovery"),
         TrippiTabBarItem(title: "Profile", image: "TabBarProfile")
     ]
     
@@ -26,8 +26,8 @@ class TrippiTabBarViewController: UIViewController {
         vc.view.alpha = 0
         return vc
     }()
-    var dashboard: DashboardViewController = {
-        let vc = getVC(storyboard: .dashboard, vc: DashboardViewController.identifier) as! DashboardViewController
+    var dashboard: DiscoveryViewController = {
+        let vc = getVC(storyboard: .discovery, vc: DiscoveryViewController.identifier) as! DiscoveryViewController
         vc.view.alpha = 0
         return vc
     }()
@@ -39,7 +39,8 @@ class TrippiTabBarViewController: UIViewController {
     
     //MARK: - Outlets
     @IBOutlet weak var containerView: UIView!
-
+    @IBOutlet weak var addButton: UIButton!
+    
     //tab bar
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tabBarContainerView: UIView!
@@ -48,6 +49,7 @@ class TrippiTabBarViewController: UIViewController {
         super.viewDidLoad()
         
         tabBarContainerView.layer.cornerRadius = 30
+        addButton.layer.cornerRadius = 30
         
         collectionView.register(UINib(nibName: TrippiTabBarItemCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: TrippiTabBarItemCollectionViewCell.identifier)
     }
@@ -55,6 +57,12 @@ class TrippiTabBarViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setUpItemWidth()
+    }
+    
+    //MARK: - Actions
+    @IBAction func onClickAddButton(_ sender: Any) {
+        let vc = getVC(storyboard: .createTrip, vc: CreateTripViewController.identifier) as! CreateTripViewController
+        self.navigationController?.presentVC(vc: vc)
     }
     
     //MARK: - Custom Methods
@@ -162,6 +170,23 @@ extension TrippiTabBarViewController: UICollectionViewDelegate, UICollectionView
 
 //MARK: - Home Delegate
 extension TrippiTabBarViewController: HomeViewControllerDelegate {
+    func hideAddButton() {
+        UIView.animate(withDuration: 0.3) {
+            self.addButton.alpha = 0
+        } completion: { _ in
+            self.addButton.isHidden = true
+        }
+    }
+    
+    func unHideAddButton() {
+        if addButton.isHidden {
+            addButton.isHidden = false
+            UIView.animate(withDuration: 0.3) {
+                self.addButton.alpha = 1
+            }
+        }
+    }
+    
     func presentShareVC() {
         let vc = getVC(storyboard: .share, vc: ShareViewController.identifier) as! ShareViewController
         self.navigationController?.presentVC(vc: vc)

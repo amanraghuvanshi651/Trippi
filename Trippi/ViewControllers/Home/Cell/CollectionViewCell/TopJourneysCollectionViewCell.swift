@@ -62,22 +62,9 @@ class TopJourneysCollectionViewCell: UICollectionViewCell, HasButtonVibration {
     @IBAction func onClickLikeButton(_ sender: Any) {
         delegate?.onClickLike(indexPath: indexPath)
         mediumVibration()
-        likeButton.bounceAnimation(bounceScale: 0.5)
+        likeButton.bounceAnimation(bounceScale: 0.8)
         topJourney?.isLiked.toggle()
         likeButton.setImage(topJourney?.isLiked ?? false ? UIImage(named: "heartRed") : UIImage(named: "heartGray"), for: .normal)
-//        UIView.animate(withDuration: 0.5) { [weak self] in
-//            guard let self = self else { return }
-//            self.likeButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-//            UIView.animate(withDuration: 2.0,
-//                           delay: 0,
-//                           usingSpringWithDamping: 0.2,
-//                           initialSpringVelocity: 6.0,
-//                           options: .allowUserInteraction,
-//                           animations: { [weak self] in
-//                guard let self = self else { return }
-//                self.likeButton.transform = .identity
-//            },completion: nil)
-//        }
     }
     
     @IBAction func onClickChatButton(_ sender: Any) {
@@ -89,23 +76,9 @@ class TopJourneysCollectionViewCell: UICollectionViewCell, HasButtonVibration {
     @IBAction func onClickSaveButton(_ sender: Any) {
         heavyVibration()
         delegate?.onClickSave(indexPath: indexPath)
-        saveButton.bounceAnimation(bounceScale: 0.5)
+        saveButton.bounceAnimation(bounceScale: 0.8)
         topJourney?.isSaved.toggle()
         saveButton.setImage(topJourney?.isSaved ?? false ? UIImage(named: "saveYellow") : UIImage(named: "saveGray"), for: .normal)
-        
-//        UIView.animate(withDuration: 0.5) { [weak self] in
-//            guard let self = self else { return }
-//            self.saveButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-//            UIView.animate(withDuration: 2.0,
-//                           delay: 0,
-//                           usingSpringWithDamping: 0.2,
-//                           initialSpringVelocity: 6.0,
-//                           options: .allowUserInteraction,
-//                           animations: { [weak self] in
-//                guard let self = self else { return }
-//                self.saveButton.transform = .identity
-//            },completion: nil)
-//        }
     }
 
 }

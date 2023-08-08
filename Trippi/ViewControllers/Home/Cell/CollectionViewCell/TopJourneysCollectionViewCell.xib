@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="328" height="20"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Q1b-Q0-lFY">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRx-U0-WAV">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -52,8 +52,8 @@
                                                             <action selector="onClickLikeButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="uD0-uK-lab"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRA-K2-GuN">
-                                                        <rect key="frame" x="25" y="0.0" width="20" height="20"/>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRA-K2-GuN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="bRQ-ez-Q9y"/>
                                                         </constraints>
@@ -63,8 +63,8 @@
                                                             <action selector="onClickChatButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="37x-Ui-yMC"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbV-pk-NXp">
-                                                        <rect key="frame" x="50" y="0.0" width="20" height="20"/>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbV-pk-NXp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="lRH-t1-Lvy"/>
                                                         </constraints>
