@@ -227,6 +227,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="commentButton" destination="7Xk-Vk-eMF" id="Xcj-OX-Ddh"/>
                 <outlet property="doubleTapButton" destination="DrM-en-ecS" id="KMJ-Pa-t11"/>
                 <outlet property="followButton" destination="z0K-JY-gij" id="jx9-JY-8ve"/>
                 <outlet property="likeAnimationView" destination="PWc-Le-T14" id="zwW-dK-LWw"/>

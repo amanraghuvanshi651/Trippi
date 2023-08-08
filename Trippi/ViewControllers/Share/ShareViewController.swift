@@ -23,6 +23,8 @@ class ShareViewController: UIViewController {
         ShareUserModel(username: "someone.in.the.game", pic: "User", isSelected: false),
         ShareUserModel(username: "theridingboots", pic: "User", isSelected: false)
     ]
+    
+    var isKeyboardVisible = false
 
     //MARK: - Outlets
     @IBOutlet weak var containterView: UIView!
@@ -50,6 +52,10 @@ class ShareViewController: UIViewController {
         
 //        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapBackGroundView))
 //        view.addGestureRecognizer(tapGesture)
+        
+        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        swipeGestureRecognizer.direction = .down
+        self.view.addGestureRecognizer(swipeGestureRecognizer)
     }
     
     //MARK: - Actions
@@ -58,19 +64,27 @@ class ShareViewController: UIViewController {
     
     //MARK: - Custom Methods
     @objc func keyboardWillShow(_ notification: Notification) {
+        isKeyboardVisible = true
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
+            let keyboardHeight = keyboardRectangle.height - 20
             
-            self.containerViewBottomConstraint.constant = keyboardHeight
+            self.view.frame.origin.y -= keyboardHeight
         }
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
-        self.containerViewBottomConstraint.constant = 0
+        isKeyboardVisible = false
+        self.view.frame.origin.y = 0
     }
     
-    @objc func didTapBackGroundView() {
+    @objc func hideKeyboard() {
+        if isKeyboardVisible {
+            view.endEditing(true)
+        }
+    }
+    
+    @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
         view.endEditing(true)
     }
 }
@@ -108,11 +122,15 @@ extension ShareViewController: UITableViewDelegate, UITableViewDataSource {
                 if !isSelected {
                     self.sendButton.isHidden = !isSelected
                     self.messageTextField.isHidden = !isSelected
-                    self.didTapBackGroundView()
+                    self.hideKeyboard()
                 }
             }
             self.tableView.reloadRows(at: [indexPath], with: .none)
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        hideKeyboard()
     }
     
 }

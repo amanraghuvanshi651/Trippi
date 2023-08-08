@@ -78,6 +78,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchTextField" destination="Ijk-Mb-rQc" id="oIs-HP-Zoq"/>
                         <outlet property="searchTextFieldContainerView" destination="Tv7-9O-bnm" id="Lt3-WE-eWz"/>
                     </connections>
                 </viewController>

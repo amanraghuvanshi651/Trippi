@@ -29,6 +29,7 @@ class MomentTableViewCell: UITableViewCell, HasButtonVibration {
     
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     
@@ -109,6 +110,8 @@ class MomentTableViewCell: UITableViewCell, HasButtonVibration {
     }
     
     @IBAction func onClickCommentButton(_ sender: Any) {
+        mediumVibration()
+        commentButton.bounceAnimation(bounceScale: 0.8)
         delegate?.onClickMomentComments()
     }
     

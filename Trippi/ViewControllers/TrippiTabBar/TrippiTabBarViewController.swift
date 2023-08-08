@@ -162,8 +162,13 @@ extension TrippiTabBarViewController: UICollectionViewDelegate, UICollectionView
 
 //MARK: - Home Delegate
 extension TrippiTabBarViewController: HomeViewControllerDelegate {
-    func presentCreateTripVC() {
+    func presentShareVC() {
         let vc = getVC(storyboard: .share, vc: ShareViewController.identifier) as! ShareViewController
+        self.navigationController?.presentVC(vc: vc)
+    }
+    
+    func presentCommentsVC() {
+        let vc = getVC(storyboard: .comments, vc: CommentsViewController.identifier) as! CommentsViewController
         self.navigationController?.presentVC(vc: vc)
     }
 }

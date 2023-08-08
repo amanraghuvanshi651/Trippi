@@ -10,7 +10,8 @@ import CoreLocation
 import Lottie
 
 protocol HomeViewControllerDelegate: AnyObject {
-    func presentCreateTripVC()
+    func presentShareVC()
+    func presentCommentsVC()
 }
 
 class HomeViewController: UIViewController {
@@ -414,7 +415,7 @@ extension HomeViewController: MomentTableViewCellDelegate {
     
     func onClickMomentShare(indexPath: IndexPath) {
         DispatchQueue.main.asyncAfter(deadline: .now() + (animationSpeed - 0.42)) {
-            self.delegate?.presentCreateTripVC()
+            self.delegate?.presentShareVC()
         }
         let cell = self.tableView.cellForRow(at: indexPath) as! MomentTableViewCell
         let imageRect = cell.shareButton.convert(cell.shareButton.bounds, to: self.view)
@@ -437,6 +438,7 @@ extension HomeViewController: MomentTableViewCellDelegate {
     }
     
     func onClickMomentComments() {
+        delegate?.presentCommentsVC()
     }
 }
 

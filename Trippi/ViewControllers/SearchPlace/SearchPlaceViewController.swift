@@ -9,10 +9,12 @@ import UIKit
 
 class SearchPlaceViewController: UIViewController {
 
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchTextFieldContainerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchTextField.becomeFirstResponder()
         searchTextFieldContainerView.layer.cornerRadius = 15
     }
     
