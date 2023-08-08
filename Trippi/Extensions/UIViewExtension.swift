@@ -2,7 +2,7 @@
 //  UIViewExtension.swift
 //  Trippi
 //
-//  Created by macmini50 on 07/08/23.
+//  Created by Aman Raghuvanshi on 07/08/23.
 //
 
 import UIKit

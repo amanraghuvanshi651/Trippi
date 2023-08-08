@@ -2,7 +2,7 @@
 //  SplashViewController.swift
 //  Trippi
 //
-//  Created by macmini50 on 04/08/23.
+//  Created by Aman Raghuvanshi on 04/08/23.
 //
 
 import UIKit

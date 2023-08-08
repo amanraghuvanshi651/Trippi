@@ -2,7 +2,7 @@
 //  TrippiTabBarViewController.swift
 //  Trippi
 //
-//  Created by macmini50 on 04/08/23.
+//  Created by Aman Raghuvanshi on 04/08/23.
 //
 
 import UIKit
@@ -147,8 +147,8 @@ extension TrippiTabBarViewController: UICollectionViewDelegate, UICollectionView
         }
         
         self.remove()
-        // Add the child's View as a subview
         
+        // Add the child's View as a subview
         switch indexPath.row {
         case 0:
             addHomeVC()

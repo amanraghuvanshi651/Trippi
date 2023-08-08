@@ -2,7 +2,7 @@
 //  MomentModel.swift
 //  Trippi
 //
-//  Created by macmini50 on 02/08/23.
+//  Created by Aman Raghuvanshi on 02/08/23.
 //
 
 import Foundation

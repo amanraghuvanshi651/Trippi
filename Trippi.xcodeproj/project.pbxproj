@@ -17,6 +17,9 @@
 		507B87942A825576004D3DBE /* ShareToUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 507B878D2A825576004D3DBE /* ShareToUserTableViewCell.xib */; };
 		507B87952A825576004D3DBE /* ShareUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B878F2A825576004D3DBE /* ShareUserModel.swift */; };
 		507B87972A82559C004D3DBE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B87962A82559C004D3DBE /* UIViewExtension.swift */; };
+		507B87A12A826D83004D3DBE /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B879F2A826D83004D3DBE /* CommentTableViewCell.swift */; };
+		507B87A22A826D83004D3DBE /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 507B87A02A826D83004D3DBE /* CommentTableViewCell.xib */; };
+		507B87A52A827CB3004D3DBE /* CommentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B87A42A827CB3004D3DBE /* CommentDataModel.swift */; };
 		5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091A6EC2A7108820091197E /* CreateNewTripTableViewCell.swift */; };
 		5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */; };
 		5091CD702A7A3472005D9A28 /* heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 5091CD6F2A7A3472005D9A28 /* heart.json */; };
@@ -134,6 +137,9 @@
 		507B878D2A825576004D3DBE /* ShareToUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareToUserTableViewCell.xib; sourceTree = "<group>"; };
 		507B878F2A825576004D3DBE /* ShareUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareUserModel.swift; sourceTree = "<group>"; };
 		507B87962A82559C004D3DBE /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		507B879F2A826D83004D3DBE /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		507B87A02A826D83004D3DBE /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		507B87A42A827CB3004D3DBE /* CommentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDataModel.swift; sourceTree = "<group>"; };
 		5091A6EC2A7108820091197E /* CreateNewTripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTripTableViewCell.swift; sourceTree = "<group>"; };
 		5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewTripTableViewCell.xib; sourceTree = "<group>"; };
 		5091CD6F2A7A3472005D9A28 /* heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart.json; sourceTree = "<group>"; };
@@ -255,6 +261,8 @@
 		507B87822A825567004D3DBE /* Comments */ = {
 			isa = PBXGroup;
 			children = (
+				507B87A32A827CA2004D3DBE /* Model */,
+				507B879C2A826D55004D3DBE /* Cell */,
 				507B87832A825567004D3DBE /* CommentsViewController.swift */,
 			);
 			path = Comments;
@@ -301,6 +309,23 @@
 			isa = PBXGroup;
 			children = (
 				507B878F2A825576004D3DBE /* ShareUserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		507B879C2A826D55004D3DBE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				507B879F2A826D83004D3DBE /* CommentTableViewCell.swift */,
+				507B87A02A826D83004D3DBE /* CommentTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		507B87A32A827CA2004D3DBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				507B87A42A827CB3004D3DBE /* CommentDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -801,6 +826,7 @@
 				509922062A7D0C67004B0BD1 /* Montserrat-VariableFont_wght.ttf in Resources */,
 				5091CD872A7AA1A4005D9A28 /* Moment8.jpg in Resources */,
 				5091CD8D2A7AA1A4005D9A28 /* Moment1.jpg in Resources */,
+				507B87A22A826D83004D3DBE /* CommentTableViewCell.xib in Resources */,
 				5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */,
 				509E2E002A77C5AD00638F06 /* SearchPlace.storyboard in Resources */,
 				5091CDA42A7AA2BA005D9A28 /* TripImage2.jpg in Resources */,
@@ -886,7 +912,9 @@
 				50C3D0A52A6EB66800DDED53 /* UIImageViewExtension.swift in Sources */,
 				50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */,
 				509922022A7CFE1F004B0BD1 /* ProfileViewController.swift in Sources */,
+				507B87A52A827CB3004D3DBE /* CommentDataModel.swift in Sources */,
 				5091CD742A7A35ED005D9A28 /* TopTripModel.swift in Sources */,
+				507B87A12A826D83004D3DBE /* CommentTableViewCell.swift in Sources */,
 				509E2DFD2A77AE6700638F06 /* UIcolor+Extension.swift in Sources */,
 				50BB53822A6A8825000DE037 /* UIViewControllerExtension.swift in Sources */,
 				50BB537B2A6A78CD000DE037 /* TrippiStoryboards.swift in Sources */,

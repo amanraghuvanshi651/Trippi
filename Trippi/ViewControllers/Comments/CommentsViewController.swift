@@ -2,7 +2,7 @@
 //  CommentsViewController.swift
 //  Trippi
 //
-//  Created by macmini50 on 08/08/23.
+//  Created by Aman Raghuvanshi on 08/08/23.
 //
 
 import UIKit
@@ -11,11 +11,21 @@ class CommentsViewController: UIViewController {
 
     var isKeyboardVisible = true
     
+    var comments = [
+        CommentDataModel(id: "0", pic: "User", username: "aman", comment: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", likesCount: "2", isLiked: false),
+        CommentDataModel(id: "1", pic: "User", username: "abhay", comment: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", likesCount: "1", isLiked: false),
+        CommentDataModel(id: "2", pic: "User", username: "ajay", comment: "OP", likesCount: "3", isLiked: false),
+        CommentDataModel(id: "3", pic: "User", username: "sanil", comment: "GG", likesCount: "6", isLiked: false),
+        CommentDataModel(id: "4", pic: "User", username: "sunil", comment: "🤪🤪", likesCount: "0", isLiked: false),
+        CommentDataModel(id: "5", pic: "User", username: "yash", comment: "🥺 😢 😭", likesCount: "2", isLiked: false),
+        CommentDataModel(id: "6", pic: "User", username: "chayan", comment: "😱 😨 😰 😥 😓 🫣", likesCount: "5", isLiked: false)
+    ]
     
-    let defaultHeight: CGFloat = UIScreen.main.bounds.height / 2 //400
-    let dismissibleHeight: CGFloat = (UIScreen.main.bounds.height * 40) / 100//200
-    let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 150
-    var currentContainerHeight: CGFloat = UIScreen.main.bounds.height / 2
+    
+    let defaultHeight: CGFloat = UIScreen.main.bounds.height / 1.3 //400
+    let dismissibleHeight: CGFloat = (UIScreen.main.bounds.height * 50) / 100//200
+    let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 80
+    var currentContainerHeight: CGFloat = UIScreen.main.bounds.height / 1.3
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -29,9 +39,11 @@ class CommentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        containerViewHeightConstraint.constant = currentContainerHeight
         setupPanGesture()
         setUpUI()
+        
+        tableView.register(UINib(nibName: CommentTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CommentTableViewCell.identifier)
         
         //setting notification observer for keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -129,5 +141,31 @@ class CommentsViewController: UIViewController {
         } completion: { _ in
             self.dismiss(animated: true)
         }
+    }
+}
+
+//MARK: - Table View Delegate and DataSource
+extension CommentsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return comments.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.identifier) as! CommentTableViewCell
+        cell.selectionStyle = .none
+        cell.delegate = self
+        cell.configure(comment: comments[indexPath.row], indexPath: indexPath)
+        return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        hideKeyboard()
+    }
+}
+
+//MARK: - comment cell delegate
+extension CommentsViewController: CommentTableViewCellDelegate {
+    func onClickLike(indexPath: IndexPath) {
+        comments[indexPath.row].isLiked.toggle()
     }
 }

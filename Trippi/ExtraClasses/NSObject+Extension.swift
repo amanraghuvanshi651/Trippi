@@ -2,7 +2,7 @@
 //  NSObject+Extension.swift
 //  Trippi
 //
-//  Created by macmini50 on 01/08/23.
+//  Created by Aman Raghuvanshi on 01/08/23.
 //
 
 import UIKit
