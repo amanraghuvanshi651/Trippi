@@ -14,6 +14,8 @@ protocol HomeViewControllerDelegate: AnyObject {
     func presentCommentsVC()
     func hideAddButton()
     func unHideAddButton()
+    
+    func pushTripVC()
 }
 
 class HomeViewController: UIViewController {
@@ -131,14 +133,30 @@ class HomeViewController: UIViewController {
         settingVC = getVC(storyboard: .setting, vc: SettingViewController.identifier) as? SettingViewController
         searchVC = getVC(storyboard: .searchPlace, vc: SearchPlaceViewController.identifier) as? SearchPlaceViewController
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapBackGroundView))
-        view.addGestureRecognizer(tapGesture)
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapBackGroundView))
+//        view.addGestureRecognizer(tapGesture)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
     
+    //MARK: - Actions
+    @IBAction func onClickProfileButton(_ sender: Any) {
+        isTranformingSearch = false
+        guard let vc = settingVC else { return }
+        vc.transitioningDelegate = self
+        self.presentVC(vc: vc)
+    }
+    
+    @IBAction func onClickSearch(_ sender: Any) {
+        isTranformingSearch = true
+        guard let vc = searchVC else { return }
+        vc.transitioningDelegate = self
+        self.presentVC(vc: vc)
+    }
+    
+    //MARK: - Custom Methods
     func setUpHomeData(moments: [MomentModel], cities: [HomeCityModel], topJourneys: [TopTripModel]) {
         //appending 2 moments
         if moments.count > 2 {
@@ -175,22 +193,6 @@ class HomeViewController: UIViewController {
         }
     }
     
-    //MARK: - Actions
-    @IBAction func onClickProfileButton(_ sender: Any) {
-        isTranformingSearch = false
-        guard let vc = settingVC else { return }
-        vc.transitioningDelegate = self
-        self.presentVC(vc: vc)
-    }
-    
-    @IBAction func onClickSearch(_ sender: Any) {
-        isTranformingSearch = true
-        guard let vc = searchVC else { return }
-        vc.transitioningDelegate = self
-        self.presentVC(vc: vc)
-    }
-    
-    //MARK: - Custom Methods
     @objc func didTapBackGroundView() {
         view.endEditing(true)
     }
@@ -326,7 +328,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .city:
             if let citiesData = data.data as? [HomeCityModel] {
                 let cell = tableView.dequeueReusableCell(withIdentifier: CitiesForYouTableViewCell.identifier, for: indexPath) as! CitiesForYouTableViewCell
-                cell.configure(cities: citiesData)
+                cell.configure(cities: citiesData, indexPath: indexPath)
+                cell.delegate = self
                 
                 cell.selectionStyle = .none
                 cell.frame = tableView.bounds
@@ -395,6 +398,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - Top Journey Cell Delegate
 extension HomeViewController: TopJourneysTableViewCellDelegate {
+    func didSelectTrip(indexPath: IndexPath, subCellIndexPath: IndexPath) {
+        delegate?.pushTripVC()
+    }
+    
     func onClickLikeTopJourney(indexPath: IndexPath, subCellIndexPath: IndexPath) {
         let data = homeData[indexPath.row]
         var topJourneysData = data.data as? [TopTripModel]
@@ -409,6 +416,15 @@ extension HomeViewController: TopJourneysTableViewCellDelegate {
         let isSaved = topJourneysData?[subCellIndexPath.row].isSaved ?? false
         topJourneysData?[subCellIndexPath.row].isSaved = !isSaved
         homeData[indexPath.row].data = topJourneysData ?? [TopTripModel]()
+    }
+}
+
+//MARK: -  Cities For You Cell Delegate
+extension HomeViewController: CitiesForYouTableViewCellDelegate {
+    func onClickSeeAll() {
+    }
+    
+    func onDidSelectCity(selectedIndexPath: IndexPath, indexPath: IndexPath) {
     }
 }
 
@@ -452,6 +468,7 @@ extension HomeViewController: MomentTableViewCellDelegate {
     }
 }
 
+//MARK: - Animation Delegate
 extension HomeViewController: CAAnimationDelegate {
     func animationDidStart(_ anim: CAAnimation) {
         UIView.animate(withDuration: animationSpeed) {

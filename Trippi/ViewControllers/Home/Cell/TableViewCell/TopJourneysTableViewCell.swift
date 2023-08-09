@@ -10,6 +10,7 @@ import UIKit
 protocol TopJourneysTableViewCellDelegate: AnyObject {
     func onClickLikeTopJourney(indexPath: IndexPath, subCellIndexPath: IndexPath)
     func onClickSaveTopJourney(indexPath: IndexPath, subCellIndexPath: IndexPath)
+    func didSelectTrip(indexPath: IndexPath, subCellIndexPath: IndexPath)
 }
 
 class TopJourneysTableViewCell: UITableViewCell {
@@ -58,6 +59,11 @@ extension TopJourneysTableViewCell: UICollectionViewDelegate, UICollectionViewDa
         cell.indexPath = indexPath
         cell.configure(topJourney: topJourneys[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+        delegate?.didSelectTrip(indexPath: self.indexPath, subCellIndexPath: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

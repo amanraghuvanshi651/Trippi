@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-VariableFont_wght.ttf">
+            <string>MontserratRoman-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Trip View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="TripViewController" id="Y6W-OH-hqX" customClass="TripViewController" customModule="Trippi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbF-1T-l5z">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="19O-eV-m0M">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sFh-P9-QI1">
+                                        <rect key="frame" x="10" y="10" width="373" height="0.0"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nG3-im-vu7">
+                                                <rect key="frame" x="0.0" y="0.0" width="373" height="0.0"/>
+                                                <subviews>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfC-3I-SlR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="92" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mN2-Uc-yaV">
+                                        <rect key="frame" x="0.0" y="10" width="393" height="783"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Y6W-OH-hqX" id="wsZ-dq-cQP"/>
+                                            <outlet property="delegate" destination="Y6W-OH-hqX" id="Ppr-pI-0ae"/>
+                                        </connections>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4h-Ak-bX8">
+                                        <rect key="frame" x="20" y="30" width="50" height="50"/>
+                                        <color key="backgroundColor" name="HighlightViewBackground"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="8Av-BI-MYJ"/>
+                                            <constraint firstAttribute="height" constant="50" id="vcV-F6-CAO"/>
+                                        </constraints>
+                                        <color key="tintColor" name="TextColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="xmark" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onClickCrossButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="p7v-Qm-ouW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="AppBackground"/>
+                                <constraints>
+                                    <constraint firstItem="sFh-P9-QI1" firstAttribute="top" secondItem="19O-eV-m0M" secondAttribute="top" constant="10" id="1r7-as-f6d"/>
+                                    <constraint firstItem="M4h-Ak-bX8" firstAttribute="top" secondItem="19O-eV-m0M" secondAttribute="top" constant="30" id="2SC-JV-DiR"/>
+                                    <constraint firstItem="mN2-Uc-yaV" firstAttribute="leading" secondItem="19O-eV-m0M" secondAttribute="leading" id="3kH-BX-DZr"/>
+                                    <constraint firstAttribute="trailing" secondItem="sFh-P9-QI1" secondAttribute="trailing" constant="10" id="4Nq-x3-VzV"/>
+                                    <constraint firstAttribute="trailing" secondItem="mN2-Uc-yaV" secondAttribute="trailing" id="7CC-pB-7F2"/>
+                                    <constraint firstItem="mN2-Uc-yaV" firstAttribute="top" secondItem="sFh-P9-QI1" secondAttribute="bottom" id="A8y-hQ-FT5"/>
+                                    <constraint firstAttribute="bottom" secondItem="mN2-Uc-yaV" secondAttribute="bottom" id="SvQ-xE-im3"/>
+                                    <constraint firstItem="M4h-Ak-bX8" firstAttribute="leading" secondItem="19O-eV-m0M" secondAttribute="leading" constant="20" id="Vxp-GJ-D3A"/>
+                                    <constraint firstItem="sFh-P9-QI1" firstAttribute="leading" secondItem="19O-eV-m0M" secondAttribute="leading" constant="10" id="bqg-Eh-a8k"/>
+                                    <constraint firstAttribute="height" constant="793" id="uLl-Wc-hUM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="AbF-1T-l5z" secondAttribute="trailing" id="2tI-Sw-1Eb"/>
+                            <constraint firstItem="AbF-1T-l5z" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="2uW-CJ-UFT"/>
+                            <constraint firstAttribute="bottom" secondItem="AbF-1T-l5z" secondAttribute="bottom" id="6B5-d4-7Yq"/>
+                            <constraint firstAttribute="bottom" secondItem="19O-eV-m0M" secondAttribute="bottom" id="7uB-gd-aBr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="19O-eV-m0M" secondAttribute="trailing" id="A6W-aR-Qoe"/>
+                            <constraint firstItem="19O-eV-m0M" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="F0h-mb-oqK"/>
+                            <constraint firstItem="AbF-1T-l5z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="aMp-cW-YSx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerViewHeightConstraint" destination="uLl-Wc-hUM" id="ocS-t6-mjO"/>
+                        <outlet property="stackViewTopConstraint" destination="1r7-as-f6d" id="L6k-8P-dLG"/>
+                        <outlet property="tableView" destination="mN2-Uc-yaV" id="CcI-Kw-JDZ"/>
+                        <outlet property="tripContainerView" destination="19O-eV-m0M" id="bSN-pM-Gfn"/>
+                        <outlet property="tripTitleTopLabel" destination="LfC-3I-SlR" id="YPD-fQ-ws3"/>
+                        <outlet property="tripViewCrossButton" destination="M4h-Ak-bX8" id="CKo-zU-cKB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="-27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="AppBackground">
+            <color red="0.92900002002716064" green="0.94099998474121094" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="HighlightViewBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

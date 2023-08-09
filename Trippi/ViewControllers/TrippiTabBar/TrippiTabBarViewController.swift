@@ -170,6 +170,11 @@ extension TrippiTabBarViewController: UICollectionViewDelegate, UICollectionView
 
 //MARK: - Home Delegate
 extension TrippiTabBarViewController: HomeViewControllerDelegate {
+    func pushTripVC() {
+        let vc = getVC(storyboard: .trip, vc: TripViewController.identifier)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func hideAddButton() {
         UIView.animate(withDuration: 0.3) {
             self.addButton.alpha = 0

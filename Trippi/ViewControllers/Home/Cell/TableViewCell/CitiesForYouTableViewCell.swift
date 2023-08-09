@@ -9,12 +9,15 @@ import UIKit
 
 protocol CitiesForYouTableViewCellDelegate: AnyObject {
     func onClickSeeAll()
+    func onDidSelectCity(selectedIndexPath: IndexPath, indexPath: IndexPath)
 }
 
 class CitiesForYouTableViewCell: UITableViewCell {
     
     weak var delegate: CitiesForYouTableViewCellDelegate?
     var cities = [HomeCityModel]()
+    
+    var indexPath = IndexPath()
         
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -31,7 +34,8 @@ class CitiesForYouTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(cities: [HomeCityModel]) {
+    func configure(cities: [HomeCityModel], indexPath: IndexPath) {
+        self.indexPath = indexPath
         self.cities = cities
         DispatchQueue.main.async {
             self.collectionView.reloadData()
@@ -54,6 +58,10 @@ extension CitiesForYouTableViewCell: UICollectionViewDelegate, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CityCollectionViewCell.identifier, for: indexPath) as! CityCollectionViewCell
         cell.configure(city: cities[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.onDidSelectCity(selectedIndexPath: indexPath, indexPath: self.indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

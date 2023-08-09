@@ -17,8 +17,8 @@ class CommentsViewController: UIViewController {
         CommentDataModel(id: "2", pic: "User", username: "ajay", comment: "OP", likesCount: "3", isLiked: false),
         CommentDataModel(id: "3", pic: "User", username: "sanil", comment: "GG", likesCount: "6", isLiked: false),
         CommentDataModel(id: "4", pic: "User", username: "sunil", comment: "🤪🤪", likesCount: "0", isLiked: false),
-        CommentDataModel(id: "5", pic: "User", username: "yash", comment: "🥺 😢 😭", likesCount: "2", isLiked: false),
-        CommentDataModel(id: "6", pic: "User", username: "chayan", comment: "😱 😨 😰 😥 😓 🫣", likesCount: "5", isLiked: false)
+        CommentDataModel(id: "5", pic: "User", username: "yash", comment: "🥺😢😭", likesCount: "2", isLiked: false),
+        CommentDataModel(id: "6", pic: "User", username: "chayan", comment: "😱😨😰😥😓🫣", likesCount: "5", isLiked: false)
     ]
     
     

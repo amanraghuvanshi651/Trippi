@@ -58,7 +58,6 @@
 		509922002A7CFE0D004B0BD1 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509921FF2A7CFE0D004B0BD1 /* Profile.storyboard */; };
 		509922022A7CFE1F004B0BD1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509922012A7CFE1F004B0BD1 /* ProfileViewController.swift */; };
 		509922052A7D0AD3004B0BD1 /* TrippiTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509922042A7D0AD3004B0BD1 /* TrippiTabBarItem.swift */; };
-		509922062A7D0C67004B0BD1 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50BB53742A6A7595000DE037 /* Montserrat-VariableFont_wght.ttf */; };
 		5099220B2A7D2A15004B0BD1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5099220A2A7D2A15004B0BD1 /* SplashViewController.swift */; };
 		5099220D2A7D2AA1004B0BD1 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5099220C2A7D2AA1004B0BD1 /* Splash.storyboard */; };
 		509E2DFB2A77AB6E00638F06 /* Fastis in Frameworks */ = {isa = PBXBuildFile; productRef = 509E2DFA2A77AB6E00638F06 /* Fastis */; };
@@ -67,6 +66,12 @@
 		509E2E022A77C5C200638F06 /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E2E012A77C5C200638F06 /* SearchPlaceViewController.swift */; };
 		50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2C8402A7230920096850D /* CreateTripViewController.swift */; };
 		50A2C8432A72309E0096850D /* CreateTrip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A2C8422A72309E0096850D /* CreateTrip.storyboard */; };
+		50A32F812A8370E90017191B /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A32F802A8370E90017191B /* Trip.storyboard */; };
+		50A32F842A83713D0017191B /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A32F832A83713D0017191B /* TripViewController.swift */; };
+		50A32F872A83A9170017191B /* TripDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A32F862A83A9170017191B /* TripDataModel.swift */; };
+		50A32F902A83AE290017191B /* TripHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A32F8E2A83AE290017191B /* TripHeaderTableViewCell.swift */; };
+		50A32F912A83AE290017191B /* TripHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A32F8F2A83AE290017191B /* TripHeaderTableViewCell.xib */; };
+		50A32F922A83B24D0017191B /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50BB53742A6A7595000DE037 /* Montserrat-VariableFont_wght.ttf */; };
 		50A4027D2A7BA36F0019F8EC /* HasButtonVibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4027C2A7BA36F0019F8EC /* HasButtonVibration.swift */; };
 		50A4027F2A7BB4990019F8EC /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4027E2A7BB4990019F8EC /* UIButtonExtension.swift */; };
 		50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */; };
@@ -184,6 +189,11 @@
 		509E2E012A77C5C200638F06 /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
 		50A2C8402A7230920096850D /* CreateTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
 		50A2C8422A72309E0096850D /* CreateTrip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateTrip.storyboard; sourceTree = "<group>"; };
+		50A32F802A8370E90017191B /* Trip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
+		50A32F832A83713D0017191B /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		50A32F862A83A9170017191B /* TripDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDataModel.swift; sourceTree = "<group>"; };
+		50A32F8E2A83AE290017191B /* TripHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		50A32F8F2A83AE290017191B /* TripHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		50A4027C2A7BA36F0019F8EC /* HasButtonVibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasButtonVibration.swift; sourceTree = "<group>"; };
 		50A4027E2A7BB4990019F8EC /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -441,6 +451,33 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		50A32F822A83711E0017191B /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				50A32F892A83A9B10017191B /* Cell */,
+				50A32F852A83A8FA0017191B /* Model */,
+				50A32F832A83713D0017191B /* TripViewController.swift */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		50A32F852A83A8FA0017191B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				50A32F862A83A9170017191B /* TripDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		50A32F892A83A9B10017191B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				50A32F8E2A83AE290017191B /* TripHeaderTableViewCell.swift */,
+				50A32F8F2A83AE290017191B /* TripHeaderTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		50A4027B2A7BA30F0019F8EC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,16 +558,17 @@
 		50BB53702A6A729C000DE037 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				50BB53832A6A8BF3000DE037 /* OnBoarding */,
 				509921F02A7CDC68004B0BD1 /* TrippiTabBar */,
-				507B87852A825576004D3DBE /* Share */,
-				507B87822A825567004D3DBE /* Comments */,
-				509922032A7CFE2F004B0BD1 /* Profile */,
+				50BB53842A6A8C06000DE037 /* Home */,
 				509921FC2A7CFDD2004B0BD1 /* Discovery */,
+				509922032A7CFE2F004B0BD1 /* Profile */,
 				509E2DFE2A77C59500638F06 /* SearchPlace */,
 				50A2C83F2A72307C0096850D /* CreateTrip */,
 				50C3D09C2A6E5FBA00DDED53 /* Setting */,
-				50BB53842A6A8C06000DE037 /* Home */,
-				50BB53832A6A8BF3000DE037 /* OnBoarding */,
+				50A32F822A83711E0017191B /* Trip */,
+				507B87822A825567004D3DBE /* Comments */,
+				507B87852A825576004D3DBE /* Share */,
 				5099220A2A7D2A15004B0BD1 /* SplashViewController.swift */,
 			);
 			path = ViewControllers;
@@ -551,6 +589,7 @@
 				50A2C8422A72309E0096850D /* CreateTrip.storyboard */,
 				78FDE5842A744DC800AA5C6E /* SignUp.storyboard */,
 				5099220C2A7D2AA1004B0BD1 /* Splash.storyboard */,
+				50A32F802A8370E90017191B /* Trip.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -823,13 +862,14 @@
 				50BB537D2A6A790C000DE037 /* Home.storyboard in Resources */,
 				5091CD882A7AA1A4005D9A28 /* Moment7.jpg in Resources */,
 				50BB534D2A6A728B000DE037 /* LaunchScreen.storyboard in Resources */,
-				509922062A7D0C67004B0BD1 /* Montserrat-VariableFont_wght.ttf in Resources */,
 				5091CD872A7AA1A4005D9A28 /* Moment8.jpg in Resources */,
+				50A32F812A8370E90017191B /* Trip.storyboard in Resources */,
 				5091CD8D2A7AA1A4005D9A28 /* Moment1.jpg in Resources */,
 				507B87A22A826D83004D3DBE /* CommentTableViewCell.xib in Resources */,
 				5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */,
 				509E2E002A77C5AD00638F06 /* SearchPlace.storyboard in Resources */,
 				5091CDA42A7AA2BA005D9A28 /* TripImage2.jpg in Resources */,
+				50A32F912A83AE290017191B /* TripHeaderTableViewCell.xib in Resources */,
 				50BB53A12A6ABC1B000DE037 /* CityCollectionViewCell.xib in Resources */,
 				5099220D2A7D2AA1004B0BD1 /* Splash.storyboard in Resources */,
 				507B87942A825576004D3DBE /* ShareToUserTableViewCell.xib in Resources */,
@@ -842,6 +882,7 @@
 				50BB53912A6A9641000DE037 /* CitiesForYouTableViewCell.xib in Resources */,
 				5091CDA52A7AA2BA005D9A28 /* TripImage4.jpg in Resources */,
 				507B87922A825576004D3DBE /* SharingOptionCollectionViewCell.xib in Resources */,
+				50A32F922A83B24D0017191B /* Montserrat-VariableFont_wght.ttf in Resources */,
 				5091CD8C2A7AA1A4005D9A28 /* Moment3.jpg in Resources */,
 				5091CD892A7AA1A4005D9A28 /* Moment2.jpg in Resources */,
 				5091CD8B2A7AA1A4005D9A28 /* Moment5.jpg in Resources */,
@@ -887,6 +928,7 @@
 				5099220B2A7D2A15004B0BD1 /* SplashViewController.swift in Sources */,
 				50BE53042A79319600B445BB /* MomentTableViewCell.swift in Sources */,
 				50AF64C12A6FFD7E005FFAB8 /* SettingsModel.swift in Sources */,
+				50A32F872A83A9170017191B /* TripDataModel.swift in Sources */,
 				507B87902A825576004D3DBE /* ShareViewController.swift in Sources */,
 				50C3D0A32A6EADCA00DDED53 /* ReversedGeoLocation.swift in Sources */,
 				507B87952A825576004D3DBE /* ShareUserModel.swift in Sources */,
@@ -898,10 +940,12 @@
 				50AF64C52A701421005FFAB8 /* Animator.swift in Sources */,
 				50BF321F2A73C10400F7CD28 /* TopJourneysTableViewCell.swift in Sources */,
 				50BE53072A7946D600B445BB /* NSObject+Extension.swift in Sources */,
+				50A32F902A83AE290017191B /* TripHeaderTableViewCell.swift in Sources */,
 				509E2E022A77C5C200638F06 /* SearchPlaceViewController.swift in Sources */,
 				507B87972A82559C004D3DBE /* UIViewExtension.swift in Sources */,
 				507B87932A825576004D3DBE /* ShareToUserTableViewCell.swift in Sources */,
 				50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */,
+				50A32F842A83713D0017191B /* TripViewController.swift in Sources */,
 				5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */,
 				50BB53782A6A781A000DE037 /* Constants.swift in Sources */,
 				50BF32232A73CB4900F7CD28 /* TopJourneysCollectionViewCell.swift in Sources */,
@@ -1118,9 +1162,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.FruityCode.Trippi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1148,9 +1195,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.FruityCode.Trippi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
