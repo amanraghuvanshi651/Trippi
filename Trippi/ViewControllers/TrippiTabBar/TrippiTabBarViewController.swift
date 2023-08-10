@@ -21,13 +21,13 @@ class TrippiTabBarViewController: UIViewController {
     ]
     
     //view controllers
-    var home: HomeViewController = {
-        let vc = getVC(storyboard: .home, vc: HomeViewController.identifier) as! HomeViewController
+    var dashboard: DashboardViewController = {
+        let vc = getVC(storyboard: .dashboard, vc: DashboardViewController.identifier) as! DashboardViewController
         vc.view.alpha = 0
         return vc
     }()
-    var dashboard: DiscoveryViewController = {
-        let vc = getVC(storyboard: .discovery, vc: DiscoveryViewController.identifier) as! DiscoveryViewController
+    var home: HomeViewController = {
+        let vc = getVC(storyboard: .home, vc: HomeViewController.identifier) as! HomeViewController
         vc.view.alpha = 0
         return vc
     }()
@@ -80,7 +80,7 @@ class TrippiTabBarViewController: UIViewController {
     
     func setUpItemWidth() {
         if !isInitialViewLoaded {
-            addHomeVC()
+            addDashboardVC()
             isInitialViewLoaded = true
         }
     }
@@ -151,13 +151,13 @@ extension TrippiTabBarViewController: UICollectionViewDelegate, UICollectionView
         // Add the child's View as a subview
         switch indexPath.row {
         case 0:
-            addHomeVC()
-        case 1:
             addDashboardVC()
+        case 1:
+            addHomeVC()
         case 2:
             addProfileVC()
         default:
-            addHomeVC()
+            addDashboardVC()
         }
     }
     

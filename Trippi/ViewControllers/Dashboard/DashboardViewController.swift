@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DiscoveryViewController: UIViewController {
+class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

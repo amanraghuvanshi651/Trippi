@@ -53,8 +53,8 @@
 		509921F42A7CDC9A004B0BD1 /* TrippiTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509921F32A7CDC9A004B0BD1 /* TrippiTabBar.storyboard */; };
 		509921F82A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509921F62A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.swift */; };
 		509921F92A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 509921F72A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.xib */; };
-		509921FB2A7CFDCA004B0BD1 /* Discovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509921FA2A7CFDCA004B0BD1 /* Discovery.storyboard */; };
-		509921FE2A7CFDE8004B0BD1 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509921FD2A7CFDE8004B0BD1 /* DiscoveryViewController.swift */; };
+		509921FB2A7CFDCA004B0BD1 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509921FA2A7CFDCA004B0BD1 /* Dashboard.storyboard */; };
+		509921FE2A7CFDE8004B0BD1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509921FD2A7CFDE8004B0BD1 /* DashboardViewController.swift */; };
 		509922002A7CFE0D004B0BD1 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509921FF2A7CFE0D004B0BD1 /* Profile.storyboard */; };
 		509922022A7CFE1F004B0BD1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509922012A7CFE1F004B0BD1 /* ProfileViewController.swift */; };
 		509922052A7D0AD3004B0BD1 /* TrippiTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509922042A7D0AD3004B0BD1 /* TrippiTabBarItem.swift */; };
@@ -177,8 +177,8 @@
 		509921F32A7CDC9A004B0BD1 /* TrippiTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrippiTabBar.storyboard; sourceTree = "<group>"; };
 		509921F62A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippiTabBarItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		509921F72A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrippiTabBarItemCollectionViewCell.xib; sourceTree = "<group>"; };
-		509921FA2A7CFDCA004B0BD1 /* Discovery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Discovery.storyboard; sourceTree = "<group>"; };
-		509921FD2A7CFDE8004B0BD1 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
+		509921FA2A7CFDCA004B0BD1 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		509921FD2A7CFDE8004B0BD1 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		509921FF2A7CFE0D004B0BD1 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		509922012A7CFE1F004B0BD1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		509922042A7D0AD3004B0BD1 /* TrippiTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippiTabBarItem.swift; sourceTree = "<group>"; };
@@ -400,12 +400,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		509921FC2A7CFDD2004B0BD1 /* Discovery */ = {
+		509921FC2A7CFDD2004B0BD1 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				509921FD2A7CFDE8004B0BD1 /* DiscoveryViewController.swift */,
+				783AD3122A85679200AF8EE0 /* Cell */,
+				509921FD2A7CFDE8004B0BD1 /* DashboardViewController.swift */,
 			);
-			path = Discovery;
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		509922032A7CFE2F004B0BD1 /* Profile */ = {
@@ -558,10 +559,10 @@
 		50BB53702A6A729C000DE037 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				50BB53832A6A8BF3000DE037 /* OnBoarding */,
 				509921F02A7CDC68004B0BD1 /* TrippiTabBar */,
+				50BB53832A6A8BF3000DE037 /* OnBoarding */,
 				50BB53842A6A8C06000DE037 /* Home */,
-				509921FC2A7CFDD2004B0BD1 /* Discovery */,
+				509921FC2A7CFDD2004B0BD1 /* Dashboard */,
 				509922032A7CFE2F004B0BD1 /* Profile */,
 				509E2DFE2A77C59500638F06 /* SearchPlace */,
 				50A2C83F2A72307C0096850D /* CreateTrip */,
@@ -579,7 +580,7 @@
 			children = (
 				509921F32A7CDC9A004B0BD1 /* TrippiTabBar.storyboard */,
 				50BB537C2A6A790C000DE037 /* Home.storyboard */,
-				509921FA2A7CFDCA004B0BD1 /* Discovery.storyboard */,
+				509921FA2A7CFDCA004B0BD1 /* Dashboard.storyboard */,
 				509921FF2A7CFE0D004B0BD1 /* Profile.storyboard */,
 				507B87762A82542B004D3DBE /* Share.storyboard */,
 				507B87742A825417004D3DBE /* Comments.storyboard */,
@@ -732,6 +733,13 @@
 			path = LottieJSON;
 			sourceTree = "<group>";
 		};
+		783AD3122A85679200AF8EE0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -856,7 +864,7 @@
 				509921F92A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.xib in Resources */,
 				5091CDA82A7AA2BA005D9A28 /* TripImage6.jpg in Resources */,
 				5091CD8F2A7AA1A4005D9A28 /* Moment4.jpg in Resources */,
-				509921FB2A7CFDCA004B0BD1 /* Discovery.storyboard in Resources */,
+				509921FB2A7CFDCA004B0BD1 /* Dashboard.storyboard in Resources */,
 				5091CDA62A7AA2BA005D9A28 /* TripImage1.jpg in Resources */,
 				5091CDA72A7AA2BA005D9A28 /* TripImage5.jpg in Resources */,
 				50BB537D2A6A790C000DE037 /* Home.storyboard in Resources */,
@@ -949,7 +957,7 @@
 				5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */,
 				50BB53782A6A781A000DE037 /* Constants.swift in Sources */,
 				50BF32232A73CB4900F7CD28 /* TopJourneysCollectionViewCell.swift in Sources */,
-				509921FE2A7CFDE8004B0BD1 /* DiscoveryViewController.swift in Sources */,
+				509921FE2A7CFDE8004B0BD1 /* DashboardViewController.swift in Sources */,
 				5091CD782A7A4A0E005D9A28 /* HomeDataModel.swift in Sources */,
 				507B87912A825576004D3DBE /* SharingOptionCollectionViewCell.swift in Sources */,
 				5091CD762A7A3682005D9A28 /* MomentModel.swift in Sources */,
