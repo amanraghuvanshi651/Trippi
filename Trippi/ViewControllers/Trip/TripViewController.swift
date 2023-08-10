@@ -13,7 +13,7 @@ class TripViewController: UIViewController {
     let dismissibleHeight: CGFloat = 150
     let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 50
     let minimumContainerHeight:CGFloat = UIScreen.main.bounds.height / 2
-    var currentContainerHeight: CGFloat = UIScreen.main.bounds.height - 50
+    var currentContainerHeight: CGFloat = UIScreen.main.bounds.height / 2
     
     var previousScrollOffset: CGFloat = 0
     
@@ -59,7 +59,7 @@ class TripViewController: UIViewController {
         panGesture.delaysTouchesBegan = false
         panGesture.delaysTouchesEnded = false
         tableView.addGestureRecognizer(panGesture)
-        panGesture.isEnabled = false
+//        panGesture.isEnabled = false
     }
     
     @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
@@ -121,7 +121,7 @@ class TripViewController: UIViewController {
 //MARK: - Table view Delegate and Datasource
 extension TripViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

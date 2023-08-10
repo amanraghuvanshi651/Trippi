@@ -60,6 +60,7 @@
 		509922052A7D0AD3004B0BD1 /* TrippiTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509922042A7D0AD3004B0BD1 /* TrippiTabBarItem.swift */; };
 		5099220B2A7D2A15004B0BD1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5099220A2A7D2A15004B0BD1 /* SplashViewController.swift */; };
 		5099220D2A7D2AA1004B0BD1 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5099220C2A7D2AA1004B0BD1 /* Splash.storyboard */; };
+		509B837B2A85120F00F372BB /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50BB53742A6A7595000DE037 /* Montserrat-VariableFont_wght.ttf */; };
 		509E2DFB2A77AB6E00638F06 /* Fastis in Frameworks */ = {isa = PBXBuildFile; productRef = 509E2DFA2A77AB6E00638F06 /* Fastis */; };
 		509E2DFD2A77AE6700638F06 /* UIcolor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E2DFC2A77AE6700638F06 /* UIcolor+Extension.swift */; };
 		509E2E002A77C5AD00638F06 /* SearchPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509E2DFF2A77C5AD00638F06 /* SearchPlace.storyboard */; };
@@ -71,7 +72,6 @@
 		50A32F872A83A9170017191B /* TripDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A32F862A83A9170017191B /* TripDataModel.swift */; };
 		50A32F902A83AE290017191B /* TripHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A32F8E2A83AE290017191B /* TripHeaderTableViewCell.swift */; };
 		50A32F912A83AE290017191B /* TripHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A32F8F2A83AE290017191B /* TripHeaderTableViewCell.xib */; };
-		50A32F922A83B24D0017191B /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50BB53742A6A7595000DE037 /* Montserrat-VariableFont_wght.ttf */; };
 		50A4027D2A7BA36F0019F8EC /* HasButtonVibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4027C2A7BA36F0019F8EC /* HasButtonVibration.swift */; };
 		50A4027F2A7BB4990019F8EC /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A4027E2A7BB4990019F8EC /* UIButtonExtension.swift */; };
 		50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF64BC2A6FC5AE005FFAB8 /* SettingTableViewCell.swift */; };
@@ -882,7 +882,7 @@
 				50BB53912A6A9641000DE037 /* CitiesForYouTableViewCell.xib in Resources */,
 				5091CDA52A7AA2BA005D9A28 /* TripImage4.jpg in Resources */,
 				507B87922A825576004D3DBE /* SharingOptionCollectionViewCell.xib in Resources */,
-				50A32F922A83B24D0017191B /* Montserrat-VariableFont_wght.ttf in Resources */,
+				509B837B2A85120F00F372BB /* Montserrat-VariableFont_wght.ttf in Resources */,
 				5091CD8C2A7AA1A4005D9A28 /* Moment3.jpg in Resources */,
 				5091CD892A7AA1A4005D9A28 /* Moment2.jpg in Resources */,
 				5091CD8B2A7AA1A4005D9A28 /* Moment5.jpg in Resources */,
