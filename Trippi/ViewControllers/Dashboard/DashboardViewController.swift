@@ -9,21 +9,36 @@ import UIKit
 
 class DashboardViewController: UIViewController {
 
+    //MARK: - Outlet's
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: OngoingTripTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: OngoingTripTableViewCell.identifier)
+        tableView.register(UINib(nibName: PlannedTripTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PlannedTripTableViewCell.identifier)
+    }
+}
 
-        // Do any additional setup after loading the view.
+//MARK: - Table View Delegate and DataSource
+extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: OngoingTripTableViewCell.identifier) as! OngoingTripTableViewCell
+            cell.selectionStyle = .none
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: PlannedTripTableViewCell.identifier) as! PlannedTripTableViewCell
+            cell.selectionStyle = .none
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
-    */
-
 }

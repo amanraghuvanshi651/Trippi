@@ -60,6 +60,12 @@
 		509922052A7D0AD3004B0BD1 /* TrippiTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509922042A7D0AD3004B0BD1 /* TrippiTabBarItem.swift */; };
 		5099220B2A7D2A15004B0BD1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5099220A2A7D2A15004B0BD1 /* SplashViewController.swift */; };
 		5099220D2A7D2AA1004B0BD1 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5099220C2A7D2AA1004B0BD1 /* Splash.storyboard */; };
+		509A0BEB2A85F32600067D45 /* OngoingTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A0BE92A85F32600067D45 /* OngoingTripTableViewCell.swift */; };
+		509A0BEC2A85F32600067D45 /* OngoingTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 509A0BEA2A85F32600067D45 /* OngoingTripTableViewCell.xib */; };
+		509A0BEF2A865A6E00067D45 /* PlannedTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A0BED2A865A6E00067D45 /* PlannedTripTableViewCell.swift */; };
+		509A0BF02A865A6E00067D45 /* PlannedTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 509A0BEE2A865A6E00067D45 /* PlannedTripTableViewCell.xib */; };
+		509A0BF42A8661A200067D45 /* PlannedTripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A0BF22A8661A200067D45 /* PlannedTripCollectionViewCell.swift */; };
+		509A0BF52A8661A200067D45 /* PlannedTripCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 509A0BF32A8661A200067D45 /* PlannedTripCollectionViewCell.xib */; };
 		509B837B2A85120F00F372BB /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50BB53742A6A7595000DE037 /* Montserrat-VariableFont_wght.ttf */; };
 		509E2DFB2A77AB6E00638F06 /* Fastis in Frameworks */ = {isa = PBXBuildFile; productRef = 509E2DFA2A77AB6E00638F06 /* Fastis */; };
 		509E2DFD2A77AE6700638F06 /* UIcolor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509E2DFC2A77AE6700638F06 /* UIcolor+Extension.swift */; };
@@ -184,6 +190,12 @@
 		509922042A7D0AD3004B0BD1 /* TrippiTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippiTabBarItem.swift; sourceTree = "<group>"; };
 		5099220A2A7D2A15004B0BD1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		5099220C2A7D2AA1004B0BD1 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		509A0BE92A85F32600067D45 /* OngoingTripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OngoingTripTableViewCell.swift; path = Trippi/ViewControllers/Trip/Cell/OngoingTripTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		509A0BEA2A85F32600067D45 /* OngoingTripTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OngoingTripTableViewCell.xib; path = Trippi/ViewControllers/Trip/Cell/OngoingTripTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		509A0BED2A865A6E00067D45 /* PlannedTripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlannedTripTableViewCell.swift; path = Trippi/ViewControllers/Trip/Cell/PlannedTripTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		509A0BEE2A865A6E00067D45 /* PlannedTripTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PlannedTripTableViewCell.xib; path = Trippi/ViewControllers/Trip/Cell/PlannedTripTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		509A0BF22A8661A200067D45 /* PlannedTripCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedTripCollectionViewCell.swift; sourceTree = "<group>"; };
+		509A0BF32A8661A200067D45 /* PlannedTripCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlannedTripCollectionViewCell.xib; sourceTree = "<group>"; };
 		509E2DFC2A77AE6700638F06 /* UIcolor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIcolor+Extension.swift"; sourceTree = "<group>"; };
 		509E2DFF2A77C5AD00638F06 /* SearchPlace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchPlace.storyboard; sourceTree = "<group>"; };
 		509E2E012A77C5C200638F06 /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
@@ -403,7 +415,8 @@
 		509921FC2A7CFDD2004B0BD1 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				783AD3122A85679200AF8EE0 /* Cell */,
+				509A0BF12A86615200067D45 /* CollectionViewCell */,
+				783AD3122A85679200AF8EE0 /* TableViewCell */,
 				509921FD2A7CFDE8004B0BD1 /* DashboardViewController.swift */,
 			);
 			path = Dashboard;
@@ -415,6 +428,15 @@
 				509922012A7CFE1F004B0BD1 /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		509A0BF12A86615200067D45 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				509A0BF22A8661A200067D45 /* PlannedTripCollectionViewCell.swift */,
+				509A0BF32A8661A200067D45 /* PlannedTripCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		509E2DFE2A77C59500638F06 /* SearchPlace */ = {
@@ -733,11 +755,15 @@
 			path = LottieJSON;
 			sourceTree = "<group>";
 		};
-		783AD3122A85679200AF8EE0 /* Cell */ = {
+		783AD3122A85679200AF8EE0 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				509A0BE92A85F32600067D45 /* OngoingTripTableViewCell.swift */,
+				509A0BEA2A85F32600067D45 /* OngoingTripTableViewCell.xib */,
+				509A0BED2A865A6E00067D45 /* PlannedTripTableViewCell.swift */,
+				509A0BEE2A865A6E00067D45 /* PlannedTripTableViewCell.xib */,
 			);
-			path = Cell;
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -863,12 +889,14 @@
 				5091CD8A2A7AA1A4005D9A28 /* Moment9.jpg in Resources */,
 				509921F92A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.xib in Resources */,
 				5091CDA82A7AA2BA005D9A28 /* TripImage6.jpg in Resources */,
+				509A0BF02A865A6E00067D45 /* PlannedTripTableViewCell.xib in Resources */,
 				5091CD8F2A7AA1A4005D9A28 /* Moment4.jpg in Resources */,
 				509921FB2A7CFDCA004B0BD1 /* Dashboard.storyboard in Resources */,
 				5091CDA62A7AA2BA005D9A28 /* TripImage1.jpg in Resources */,
 				5091CDA72A7AA2BA005D9A28 /* TripImage5.jpg in Resources */,
 				50BB537D2A6A790C000DE037 /* Home.storyboard in Resources */,
 				5091CD882A7AA1A4005D9A28 /* Moment7.jpg in Resources */,
+				509A0BEC2A85F32600067D45 /* OngoingTripTableViewCell.xib in Resources */,
 				50BB534D2A6A728B000DE037 /* LaunchScreen.storyboard in Resources */,
 				5091CD872A7AA1A4005D9A28 /* Moment8.jpg in Resources */,
 				50A32F812A8370E90017191B /* Trip.storyboard in Resources */,
@@ -901,6 +929,7 @@
 				5091CD9C2A7AA289005D9A28 /* Moscow.jpg in Resources */,
 				507B87752A825417004D3DBE /* Comments.storyboard in Resources */,
 				50BB53482A6A7289000DE037 /* OnBoarding.storyboard in Resources */,
+				509A0BF52A8661A200067D45 /* PlannedTripCollectionViewCell.xib in Resources */,
 				50A2C8432A72309E0096850D /* CreateTrip.storyboard in Resources */,
 				507B87772A82542B004D3DBE /* Share.storyboard in Resources */,
 				78FDE5852A744DC800AA5C6E /* SignUp.storyboard in Resources */,
@@ -934,6 +963,7 @@
 				50BB53452A6A7289000DE037 /* OnBoardingViewController.swift in Sources */,
 				509921F22A7CDC8A004B0BD1 /* TrippiTabBarViewController.swift in Sources */,
 				5099220B2A7D2A15004B0BD1 /* SplashViewController.swift in Sources */,
+				509A0BF42A8661A200067D45 /* PlannedTripCollectionViewCell.swift in Sources */,
 				50BE53042A79319600B445BB /* MomentTableViewCell.swift in Sources */,
 				50AF64C12A6FFD7E005FFAB8 /* SettingsModel.swift in Sources */,
 				50A32F872A83A9170017191B /* TripDataModel.swift in Sources */,
@@ -942,6 +972,7 @@
 				507B87952A825576004D3DBE /* ShareUserModel.swift in Sources */,
 				50BB53412A6A7289000DE037 /* AppDelegate.swift in Sources */,
 				50BB53432A6A7289000DE037 /* SceneDelegate.swift in Sources */,
+				509A0BEB2A85F32600067D45 /* OngoingTripTableViewCell.swift in Sources */,
 				50BB53862A6A8C1F000DE037 /* HomeViewModel.swift in Sources */,
 				50C3D0A02A6E613800DDED53 /* SettingViewController.swift in Sources */,
 				50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */,
@@ -953,6 +984,7 @@
 				507B87972A82559C004D3DBE /* UIViewExtension.swift in Sources */,
 				507B87932A825576004D3DBE /* ShareToUserTableViewCell.swift in Sources */,
 				50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */,
+				509A0BEF2A865A6E00067D45 /* PlannedTripTableViewCell.swift in Sources */,
 				50A32F842A83713D0017191B /* TripViewController.swift in Sources */,
 				5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */,
 				50BB53782A6A781A000DE037 /* Constants.swift in Sources */,
