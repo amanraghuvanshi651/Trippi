@@ -29,11 +29,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="19O-eV-m0M">
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sFh-P9-QI1">
-                                        <rect key="frame" x="10" y="10" width="373" height="0.0"/>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sFh-P9-QI1">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nG3-im-vu7">
-                                                <rect key="frame" x="0.0" y="0.0" width="373" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
                                                 <subviews>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfC-3I-SlR">
                                                         <rect key="frame" x="0.0" y="0.0" width="92" height="0.0"/>
@@ -44,9 +44,10 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
+                                        <color key="backgroundColor" name="BadgeColor"/>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mN2-Uc-yaV">
-                                        <rect key="frame" x="0.0" y="10" width="393" height="783"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="dataSource" destination="Y6W-OH-hqX" id="wsZ-dq-cQP"/>
@@ -72,15 +73,15 @@
                                 </subviews>
                                 <color key="backgroundColor" name="AppBackground"/>
                                 <constraints>
-                                    <constraint firstItem="sFh-P9-QI1" firstAttribute="top" secondItem="19O-eV-m0M" secondAttribute="top" constant="10" id="1r7-as-f6d"/>
+                                    <constraint firstItem="sFh-P9-QI1" firstAttribute="top" secondItem="19O-eV-m0M" secondAttribute="top" id="1r7-as-f6d"/>
                                     <constraint firstItem="M4h-Ak-bX8" firstAttribute="top" secondItem="19O-eV-m0M" secondAttribute="top" constant="30" id="2SC-JV-DiR"/>
                                     <constraint firstItem="mN2-Uc-yaV" firstAttribute="leading" secondItem="19O-eV-m0M" secondAttribute="leading" id="3kH-BX-DZr"/>
-                                    <constraint firstAttribute="trailing" secondItem="sFh-P9-QI1" secondAttribute="trailing" constant="10" id="4Nq-x3-VzV"/>
+                                    <constraint firstAttribute="trailing" secondItem="sFh-P9-QI1" secondAttribute="trailing" id="4Nq-x3-VzV"/>
                                     <constraint firstAttribute="trailing" secondItem="mN2-Uc-yaV" secondAttribute="trailing" id="7CC-pB-7F2"/>
                                     <constraint firstItem="mN2-Uc-yaV" firstAttribute="top" secondItem="sFh-P9-QI1" secondAttribute="bottom" id="A8y-hQ-FT5"/>
                                     <constraint firstAttribute="bottom" secondItem="mN2-Uc-yaV" secondAttribute="bottom" id="SvQ-xE-im3"/>
                                     <constraint firstItem="M4h-Ak-bX8" firstAttribute="leading" secondItem="19O-eV-m0M" secondAttribute="leading" constant="20" id="Vxp-GJ-D3A"/>
-                                    <constraint firstItem="sFh-P9-QI1" firstAttribute="leading" secondItem="19O-eV-m0M" secondAttribute="leading" constant="10" id="bqg-Eh-a8k"/>
+                                    <constraint firstItem="sFh-P9-QI1" firstAttribute="leading" secondItem="19O-eV-m0M" secondAttribute="leading" id="bqg-Eh-a8k"/>
                                     <constraint firstAttribute="height" constant="793" id="uLl-Wc-hUM"/>
                                 </constraints>
                             </view>
@@ -101,6 +102,7 @@
                         <outlet property="containerViewHeightConstraint" destination="uLl-Wc-hUM" id="ocS-t6-mjO"/>
                         <outlet property="stackViewTopConstraint" destination="1r7-as-f6d" id="L6k-8P-dLG"/>
                         <outlet property="tableView" destination="mN2-Uc-yaV" id="CcI-Kw-JDZ"/>
+                        <outlet property="topStackView" destination="sFh-P9-QI1" id="moL-Wr-bJp"/>
                         <outlet property="tripContainerView" destination="19O-eV-m0M" id="bSN-pM-Gfn"/>
                         <outlet property="tripTitleTopLabel" destination="LfC-3I-SlR" id="YPD-fQ-ws3"/>
                         <outlet property="tripViewCrossButton" destination="M4h-Ak-bX8" id="CKo-zU-cKB"/>
@@ -115,6 +117,9 @@
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AppBackground">
             <color red="0.92900002002716064" green="0.94099998474121094" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BadgeColor">
+            <color red="0.98000001907348633" green="0.31400001049041748" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="HighlightViewBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

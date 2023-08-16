@@ -24,6 +24,7 @@ class TripViewController: UIViewController {
     //MARK: - Outlets
     //Trip View
     @IBOutlet weak var tripContainerView: UIView!
+    @IBOutlet weak var topStackView: UIStackView!
     @IBOutlet weak var tripViewCrossButton: UIButton!
     
     @IBOutlet weak var tripTitleTopLabel: UILabel!
@@ -58,6 +59,7 @@ class TripViewController: UIViewController {
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture))
         panGesture.delaysTouchesBegan = false
         panGesture.delaysTouchesEnded = false
+        topStackView.addGestureRecognizer(panGesture)
         tableView.addGestureRecognizer(panGesture)
 //        panGesture.isEnabled = false
     }

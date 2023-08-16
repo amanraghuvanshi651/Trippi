@@ -12,6 +12,8 @@ class PlannedTripTableViewCell: UITableViewCell {
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -22,6 +24,11 @@ class PlannedTripTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        collectionViewHeightConstraint.constant = (((collectionView.frame.width / 2) + 20) * 2) + 10
     }
     
 }
@@ -39,6 +46,6 @@ extension PlannedTripTableViewCell: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.width / 2), height: (collectionView.frame.width / 2) + 50)
+        return CGSize(width: (collectionView.frame.width / 2) - 20, height: (collectionView.frame.width / 2) + 20)
     }
 }

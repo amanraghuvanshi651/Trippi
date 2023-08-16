@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-VariableFont_wght.ttf">
+            <string>MontserratRoman-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Dashboard View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -16,7 +21,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vPI-eU-QLh">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ms9-II-NVp">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Trips Yet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b90-Ob-Cqr">
+                                        <rect key="frame" x="20" y="367.33333333333331" width="353" height="24.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="b90-Ob-Cqr" secondAttribute="trailing" constant="20" id="J8e-6k-8wD"/>
+                                    <constraint firstItem="b90-Ob-Cqr" firstAttribute="centerY" secondItem="Ms9-II-NVp" secondAttribute="centerY" id="Rsx-ol-SD7"/>
+                                    <constraint firstItem="b90-Ob-Cqr" firstAttribute="leading" secondItem="Ms9-II-NVp" secondAttribute="leading" constant="20" id="ncD-JO-kWA"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vPI-eU-QLh">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -30,11 +52,16 @@
                         <constraints>
                             <constraint firstItem="vPI-eU-QLh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="BgM-3d-FYz"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vPI-eU-QLh" secondAttribute="trailing" id="DGC-9O-m4K"/>
+                            <constraint firstItem="Ms9-II-NVp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Url-Kf-PQ9"/>
+                            <constraint firstItem="Ms9-II-NVp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jvK-eO-VfV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ms9-II-NVp" secondAttribute="trailing" id="oim-h7-0Ac"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ms9-II-NVp" secondAttribute="bottom" id="rVE-CQ-RKG"/>
                             <constraint firstItem="vPI-eU-QLh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="vp9-Im-kOp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vPI-eU-QLh" secondAttribute="bottom" id="xtG-bT-Q1Z"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="noTripView" destination="Ms9-II-NVp" id="tMd-7j-6ZN"/>
                         <outlet property="tableView" destination="vPI-eU-QLh" id="6Ts-wh-Vpo"/>
                     </connections>
                 </viewController>

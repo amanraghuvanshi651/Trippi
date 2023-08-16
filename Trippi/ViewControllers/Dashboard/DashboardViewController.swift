@@ -11,13 +11,16 @@ class DashboardViewController: UIViewController {
 
     //MARK: - Outlet's
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noTripView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        noTripView.isHidden = true
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: OngoingTripTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: OngoingTripTableViewCell.identifier)
         tableView.register(UINib(nibName: PlannedTripTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PlannedTripTableViewCell.identifier)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 120, right: 0)
     }
 }
 
@@ -36,6 +39,11 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: PlannedTripTableViewCell.identifier) as! PlannedTripTableViewCell
             cell.selectionStyle = .none
+            
+            cell.frame = tableView.bounds
+            cell.layoutIfNeeded()
+            cell.collectionViewHeightConstraint.constant = (((cell.collectionView.frame.width / 2) + 20) * 2) + 10
+            cell.collectionView.reloadData()
             return cell
         default:
             return UITableViewCell()
