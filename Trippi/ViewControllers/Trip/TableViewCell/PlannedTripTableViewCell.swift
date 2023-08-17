@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol PlannedTripTableViewCellDelegate: AnyObject {
+    func didSelectPlannedTrip(indexPath: IndexPath)
+}
+
 class PlannedTripTableViewCell: UITableViewCell {
 
+    weak var delegate: PlannedTripTableViewCellDelegate?
+    
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -47,5 +53,9 @@ extension PlannedTripTableViewCell: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (collectionView.frame.width / 2) - 20, height: (collectionView.frame.width / 2) + 20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectPlannedTrip(indexPath: indexPath)
     }
 }

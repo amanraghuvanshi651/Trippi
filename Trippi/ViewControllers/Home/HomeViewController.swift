@@ -20,7 +20,7 @@ protocol HomeViewControllerDelegate: AnyObject {
 
 class HomeViewController: UIViewController {
     
-    weak var delegate: HomeViewControllerDelegate?
+    weak var delegate: TabBarDelegate?
     private var viewModel = HomeViewModel()
     
     var animationSpeed = 0.8

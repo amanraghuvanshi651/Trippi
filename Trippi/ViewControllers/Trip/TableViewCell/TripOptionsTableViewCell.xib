@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-VariableFont_wght.ttf">
+            <string>MontserratRoman-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="94" id="KGk-i7-Jjw" customClass="TripOptionsTableViewCell" customModule="Trippi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="412" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="412" height="94"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UuQ-vh-5aP">
+                        <rect key="frame" x="10" y="10" width="349" height="74"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxu-yh-cbT">
+                                <rect key="frame" x="0.0" y="0.0" width="101" height="74"/>
+                                <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Days Plan">
+                                    <color key="titleColor" name="TextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickDaysPlan:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="w3c-s0-nsa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igc-c3-2xS">
+                                <rect key="frame" x="121" y="0.0" width="131" height="74"/>
+                                <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Reservations">
+                                    <color key="titleColor" name="SecondaryTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickReservations:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Tu5-DW-hNR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5L-M2-b2p">
+                                <rect key="frame" x="272" y="0.0" width="77" height="74"/>
+                                <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Budget">
+                                    <color key="titleColor" name="SecondaryTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickBudget:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QzS-mQ-rMW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="UuQ-vh-5aP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="1RQ-DW-nTS"/>
+                    <constraint firstAttribute="bottom" secondItem="UuQ-vh-5aP" secondAttribute="bottom" constant="10" id="Nba-mD-iud"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UuQ-vh-5aP" secondAttribute="trailing" constant="10" id="YPF-wD-gus"/>
+                    <constraint firstItem="UuQ-vh-5aP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ctp-3o-k91"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="bidgetButton" destination="L5L-M2-b2p" id="q8C-z1-h04"/>
+                <outlet property="daysPlanButton" destination="Bxu-yh-cbT" id="tQu-AI-zgg"/>
+                <outlet property="reservationsButton" destination="igc-c3-2xS" id="hcY-xg-3pV"/>
+            </connections>
+            <point key="canvasLocation" x="227.48091603053433" y="35.211267605633807"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="SecondaryTextColor">
+            <color white="0.60000002384185791" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

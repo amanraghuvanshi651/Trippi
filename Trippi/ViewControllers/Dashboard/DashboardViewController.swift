@@ -9,6 +9,8 @@ import UIKit
 
 class DashboardViewController: UIViewController {
 
+    weak var delegate: TabBarDelegate?
+    
     //MARK: - Outlet's
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noTripView: UIView!
@@ -39,6 +41,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: PlannedTripTableViewCell.identifier) as! PlannedTripTableViewCell
             cell.selectionStyle = .none
+            cell.delegate = self
             
             cell.frame = tableView.bounds
             cell.layoutIfNeeded()
@@ -48,5 +51,18 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            delegate?.pushTripVC()
+        }
+    }
+}
+
+//MARK: - Planned Trip Cell Delegate
+extension DashboardViewController: PlannedTripTableViewCellDelegate {
+    func didSelectPlannedTrip(indexPath: IndexPath) {
+        delegate?.pushTripVC()
     }
 }

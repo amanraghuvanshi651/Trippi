@@ -8,6 +8,8 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    weak var delegate: TabBarDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

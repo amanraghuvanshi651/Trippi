@@ -13,13 +13,12 @@ class TripViewController: UIViewController {
     let dismissibleHeight: CGFloat = 150
     let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 50
     let minimumContainerHeight:CGFloat = UIScreen.main.bounds.height / 2
+    
     var currentContainerHeight: CGFloat = UIScreen.main.bounds.height / 2
-    
     var previousScrollOffset: CGFloat = 0
-    
     var isKeyboardVisible = true
-    
     var isDragedByUser = false
+    var selectedOption: TripOptions = .daysPlan
 
     //MARK: - Outlets
     //Trip View
@@ -45,6 +44,8 @@ class TripViewController: UIViewController {
         
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: TripHeaderTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripHeaderTableViewCell.identifier)
+        tableView.register(UINib(nibName: TripOptionsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripOptionsTableViewCell.identifier)
+        tableView.register(UINib(nibName: TripDatesTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripDatesTableViewCell.identifier)
     }
     
     //MARK: - Actions
@@ -123,13 +124,27 @@ class TripViewController: UIViewController {
 //MARK: - Table view Delegate and Datasource
 extension TripViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TripHeaderTableViewCell.identifier, for: indexPath)
-        cell.selectionStyle = .none
-        return cell
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TripHeaderTableViewCell.identifier, for: indexPath) as! TripHeaderTableViewCell
+            cell.selectionStyle = .none
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TripOptionsTableViewCell.identifier, for: indexPath) as! TripOptionsTableViewCell
+            cell.selectionStyle = .none
+            cell.delegate = self
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TripDatesTableViewCell.identifier, for: indexPath) as! TripDatesTableViewCell
+            cell.selectionStyle = .none
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -156,5 +171,12 @@ extension TripViewController: UITableViewDelegate, UITableViewDataSource {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         isDragedByUser = false
+    }
+}
+
+//MARK: - Trip Options cell delegate
+extension TripViewController: TripOptionsTableViewCellDelegate {
+    func onClickOption(option: TripOptions) {
+        selectedOption = option
     }
 }

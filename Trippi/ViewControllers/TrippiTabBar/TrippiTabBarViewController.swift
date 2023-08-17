@@ -87,10 +87,10 @@ class TrippiTabBarViewController: UIViewController {
     
     func addHomeVC() {
         home.delegate = self
-        self.containerView.addSubview(self.home.view)
-        self.home.accessibilityFrame = self.containerView.frame
-        self.home.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.home.didMove(toParent: self)
+        containerView.addSubview(self.home.view)
+        home.accessibilityFrame = self.containerView.frame
+        home.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        home.didMove(toParent: self)
         UIView.animate(withDuration: 0.2,
                        animations: {self.home.view.alpha = 1},
                        completion: {(value: Bool) in
@@ -98,10 +98,11 @@ class TrippiTabBarViewController: UIViewController {
     }
     
     func addDashboardVC() {
-        self.containerView.addSubview(self.dashboard.view)
-        self.dashboard.accessibilityFrame = self.containerView.frame
-        self.dashboard.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.dashboard.didMove(toParent: self)
+        dashboard.delegate = self
+        containerView.addSubview(self.dashboard.view)
+        dashboard.accessibilityFrame = self.containerView.frame
+        dashboard.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        dashboard.didMove(toParent: self)
         UIView.animate(withDuration: 0.2,
                        animations: {self.dashboard.view.alpha = 1},
                        completion: {(value: Bool) in
@@ -109,10 +110,11 @@ class TrippiTabBarViewController: UIViewController {
     }
     
     func addProfileVC() {
-        self.containerView.addSubview(self.profile.view)
-        self.profile.accessibilityFrame = self.containerView.frame
-        self.profile.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.profile.didMove(toParent: self)
+        profile.delegate = self
+        containerView.addSubview(self.profile.view)
+        profile.accessibilityFrame = self.containerView.frame
+        profile.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        profile.didMove(toParent: self)
         UIView.animate(withDuration: 0.2,
                        animations: {self.profile.view.alpha = 1},
                        completion: {(value: Bool) in
@@ -169,7 +171,7 @@ extension TrippiTabBarViewController: UICollectionViewDelegate, UICollectionView
 }
 
 //MARK: - Home Delegate
-extension TrippiTabBarViewController: HomeViewControllerDelegate {
+extension TrippiTabBarViewController: TabBarDelegate {
     func pushTripVC() {
         let vc = getVC(storyboard: .trip, vc: TripViewController.identifier)
         navigationController?.pushViewController(vc, animated: true)
