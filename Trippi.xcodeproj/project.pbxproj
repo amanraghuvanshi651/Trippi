@@ -60,10 +60,6 @@
 		509922052A7D0AD3004B0BD1 /* TrippiTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509922042A7D0AD3004B0BD1 /* TrippiTabBarItem.swift */; };
 		5099220B2A7D2A15004B0BD1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5099220A2A7D2A15004B0BD1 /* SplashViewController.swift */; };
 		5099220D2A7D2AA1004B0BD1 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5099220C2A7D2AA1004B0BD1 /* Splash.storyboard */; };
-		509A0BEB2A85F32600067D45 /* OngoingTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A0BE92A85F32600067D45 /* OngoingTripTableViewCell.swift */; };
-		509A0BEC2A85F32600067D45 /* OngoingTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 509A0BEA2A85F32600067D45 /* OngoingTripTableViewCell.xib */; };
-		509A0BEF2A865A6E00067D45 /* PlannedTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A0BED2A865A6E00067D45 /* PlannedTripTableViewCell.swift */; };
-		509A0BF02A865A6E00067D45 /* PlannedTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 509A0BEE2A865A6E00067D45 /* PlannedTripTableViewCell.xib */; };
 		509A0BF42A8661A200067D45 /* PlannedTripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A0BF22A8661A200067D45 /* PlannedTripCollectionViewCell.swift */; };
 		509A0BF52A8661A200067D45 /* PlannedTripCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 509A0BF32A8661A200067D45 /* PlannedTripCollectionViewCell.xib */; };
 		509B837B2A85120F00F372BB /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50BB53742A6A7595000DE037 /* Montserrat-VariableFont_wght.ttf */; };
@@ -117,6 +113,18 @@
 		50C3D0A52A6EB66800DDED53 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C3D0A42A6EB66800DDED53 /* UIImageViewExtension.swift */; };
 		50C3D0AD2A6EBAFC00DDED53 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 50C3D0AC2A6EBAFC00DDED53 /* Lottie */; };
 		50C3D0B02A6EBB3B00DDED53 /* unknownLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = 50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */; };
+		50D676A42A8DED8F00DC0454 /* TabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D676A32A8DED8F00DC0454 /* TabBarDelegate.swift */; };
+		50D676A72A8E18D700DC0454 /* TripOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D676A52A8E18D700DC0454 /* TripOptionsTableViewCell.swift */; };
+		50D676A82A8E18D700DC0454 /* TripOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D676A62A8E18D700DC0454 /* TripOptionsTableViewCell.xib */; };
+		50D676AA2A8E1EFD00DC0454 /* TripOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D676A92A8E1EFD00DC0454 /* TripOptions.swift */; };
+		50D676AD2A8E324C00DC0454 /* TripDatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D676AB2A8E324C00DC0454 /* TripDatesTableViewCell.swift */; };
+		50D676AE2A8E324C00DC0454 /* TripDatesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D676AC2A8E324C00DC0454 /* TripDatesTableViewCell.xib */; };
+		50D676B22A8E32A800DC0454 /* TripDatesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D676B02A8E32A800DC0454 /* TripDatesCollectionViewCell.swift */; };
+		50D676B32A8E32A800DC0454 /* TripDatesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D676B12A8E32A800DC0454 /* TripDatesCollectionViewCell.xib */; };
+		50D676B62A8E51AF00DC0454 /* OngoingTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D676B42A8E51AF00DC0454 /* OngoingTripTableViewCell.swift */; };
+		50D676B72A8E51AF00DC0454 /* OngoingTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D676B52A8E51AF00DC0454 /* OngoingTripTableViewCell.xib */; };
+		50D676BA2A8E520700DC0454 /* PlannedTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D676B82A8E520700DC0454 /* PlannedTripTableViewCell.swift */; };
+		50D676BB2A8E520700DC0454 /* PlannedTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D676B92A8E520700DC0454 /* PlannedTripTableViewCell.xib */; };
 		78FDE5852A744DC800AA5C6E /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FDE5842A744DC800AA5C6E /* SignUp.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -249,6 +257,18 @@
 		50C3D0A22A6EADCA00DDED53 /* ReversedGeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversedGeoLocation.swift; sourceTree = "<group>"; };
 		50C3D0A42A6EB66800DDED53 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unknownLocation.json; sourceTree = "<group>"; };
+		50D676A32A8DED8F00DC0454 /* TabBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDelegate.swift; sourceTree = "<group>"; };
+		50D676A52A8E18D700DC0454 /* TripOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripOptionsTableViewCell.swift; sourceTree = "<group>"; };
+		50D676A62A8E18D700DC0454 /* TripOptionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripOptionsTableViewCell.xib; sourceTree = "<group>"; };
+		50D676A92A8E1EFD00DC0454 /* TripOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripOptions.swift; sourceTree = "<group>"; };
+		50D676AB2A8E324C00DC0454 /* TripDatesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDatesTableViewCell.swift; sourceTree = "<group>"; };
+		50D676AC2A8E324C00DC0454 /* TripDatesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripDatesTableViewCell.xib; sourceTree = "<group>"; };
+		50D676B02A8E32A800DC0454 /* TripDatesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDatesCollectionViewCell.swift; sourceTree = "<group>"; };
+		50D676B12A8E32A800DC0454 /* TripDatesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripDatesCollectionViewCell.xib; sourceTree = "<group>"; };
+		50D676B42A8E51AF00DC0454 /* OngoingTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OngoingTripTableViewCell.swift; sourceTree = "<group>"; };
+		50D676B52A8E51AF00DC0454 /* OngoingTripTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OngoingTripTableViewCell.xib; sourceTree = "<group>"; };
+		50D676B82A8E520700DC0454 /* PlannedTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannedTripTableViewCell.swift; sourceTree = "<group>"; };
+		50D676B92A8E520700DC0454 /* PlannedTripTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannedTripTableViewCell.xib; sourceTree = "<group>"; };
 		78FDE5842A744DC800AA5C6E /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -399,6 +419,7 @@
 				509921F52A7CFC57004B0BD1 /* Cell */,
 				509921F12A7CDC8A004B0BD1 /* TrippiTabBarViewController.swift */,
 				509922042A7D0AD3004B0BD1 /* TrippiTabBarItem.swift */,
+				50D676A32A8DED8F00DC0454 /* TabBarDelegate.swift */,
 			);
 			path = TrippiTabBar;
 			sourceTree = "<group>";
@@ -477,7 +498,8 @@
 		50A32F822A83711E0017191B /* Trip */ = {
 			isa = PBXGroup;
 			children = (
-				50A32F892A83A9B10017191B /* Cell */,
+				50D676AF2A8E328100DC0454 /* CollectionViewCell */,
+				50A32F892A83A9B10017191B /* TableViewCell */,
 				50A32F852A83A8FA0017191B /* Model */,
 				50A32F832A83713D0017191B /* TripViewController.swift */,
 			);
@@ -492,13 +514,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		50A32F892A83A9B10017191B /* Cell */ = {
+		50A32F892A83A9B10017191B /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				50D676B82A8E520700DC0454 /* PlannedTripTableViewCell.swift */,
+				50D676B92A8E520700DC0454 /* PlannedTripTableViewCell.xib */,
+				50D676B42A8E51AF00DC0454 /* OngoingTripTableViewCell.swift */,
+				50D676B52A8E51AF00DC0454 /* OngoingTripTableViewCell.xib */,
 				50A32F8E2A83AE290017191B /* TripHeaderTableViewCell.swift */,
 				50A32F8F2A83AE290017191B /* TripHeaderTableViewCell.xib */,
+				50D676A52A8E18D700DC0454 /* TripOptionsTableViewCell.swift */,
+				50D676A62A8E18D700DC0454 /* TripOptionsTableViewCell.xib */,
+				50D676AB2A8E324C00DC0454 /* TripDatesTableViewCell.swift */,
+				50D676AC2A8E324C00DC0454 /* TripDatesTableViewCell.xib */,
 			);
-			path = Cell;
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		50A4027B2A7BA30F0019F8EC /* Protocols */ = {
@@ -637,6 +667,7 @@
 			isa = PBXGroup;
 			children = (
 				50BB537A2A6A78CD000DE037 /* TrippiStoryboards.swift */,
+				50D676A92A8E1EFD00DC0454 /* TripOptions.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -753,6 +784,15 @@
 				50C3D0AF2A6EBB3B00DDED53 /* unknownLocation.json */,
 			);
 			path = LottieJSON;
+			sourceTree = "<group>";
+		};
+		50D676AF2A8E328100DC0454 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				50D676B02A8E32A800DC0454 /* TripDatesCollectionViewCell.swift */,
+				50D676B12A8E32A800DC0454 /* TripDatesCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		783AD3122A85679200AF8EE0 /* TableViewCell */ = {
@@ -889,28 +929,31 @@
 				5091CD8A2A7AA1A4005D9A28 /* Moment9.jpg in Resources */,
 				509921F92A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.xib in Resources */,
 				5091CDA82A7AA2BA005D9A28 /* TripImage6.jpg in Resources */,
-				509A0BF02A865A6E00067D45 /* PlannedTripTableViewCell.xib in Resources */,
 				5091CD8F2A7AA1A4005D9A28 /* Moment4.jpg in Resources */,
 				509921FB2A7CFDCA004B0BD1 /* Dashboard.storyboard in Resources */,
 				5091CDA62A7AA2BA005D9A28 /* TripImage1.jpg in Resources */,
 				5091CDA72A7AA2BA005D9A28 /* TripImage5.jpg in Resources */,
 				50BB537D2A6A790C000DE037 /* Home.storyboard in Resources */,
 				5091CD882A7AA1A4005D9A28 /* Moment7.jpg in Resources */,
-				509A0BEC2A85F32600067D45 /* OngoingTripTableViewCell.xib in Resources */,
 				50BB534D2A6A728B000DE037 /* LaunchScreen.storyboard in Resources */,
 				5091CD872A7AA1A4005D9A28 /* Moment8.jpg in Resources */,
 				50A32F812A8370E90017191B /* Trip.storyboard in Resources */,
+				50D676AE2A8E324C00DC0454 /* TripDatesTableViewCell.xib in Resources */,
 				5091CD8D2A7AA1A4005D9A28 /* Moment1.jpg in Resources */,
 				507B87A22A826D83004D3DBE /* CommentTableViewCell.xib in Resources */,
 				5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */,
+				50D676B72A8E51AF00DC0454 /* OngoingTripTableViewCell.xib in Resources */,
 				509E2E002A77C5AD00638F06 /* SearchPlace.storyboard in Resources */,
 				5091CDA42A7AA2BA005D9A28 /* TripImage2.jpg in Resources */,
 				50A32F912A83AE290017191B /* TripHeaderTableViewCell.xib in Resources */,
+				50D676BB2A8E520700DC0454 /* PlannedTripTableViewCell.xib in Resources */,
 				50BB53A12A6ABC1B000DE037 /* CityCollectionViewCell.xib in Resources */,
+				50D676A82A8E18D700DC0454 /* TripOptionsTableViewCell.xib in Resources */,
 				5099220D2A7D2AA1004B0BD1 /* Splash.storyboard in Resources */,
 				507B87942A825576004D3DBE /* ShareToUserTableViewCell.xib in Resources */,
 				50BE53092A794A7B00B445BB /* likeAnimation1.json in Resources */,
 				50BF32202A73C10400F7CD28 /* TopJourneysTableViewCell.xib in Resources */,
+				50D676B32A8E32A800DC0454 /* TripDatesCollectionViewCell.xib in Resources */,
 				50BB534A2A6A728B000DE037 /* Assets.xcassets in Resources */,
 				5091CD9A2A7AA289005D9A28 /* Seoul.jpg in Resources */,
 				5091CD9B2A7AA289005D9A28 /* Paris.jpg in Resources */,
@@ -971,8 +1014,8 @@
 				50C3D0A32A6EADCA00DDED53 /* ReversedGeoLocation.swift in Sources */,
 				507B87952A825576004D3DBE /* ShareUserModel.swift in Sources */,
 				50BB53412A6A7289000DE037 /* AppDelegate.swift in Sources */,
+				50D676B62A8E51AF00DC0454 /* OngoingTripTableViewCell.swift in Sources */,
 				50BB53432A6A7289000DE037 /* SceneDelegate.swift in Sources */,
-				509A0BEB2A85F32600067D45 /* OngoingTripTableViewCell.swift in Sources */,
 				50BB53862A6A8C1F000DE037 /* HomeViewModel.swift in Sources */,
 				50C3D0A02A6E613800DDED53 /* SettingViewController.swift in Sources */,
 				50BB53A02A6ABC1B000DE037 /* CityCollectionViewCell.swift in Sources */,
@@ -984,28 +1027,33 @@
 				507B87972A82559C004D3DBE /* UIViewExtension.swift in Sources */,
 				507B87932A825576004D3DBE /* ShareToUserTableViewCell.swift in Sources */,
 				50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */,
-				509A0BEF2A865A6E00067D45 /* PlannedTripTableViewCell.swift in Sources */,
 				50A32F842A83713D0017191B /* TripViewController.swift in Sources */,
 				5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */,
 				50BB53782A6A781A000DE037 /* Constants.swift in Sources */,
 				50BF32232A73CB4900F7CD28 /* TopJourneysCollectionViewCell.swift in Sources */,
 				509921FE2A7CFDE8004B0BD1 /* DashboardViewController.swift in Sources */,
+				50D676A72A8E18D700DC0454 /* TripOptionsTableViewCell.swift in Sources */,
 				5091CD782A7A4A0E005D9A28 /* HomeDataModel.swift in Sources */,
 				507B87912A825576004D3DBE /* SharingOptionCollectionViewCell.swift in Sources */,
 				5091CD762A7A3682005D9A28 /* MomentModel.swift in Sources */,
 				50C3D0A52A6EB66800DDED53 /* UIImageViewExtension.swift in Sources */,
 				50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */,
 				509922022A7CFE1F004B0BD1 /* ProfileViewController.swift in Sources */,
+				50D676A42A8DED8F00DC0454 /* TabBarDelegate.swift in Sources */,
 				507B87A52A827CB3004D3DBE /* CommentDataModel.swift in Sources */,
+				50D676AD2A8E324C00DC0454 /* TripDatesTableViewCell.swift in Sources */,
 				5091CD742A7A35ED005D9A28 /* TopTripModel.swift in Sources */,
+				50D676B22A8E32A800DC0454 /* TripDatesCollectionViewCell.swift in Sources */,
 				507B87A12A826D83004D3DBE /* CommentTableViewCell.swift in Sources */,
 				509E2DFD2A77AE6700638F06 /* UIcolor+Extension.swift in Sources */,
+				50D676BA2A8E520700DC0454 /* PlannedTripTableViewCell.swift in Sources */,
 				50BB53822A6A8825000DE037 /* UIViewControllerExtension.swift in Sources */,
 				50BB537B2A6A78CD000DE037 /* TrippiStoryboards.swift in Sources */,
 				507B87842A825567004D3DBE /* CommentsViewController.swift in Sources */,
 				50BB53902A6A9641000DE037 /* CitiesForYouTableViewCell.swift in Sources */,
 				50BB537F2A6A7CB9000DE037 /* HomeViewController.swift in Sources */,
 				509921F82A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.swift in Sources */,
+				50D676AA2A8E1EFD00DC0454 /* TripOptions.swift in Sources */,
 				50A4027D2A7BA36F0019F8EC /* HasButtonVibration.swift in Sources */,
 				50A4027F2A7BB4990019F8EC /* UIButtonExtension.swift in Sources */,
 				509922052A7D0AD3004B0BD1 /* TrippiTabBarItem.swift in Sources */,
