@@ -135,31 +135,33 @@ extension TrippiTabBarViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let lastSelectedCell = collectionView.cellForItem(at: IndexPath(row: selectedItem, section: 0)) as! TrippiTabBarItemCollectionViewCell
-        let currentCell = collectionView.cellForItem(at: indexPath) as! TrippiTabBarItemCollectionViewCell
-        selectedItem = indexPath.row
-        
-        collectionView.collectionViewLayout.invalidateLayout()
-        lastSelectedCell.containerView.backgroundColor = .clear
-        currentCell.containerView.backgroundColor = UIColor(named: BUTTON_BACKGROUND_COLOR)
-        UIView.animate(withDuration: 0.4) {
-            collectionView.layoutIfNeeded()
-            lastSelectedCell.updateUI(isSelected: false)
-            currentCell.updateUI(isSelected: true)
-        }
-        
-        self.remove()
-        
-        // Add the child's View as a subview
-        switch indexPath.row {
-        case 0:
-            addDashboardVC()
-        case 1:
-            addHomeVC()
-        case 2:
-            addProfileVC()
-        default:
-            addDashboardVC()
+        if selectedItem != indexPath.row {
+            let lastSelectedCell = collectionView.cellForItem(at: IndexPath(row: selectedItem, section: 0)) as! TrippiTabBarItemCollectionViewCell
+            let currentCell = collectionView.cellForItem(at: indexPath) as! TrippiTabBarItemCollectionViewCell
+            selectedItem = indexPath.row
+            
+            collectionView.collectionViewLayout.invalidateLayout()
+            lastSelectedCell.containerView.backgroundColor = .clear
+            currentCell.containerView.backgroundColor = UIColor(named: BUTTON_BACKGROUND_COLOR)
+            UIView.animate(withDuration: 0.4) {
+                collectionView.layoutIfNeeded()
+                lastSelectedCell.updateUI(isSelected: false)
+                currentCell.updateUI(isSelected: true)
+            }
+            
+            self.remove()
+            
+            // Add the child's View as a subview
+            switch indexPath.row {
+            case 0:
+                addDashboardVC()
+            case 1:
+                addHomeVC()
+            case 2:
+                addProfileVC()
+            default:
+                addDashboardVC()
+            }
         }
     }
     

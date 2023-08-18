@@ -21,7 +21,7 @@ class TripViewController: UIViewController {
     var isDragedByUser = false
     var selectedOption: TripOptions = .daysPlan
     
-    var tripData: TripDataModel? = TripDataModel(id: "dsadsa", title: "Trip to Bhusan", image: "", dates: [TripDate(date: Date(), isSelected: true), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false)], dayPlan: [TripDayPlan()], reservations: [TripReservation(id: "", reservationType: .bus, fromPlace: "", toPlace: ""), TripReservation(id: "", reservationType: .bus, fromPlace: "", toPlace: ""), TripReservation(id: "", reservationType: .bus, fromPlace: "", toPlace: ""), TripReservation(id: "", reservationType: .bus, fromPlace: "", toPlace: "")], budget: TripBudget())
+    var tripData: TripDataModel? = TripDataModel(id: "dsadsa", title: "Trip to Bhusan", image: "", dates: [TripDate(date: Date(), isSelected: true), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false)], dayPlan: [TripDayPlan()], reservations: [TripReservation(id: "", reservationType: .bus, fromPlace: "", toPlace: ""), TripReservation(id: "", reservationType: .flight, fromPlace: "", toPlace: ""), TripReservation(id: "", reservationType: .train, fromPlace: "", toPlace: "")], budget: TripBudget())
 
     //MARK: - Outlets
     //Trip View
@@ -186,6 +186,7 @@ extension TripViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: TripReservationTableViewCell.identifier, for: indexPath) as? TripReservationTableViewCell else {
                     return UITableViewCell()
                 }
+                cell.configure(tripReservation: tripData!.reservations[indexPath.row])
                 cell.selectionStyle = .none
                 return cell
             case .budget:
@@ -198,18 +199,20 @@ extension TripViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - Trip Options cell delegate
 extension TripViewController: TripOptionsTableViewCellDelegate {
     func onClickOption(option: TripOptions) {
-        var animation = UITableView.RowAnimation.left
-        switch option {
-        case .budget:
-            animation = .left
-        case .daysPlan:
-            animation = .right
-        case .reservations:
-            animation = selectedOption == .budget ? .right : .left
-        }
-        selectedOption = option
-        DispatchQueue.main.async {
-            self.tableView.reloadSections(IndexSet(integer: 1), with: animation)
+        if selectedOption != option {
+            var animation = UITableView.RowAnimation.left
+            switch option {
+            case .budget:
+                animation = .left
+            case .daysPlan:
+                animation = .right
+            case .reservations:
+                animation = selectedOption == .budget ? .right : .left
+            }
+            selectedOption = option
+            DispatchQueue.main.async {
+                self.tableView.reloadSections(IndexSet(integer: 1), with: animation)
+            }
         }
     }
 }

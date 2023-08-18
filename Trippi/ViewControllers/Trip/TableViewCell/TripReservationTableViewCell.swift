@@ -14,6 +14,8 @@ class TripReservationTableViewCell: UITableViewCell {
     @IBOutlet weak var cutViewFirst: UIView!
     @IBOutlet weak var cutViewSecond: UIView!
 
+    @IBOutlet weak var reservationTypeImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -24,6 +26,10 @@ class TripReservationTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func configure(tripReservation: TripReservation) {
+        reservationTypeImageView.image = UIImage(named: tripReservation.reservationType.rawValue)
     }
     
 }

@@ -7,10 +7,8 @@
 
 import Foundation
 
-enum TripReservationType {
-    case flight
-    case train
-    case bus
-    case drive
-    case ride
+enum TripReservationType: String {
+    case flight = "Flight"
+    case train = "Train"
+    case bus = "Bus"
 }

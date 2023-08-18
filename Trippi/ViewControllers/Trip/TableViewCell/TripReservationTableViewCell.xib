@@ -48,13 +48,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CDG INDB SPL" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="496-7o-h5v">
                                         <rect key="frame" x="0.0" y="0.0" width="117.33333333333333" height="14.666666666666666"/>
                                         <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="12"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="ButtonTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri, 29 Oct 23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSf-of-Mqn">
                                         <rect key="frame" x="0.0" y="14.666666666666664" width="117.33333333333333" height="22"/>
                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="ButtonTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -68,13 +68,13 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INDORE JN BG" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPf-Np-WTG">
                                                 <rect key="frame" x="0.0" y="0.0" width="103" height="14.666666666666666"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INDB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mH4-2n-Iku">
                                                 <rect key="frame" x="0.0" y="14.666666666666661" width="103" height="46.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="38"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -92,13 +92,13 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHANDIGARH" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJv-dd-a7k">
                                                 <rect key="frame" x="0.0" y="0.0" width="88.333333333333329" height="14.666666666666666"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CDG" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4k-kL-qnq">
                                                 <rect key="frame" x="0.0" y="14.666666666666661" width="88.333333333333329" height="46.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="38"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -114,13 +114,13 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEPART" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cek-Tz-tta">
                                                 <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="14.666666666666666"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="frn-Jg-j8Z">
                                                 <rect key="frame" x="0.0" y="14.666666666666687" width="50.333333333333336" height="19.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -131,13 +131,13 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiv-IV-2bq">
                                                 <rect key="frame" x="0.0" y="0.0" width="93" height="14.666666666666666"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="098746 | SL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="J0L-0j-VKk">
                                                 <rect key="frame" x="0.0" y="14.666666666666687" width="93" height="19.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -148,13 +148,13 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARRIVES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IW-13-JTY">
                                                 <rect key="frame" x="0.0" y="0.0" width="0.0" height="14.666666666666666"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="nAC-hO-ILP">
                                                 <rect key="frame" x="0.0" y="14.666666666666687" width="0.0" height="19.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -165,13 +165,13 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLIGHT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGi-m8-3lZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="52.666666666666664" height="14.666666666666666"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SQ422" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wzF-Cq-BzK">
                                                 <rect key="frame" x="0.0" y="14.666666666666687" width="52.666666666666664" height="19.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -182,13 +182,13 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PNR" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYA-PH-BYu">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="14.666666666666666"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Regular" family="Montserrat" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="76378675355" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="MOu-fM-hZ3">
                                                 <rect key="frame" x="0.0" y="14.666666666666687" width="103.33333333333333" height="19.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="ButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -227,6 +227,7 @@
                 <outlet property="containerView" destination="3vx-no-HWJ" id="Rn2-hX-dMP"/>
                 <outlet property="cutViewFirst" destination="ilO-OJ-nMJ" id="hkZ-uE-Het"/>
                 <outlet property="cutViewSecond" destination="Tb7-bF-x2H" id="Kg5-Ja-o9j"/>
+                <outlet property="reservationTypeImageView" destination="4Bb-Hx-d4A" id="zwL-l0-umu"/>
             </connections>
             <point key="canvasLocation" x="277.09923664122135" y="122.53521126760565"/>
         </tableViewCell>
@@ -237,6 +238,9 @@
         </namedColor>
         <namedColor name="ButtonBackground">
             <color red="0.98000001907348633" green="0.81599998474121094" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButtonTextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
