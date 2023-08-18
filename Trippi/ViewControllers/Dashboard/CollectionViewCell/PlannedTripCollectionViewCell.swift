@@ -2,7 +2,7 @@
 //  PlannedTripCollectionViewCell.swift
 //  Trippi
 //
-//  Created by macmini50 on 11/08/23.
+//  Created by Aman Raghuvanshi on 11/08/23.
 //
 
 import UIKit

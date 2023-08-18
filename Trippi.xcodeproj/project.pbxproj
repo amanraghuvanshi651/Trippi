@@ -125,6 +125,14 @@
 		50D676B72A8E51AF00DC0454 /* OngoingTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D676B52A8E51AF00DC0454 /* OngoingTripTableViewCell.xib */; };
 		50D676BA2A8E520700DC0454 /* PlannedTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D676B82A8E520700DC0454 /* PlannedTripTableViewCell.swift */; };
 		50D676BB2A8E520700DC0454 /* PlannedTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50D676B92A8E520700DC0454 /* PlannedTripTableViewCell.xib */; };
+		783AD3142A8FE4FB00AF8EE0 /* TripDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783AD3132A8FE4FB00AF8EE0 /* TripDate.swift */; };
+		783AD3162A8FE69500AF8EE0 /* TripPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783AD3152A8FE69500AF8EE0 /* TripPlace.swift */; };
+		783AD3182A8FE7A900AF8EE0 /* TripReservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783AD3172A8FE7A900AF8EE0 /* TripReservation.swift */; };
+		783AD31A2A8FE80F00AF8EE0 /* TripReservationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783AD3192A8FE80F00AF8EE0 /* TripReservationType.swift */; };
+		783AD31C2A8FE9A000AF8EE0 /* TripBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783AD31B2A8FE9A000AF8EE0 /* TripBudget.swift */; };
+		783AD31E2A8FEE2400AF8EE0 /* TripDayPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783AD31D2A8FEE2400AF8EE0 /* TripDayPlan.swift */; };
+		783AD3212A8FF39200AF8EE0 /* TripReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783AD31F2A8FF39200AF8EE0 /* TripReservationTableViewCell.swift */; };
+		783AD3222A8FF39200AF8EE0 /* TripReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783AD3202A8FF39200AF8EE0 /* TripReservationTableViewCell.xib */; };
 		78FDE5852A744DC800AA5C6E /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78FDE5842A744DC800AA5C6E /* SignUp.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -269,6 +277,14 @@
 		50D676B52A8E51AF00DC0454 /* OngoingTripTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OngoingTripTableViewCell.xib; sourceTree = "<group>"; };
 		50D676B82A8E520700DC0454 /* PlannedTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannedTripTableViewCell.swift; sourceTree = "<group>"; };
 		50D676B92A8E520700DC0454 /* PlannedTripTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlannedTripTableViewCell.xib; sourceTree = "<group>"; };
+		783AD3132A8FE4FB00AF8EE0 /* TripDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDate.swift; sourceTree = "<group>"; };
+		783AD3152A8FE69500AF8EE0 /* TripPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlace.swift; sourceTree = "<group>"; };
+		783AD3172A8FE7A900AF8EE0 /* TripReservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripReservation.swift; sourceTree = "<group>"; };
+		783AD3192A8FE80F00AF8EE0 /* TripReservationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripReservationType.swift; sourceTree = "<group>"; };
+		783AD31B2A8FE9A000AF8EE0 /* TripBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripBudget.swift; sourceTree = "<group>"; };
+		783AD31D2A8FEE2400AF8EE0 /* TripDayPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDayPlan.swift; sourceTree = "<group>"; };
+		783AD31F2A8FF39200AF8EE0 /* TripReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripReservationTableViewCell.swift; sourceTree = "<group>"; };
+		783AD3202A8FF39200AF8EE0 /* TripReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripReservationTableViewCell.xib; sourceTree = "<group>"; };
 		78FDE5842A744DC800AA5C6E /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -510,6 +526,11 @@
 			isa = PBXGroup;
 			children = (
 				50A32F862A83A9170017191B /* TripDataModel.swift */,
+				783AD3132A8FE4FB00AF8EE0 /* TripDate.swift */,
+				783AD3152A8FE69500AF8EE0 /* TripPlace.swift */,
+				783AD3172A8FE7A900AF8EE0 /* TripReservation.swift */,
+				783AD31B2A8FE9A000AF8EE0 /* TripBudget.swift */,
+				783AD31D2A8FEE2400AF8EE0 /* TripDayPlan.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -527,6 +548,8 @@
 				50D676A62A8E18D700DC0454 /* TripOptionsTableViewCell.xib */,
 				50D676AB2A8E324C00DC0454 /* TripDatesTableViewCell.swift */,
 				50D676AC2A8E324C00DC0454 /* TripDatesTableViewCell.xib */,
+				783AD31F2A8FF39200AF8EE0 /* TripReservationTableViewCell.swift */,
+				783AD3202A8FF39200AF8EE0 /* TripReservationTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -668,6 +691,7 @@
 			children = (
 				50BB537A2A6A78CD000DE037 /* TrippiStoryboards.swift */,
 				50D676A92A8E1EFD00DC0454 /* TripOptions.swift */,
+				783AD3192A8FE80F00AF8EE0 /* TripReservationType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -933,6 +957,7 @@
 				509921FB2A7CFDCA004B0BD1 /* Dashboard.storyboard in Resources */,
 				5091CDA62A7AA2BA005D9A28 /* TripImage1.jpg in Resources */,
 				5091CDA72A7AA2BA005D9A28 /* TripImage5.jpg in Resources */,
+				783AD3222A8FF39200AF8EE0 /* TripReservationTableViewCell.xib in Resources */,
 				50BB537D2A6A790C000DE037 /* Home.storyboard in Resources */,
 				5091CD882A7AA1A4005D9A28 /* Moment7.jpg in Resources */,
 				50BB534D2A6A728B000DE037 /* LaunchScreen.storyboard in Resources */,
@@ -1015,6 +1040,7 @@
 				507B87952A825576004D3DBE /* ShareUserModel.swift in Sources */,
 				50BB53412A6A7289000DE037 /* AppDelegate.swift in Sources */,
 				50D676B62A8E51AF00DC0454 /* OngoingTripTableViewCell.swift in Sources */,
+				783AD31C2A8FE9A000AF8EE0 /* TripBudget.swift in Sources */,
 				50BB53432A6A7289000DE037 /* SceneDelegate.swift in Sources */,
 				50BB53862A6A8C1F000DE037 /* HomeViewModel.swift in Sources */,
 				50C3D0A02A6E613800DDED53 /* SettingViewController.swift in Sources */,
@@ -1027,6 +1053,7 @@
 				507B87972A82559C004D3DBE /* UIViewExtension.swift in Sources */,
 				507B87932A825576004D3DBE /* ShareToUserTableViewCell.swift in Sources */,
 				50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */,
+				783AD3162A8FE69500AF8EE0 /* TripPlace.swift in Sources */,
 				50A32F842A83713D0017191B /* TripViewController.swift in Sources */,
 				5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */,
 				50BB53782A6A781A000DE037 /* Constants.swift in Sources */,
@@ -1034,20 +1061,24 @@
 				509921FE2A7CFDE8004B0BD1 /* DashboardViewController.swift in Sources */,
 				50D676A72A8E18D700DC0454 /* TripOptionsTableViewCell.swift in Sources */,
 				5091CD782A7A4A0E005D9A28 /* HomeDataModel.swift in Sources */,
+				783AD31A2A8FE80F00AF8EE0 /* TripReservationType.swift in Sources */,
 				507B87912A825576004D3DBE /* SharingOptionCollectionViewCell.swift in Sources */,
 				5091CD762A7A3682005D9A28 /* MomentModel.swift in Sources */,
 				50C3D0A52A6EB66800DDED53 /* UIImageViewExtension.swift in Sources */,
 				50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */,
+				783AD3142A8FE4FB00AF8EE0 /* TripDate.swift in Sources */,
 				509922022A7CFE1F004B0BD1 /* ProfileViewController.swift in Sources */,
 				50D676A42A8DED8F00DC0454 /* TabBarDelegate.swift in Sources */,
 				507B87A52A827CB3004D3DBE /* CommentDataModel.swift in Sources */,
 				50D676AD2A8E324C00DC0454 /* TripDatesTableViewCell.swift in Sources */,
+				783AD31E2A8FEE2400AF8EE0 /* TripDayPlan.swift in Sources */,
 				5091CD742A7A35ED005D9A28 /* TopTripModel.swift in Sources */,
 				50D676B22A8E32A800DC0454 /* TripDatesCollectionViewCell.swift in Sources */,
 				507B87A12A826D83004D3DBE /* CommentTableViewCell.swift in Sources */,
 				509E2DFD2A77AE6700638F06 /* UIcolor+Extension.swift in Sources */,
 				50D676BA2A8E520700DC0454 /* PlannedTripTableViewCell.swift in Sources */,
 				50BB53822A6A8825000DE037 /* UIViewControllerExtension.swift in Sources */,
+				783AD3212A8FF39200AF8EE0 /* TripReservationTableViewCell.swift in Sources */,
 				50BB537B2A6A78CD000DE037 /* TrippiStoryboards.swift in Sources */,
 				507B87842A825567004D3DBE /* CommentsViewController.swift in Sources */,
 				50BB53902A6A9641000DE037 /* CitiesForYouTableViewCell.swift in Sources */,
@@ -1057,6 +1088,7 @@
 				50A4027D2A7BA36F0019F8EC /* HasButtonVibration.swift in Sources */,
 				50A4027F2A7BB4990019F8EC /* UIButtonExtension.swift in Sources */,
 				509922052A7D0AD3004B0BD1 /* TrippiTabBarItem.swift in Sources */,
+				783AD3182A8FE7A900AF8EE0 /* TripReservation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

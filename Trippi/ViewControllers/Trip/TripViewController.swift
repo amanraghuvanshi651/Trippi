@@ -14,11 +14,14 @@ class TripViewController: UIViewController {
     let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 80
     let minimumContainerHeight:CGFloat = UIScreen.main.bounds.height / 2
     
+    var panGesture = UIPanGestureRecognizer()
     var currentContainerHeight: CGFloat = UIScreen.main.bounds.height / 2
     var previousScrollOffset: CGFloat = 0
     var isKeyboardVisible = true
     var isDragedByUser = false
     var selectedOption: TripOptions = .daysPlan
+    
+    var tripData: TripDataModel? = TripDataModel(id: "dsadsa", title: "Trip to Bhusan", image: "", dates: [TripDate(date: Date(), isSelected: true), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false)], dayPlan: [TripDayPlan()], reservations: [TripReservation(id: "", reservationType: .bus, fromPlace: "", toPlace: ""), TripReservation(id: "", reservationType: .bus, fromPlace: "", toPlace: ""), TripReservation(id: "", reservationType: .bus, fromPlace: "", toPlace: ""), TripReservation(id: "", reservationType: .bus, fromPlace: "", toPlace: "")], budget: TripBudget())
 
     //MARK: - Outlets
     //Trip View
@@ -39,16 +42,9 @@ class TripViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpUI()
+        setUpTableView()
         setupPanGesture()
-        containerViewHeightConstraint.constant = currentContainerHeight
-        tripViewCrossButton.layer.cornerRadius = 25
-        tripContainerView.layer.cornerRadius = 30
-        topDraggableSubView.layer.cornerRadius = 2.5
-        
-        tableView.separatorStyle = .none
-        tableView.register(UINib(nibName: TripHeaderTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripHeaderTableViewCell.identifier)
-        tableView.register(UINib(nibName: TripOptionsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripOptionsTableViewCell.identifier)
-        tableView.register(UINib(nibName: TripDatesTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripDatesTableViewCell.identifier)
     }
     
     //MARK: - Actions
@@ -56,17 +52,28 @@ class TripViewController: UIViewController {
         self.dismissOrPop()
     }
     
-    var panGesture = UIPanGestureRecognizer()
     
     //MARK: - Custom Methods
+    func setUpUI() {
+        containerViewHeightConstraint.constant = currentContainerHeight
+        tripViewCrossButton.layer.cornerRadius = 25
+        tripContainerView.layer.cornerRadius = 30
+        topDraggableSubView.layer.cornerRadius = 2.5
+    }
+    
+    func setUpTableView() {
+        tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: TripHeaderTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripHeaderTableViewCell.identifier)
+        tableView.register(UINib(nibName: TripOptionsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripOptionsTableViewCell.identifier)
+        tableView.register(UINib(nibName: TripDatesTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripDatesTableViewCell.identifier)
+        tableView.register(UINib(nibName: TripReservationTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripReservationTableViewCell.identifier)
+    }
+    
     func setupPanGesture() {
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture))
         panGesture.delaysTouchesBegan = false
         panGesture.delaysTouchesEnded = false
-//        topStackView.addGestureRecognizer(panGesture)
-//        tableView.addGestureRecognizer(panGesture)
         topDragableView.addGestureRecognizer(panGesture)
-//        panGesture.isEnabled = false
     }
     
     @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
@@ -82,15 +89,12 @@ class TripViewController: UIViewController {
             }
         case .ended:
             if newHeight < minimumContainerHeight && isDraggingDown {
-//                panGesture.isEnabled = true
                 animateMinimumHeight(dismissibleHeight)
             }
             else if newHeight < defaultHeight && isDraggingDown {
-//                panGesture.isEnabled = true
                 animateContainerHeight(minimumContainerHeight)
             }
             else if newHeight < defaultHeight {
-//                panGesture.isEnabled = false
                 animateContainerHeight(defaultHeight)
             }
         default:
@@ -127,60 +131,94 @@ class TripViewController: UIViewController {
 
 //MARK: - Table view Delegate and Datasource
 extension TripViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TripHeaderTableViewCell.identifier, for: indexPath) as! TripHeaderTableViewCell
-            cell.selectionStyle = .none
-            return cell
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TripOptionsTableViewCell.identifier, for: indexPath) as! TripOptionsTableViewCell
-            cell.selectionStyle = .none
-            cell.delegate = self
-            return cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TripDatesTableViewCell.identifier, for: indexPath) as! TripDatesTableViewCell
-            cell.selectionStyle = .none
-            return cell
-        default:
-            return UITableViewCell()
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 2
+        } else {
+            switch selectedOption {
+            case .daysPlan:
+                return (tripData?.dayPlan.count ?? 0) + 10
+            case .reservations:
+                return tripData?.reservations.count ?? 0
+            case .budget:
+                return 10
+            }
         }
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        isDragedByUser = true
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y <= 0 {
-////            panGesture.isEnabled = true
-//            if currentContainerHeight == defaultHeight {
-//                isDragedByUser = false
-//                animateContainerHeight(minimumContainerHeight)
-//            } else if currentContainerHeight == minimumContainerHeight && isDragedByUser{
-//                animateMinimumHeight(dismissibleHeight)
-//            }
-//        } else {
-//            animateContainerHeight(maximumContainerHeight)
-//        }
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        isDragedByUser = false
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        isDragedByUser = false
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: TripHeaderTableViewCell.identifier, for: indexPath) as? TripHeaderTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.selectionStyle = .none
+                return cell
+            case 1:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: TripOptionsTableViewCell.identifier, for: indexPath) as? TripOptionsTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.selectionStyle = .none
+                cell.delegate = self
+                return cell
+            default:
+                return UITableViewCell()
+            }
+        } else {
+            switch selectedOption {
+            case .daysPlan:
+                switch indexPath.row {
+                case 0:
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: TripDatesTableViewCell.identifier, for: indexPath) as? TripDatesTableViewCell else {
+                        return UITableViewCell()
+                    }
+                    cell.delegate = self
+                    cell.selectionStyle = .none
+                    return cell
+                default:
+                    return UITableViewCell()
+                }
+            case .reservations:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: TripReservationTableViewCell.identifier, for: indexPath) as? TripReservationTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.selectionStyle = .none
+                return cell
+            case .budget:
+                return UITableViewCell()
+            }
+        }
     }
 }
 
 //MARK: - Trip Options cell delegate
 extension TripViewController: TripOptionsTableViewCellDelegate {
     func onClickOption(option: TripOptions) {
+        var animation = UITableView.RowAnimation.left
+        switch option {
+        case .budget:
+            animation = .left
+        case .daysPlan:
+            animation = .right
+        case .reservations:
+            animation = selectedOption == .budget ? .right : .left
+        }
         selectedOption = option
+        DispatchQueue.main.async {
+            self.tableView.reloadSections(IndexSet(integer: 1), with: animation)
+        }
+    }
+}
+
+//MARK: - Trip Dates Cell Delegate
+extension TripViewController: TripDatesTableViewCellDelegate {
+    func onClickDate(tripDate: TripDate, indexPath: IndexPath) {
+    }
+    
+    func onClickAddDate() {
     }
 }

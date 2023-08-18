@@ -11,4 +11,8 @@ struct TripDataModel {
     var id: String
     var title: String
     var image: String
+    var dates: [TripDate]
+    var dayPlan: [TripDayPlan]
+    var reservations: [TripReservation]
+    var budget: TripBudget
 }

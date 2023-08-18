@@ -2,7 +2,7 @@
 //  TripDatesCollectionViewCell.swift
 //  Trippi
 //
-//  Created by macmini50 on 17/08/23.
+//  Created by Aman Raghuvanshi on 17/08/23.
 //
 
 import UIKit
@@ -18,13 +18,20 @@ class TripDatesCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         dateFormatter.dateFormat = "MMMM d"
-    }
-    
-    func configure(date: Date) {
-        containerView.backgroundColor = .brown
         containerView.layer.cornerRadius = 20
         containerView.clipsToBounds = true
         containerView.layer.masksToBounds = true
-        dateLabel.text = dateFormatter.string(from: date)
+    }
+    
+    func configure(tripDate: TripDate) {
+        containerView.backgroundColor = tripDate.isSelected ? .black : .white
+        dateLabel.textColor = tripDate.isSelected ? .white : .black
+        dateLabel.text = dateFormatter.string(from: tripDate.date)
+    }
+    
+    func configureAddButton() {
+        containerView.backgroundColor = UIColor(named: BUTTON_BACKGROUND_COLOR)
+        dateLabel.textColor = .black
+        dateLabel.text = "Add +"
     }
 }
