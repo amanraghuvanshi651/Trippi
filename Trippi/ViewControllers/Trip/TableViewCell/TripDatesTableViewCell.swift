@@ -34,6 +34,7 @@ extension TripDatesTableViewCell: UICollectionViewDelegate, UICollectionViewData
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TripDatesCollectionViewCell.identifier, for: indexPath) as? TripDatesCollectionViewCell else {
             return UICollectionViewCell()
         }
+        cell.configure(date: Date())
         return cell
     }
 }

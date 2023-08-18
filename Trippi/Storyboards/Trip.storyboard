@@ -6,6 +6,7 @@
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -27,10 +28,29 @@
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="19O-eV-m0M">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="352" width="393" height="500"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csx-Ch-L8e">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="40"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8x-Pz-5fP">
+                                                <rect key="frame" x="150" y="30" width="93" height="5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="5" id="p8I-0q-x6c"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="H8x-Pz-5fP" firstAttribute="leading" secondItem="csx-Ch-L8e" secondAttribute="leading" constant="150" id="8T8-kD-AWV"/>
+                                            <constraint firstAttribute="height" constant="40" id="Ey9-jg-Fah"/>
+                                            <constraint firstAttribute="bottom" secondItem="H8x-Pz-5fP" secondAttribute="bottom" constant="5" id="sDI-aH-zRH"/>
+                                            <constraint firstAttribute="trailing" secondItem="H8x-Pz-5fP" secondAttribute="trailing" constant="150" id="uT3-pK-tOo"/>
+                                        </constraints>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sFh-P9-QI1">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="0.0"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nG3-im-vu7">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
@@ -47,7 +67,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mN2-Uc-yaV">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="450"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="dataSource" destination="Y6W-OH-hqX" id="wsZ-dq-cQP"/>
@@ -73,16 +93,21 @@
                                 </subviews>
                                 <color key="backgroundColor" name="AppBackground"/>
                                 <constraints>
-                                    <constraint firstItem="sFh-P9-QI1" firstAttribute="top" secondItem="19O-eV-m0M" secondAttribute="top" id="1r7-as-f6d"/>
                                     <constraint firstItem="M4h-Ak-bX8" firstAttribute="top" secondItem="19O-eV-m0M" secondAttribute="top" constant="30" id="2SC-JV-DiR"/>
                                     <constraint firstItem="mN2-Uc-yaV" firstAttribute="leading" secondItem="19O-eV-m0M" secondAttribute="leading" id="3kH-BX-DZr"/>
                                     <constraint firstAttribute="trailing" secondItem="sFh-P9-QI1" secondAttribute="trailing" id="4Nq-x3-VzV"/>
                                     <constraint firstAttribute="trailing" secondItem="mN2-Uc-yaV" secondAttribute="trailing" id="7CC-pB-7F2"/>
-                                    <constraint firstItem="mN2-Uc-yaV" firstAttribute="top" secondItem="sFh-P9-QI1" secondAttribute="bottom" id="A8y-hQ-FT5"/>
+                                    <constraint firstAttribute="trailing" secondItem="sFh-P9-QI1" secondAttribute="trailing" id="9pt-dX-JlL"/>
+                                    <constraint firstAttribute="trailing" secondItem="csx-Ch-L8e" secondAttribute="trailing" id="B5r-Hl-S8T"/>
+                                    <constraint firstItem="mN2-Uc-yaV" firstAttribute="top" secondItem="sFh-P9-QI1" secondAttribute="bottom" id="JlX-fX-YJy"/>
+                                    <constraint firstItem="sFh-P9-QI1" firstAttribute="leading" secondItem="19O-eV-m0M" secondAttribute="leading" id="Sd4-2a-XdU"/>
                                     <constraint firstAttribute="bottom" secondItem="mN2-Uc-yaV" secondAttribute="bottom" id="SvQ-xE-im3"/>
                                     <constraint firstItem="M4h-Ak-bX8" firstAttribute="leading" secondItem="19O-eV-m0M" secondAttribute="leading" constant="20" id="Vxp-GJ-D3A"/>
+                                    <constraint firstItem="csx-Ch-L8e" firstAttribute="leading" secondItem="19O-eV-m0M" secondAttribute="leading" id="X2N-68-ldS"/>
                                     <constraint firstItem="sFh-P9-QI1" firstAttribute="leading" secondItem="19O-eV-m0M" secondAttribute="leading" id="bqg-Eh-a8k"/>
-                                    <constraint firstAttribute="height" constant="793" id="uLl-Wc-hUM"/>
+                                    <constraint firstItem="csx-Ch-L8e" firstAttribute="top" secondItem="19O-eV-m0M" secondAttribute="top" id="r68-XG-Eaq"/>
+                                    <constraint firstItem="sFh-P9-QI1" firstAttribute="top" secondItem="csx-Ch-L8e" secondAttribute="bottom" constant="10" id="rqe-DU-5lz"/>
+                                    <constraint firstAttribute="height" constant="500" id="uLl-Wc-hUM"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -100,8 +125,10 @@
                     </view>
                     <connections>
                         <outlet property="containerViewHeightConstraint" destination="uLl-Wc-hUM" id="ocS-t6-mjO"/>
-                        <outlet property="stackViewTopConstraint" destination="1r7-as-f6d" id="L6k-8P-dLG"/>
+                        <outlet property="stackViewTopConstraint" destination="rqe-DU-5lz" id="rL4-Hl-2EW"/>
                         <outlet property="tableView" destination="mN2-Uc-yaV" id="CcI-Kw-JDZ"/>
+                        <outlet property="topDragableView" destination="csx-Ch-L8e" id="xnd-SP-K6F"/>
+                        <outlet property="topDraggableSubView" destination="H8x-Pz-5fP" id="loT-Pp-X1H"/>
                         <outlet property="topStackView" destination="sFh-P9-QI1" id="moL-Wr-bJp"/>
                         <outlet property="tripContainerView" destination="19O-eV-m0M" id="bSN-pM-Gfn"/>
                         <outlet property="tripTitleTopLabel" destination="LfC-3I-SlR" id="YPD-fQ-ws3"/>
@@ -110,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="-27"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
@@ -124,5 +151,8 @@
         <namedColor name="TextColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

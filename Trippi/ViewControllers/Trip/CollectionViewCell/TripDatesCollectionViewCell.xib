@@ -43,6 +43,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Q1f-Sm-6LF" secondAttribute="bottom" constant="10" id="5g2-5Q-MbO"/>
                 <constraint firstItem="Q1f-Sm-6LF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="QCH-gT-Orj"/>
@@ -51,8 +52,8 @@
             </constraints>
             <size key="customSize" width="158" height="108"/>
             <connections>
-                <outlet property="containerView" destination="Q1f-Sm-6LF" id="frw-EY-19Q"/>
-                <outlet property="dateLabel" destination="etr-HJ-Cdg" id="HWG-cX-8mD"/>
+                <outlet property="containerView" destination="Q1f-Sm-6LF" id="zrZ-mT-obk"/>
+                <outlet property="dateLabel" destination="etr-HJ-Cdg" id="UMn-cv-aN2"/>
             </connections>
             <point key="canvasLocation" x="212.21374045801525" y="9.1549295774647899"/>
         </collectionViewCell>

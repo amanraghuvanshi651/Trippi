@@ -9,9 +9,9 @@ import UIKit
 
 class TripViewController: UIViewController {
     
-    let defaultHeight: CGFloat = UIScreen.main.bounds.height - 50
+    let defaultHeight: CGFloat = UIScreen.main.bounds.height - 80
     let dismissibleHeight: CGFloat = 150
-    let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 50
+    let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 80
     let minimumContainerHeight:CGFloat = UIScreen.main.bounds.height / 2
     
     var currentContainerHeight: CGFloat = UIScreen.main.bounds.height / 2
@@ -27,6 +27,8 @@ class TripViewController: UIViewController {
     @IBOutlet weak var tripViewCrossButton: UIButton!
     
     @IBOutlet weak var tripTitleTopLabel: UILabel!
+    @IBOutlet weak var topDragableView: UIView!
+    @IBOutlet weak var topDraggableSubView: UIView!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -41,6 +43,7 @@ class TripViewController: UIViewController {
         containerViewHeightConstraint.constant = currentContainerHeight
         tripViewCrossButton.layer.cornerRadius = 25
         tripContainerView.layer.cornerRadius = 30
+        topDraggableSubView.layer.cornerRadius = 2.5
         
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: TripHeaderTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripHeaderTableViewCell.identifier)
@@ -60,8 +63,9 @@ class TripViewController: UIViewController {
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture))
         panGesture.delaysTouchesBegan = false
         panGesture.delaysTouchesEnded = false
-        topStackView.addGestureRecognizer(panGesture)
-        tableView.addGestureRecognizer(panGesture)
+//        topStackView.addGestureRecognizer(panGesture)
+//        tableView.addGestureRecognizer(panGesture)
+        topDragableView.addGestureRecognizer(panGesture)
 //        panGesture.isEnabled = false
     }
     
@@ -78,15 +82,15 @@ class TripViewController: UIViewController {
             }
         case .ended:
             if newHeight < minimumContainerHeight && isDraggingDown {
-                panGesture.isEnabled = true
+//                panGesture.isEnabled = true
                 animateMinimumHeight(dismissibleHeight)
             }
             else if newHeight < defaultHeight && isDraggingDown {
-                panGesture.isEnabled = true
+//                panGesture.isEnabled = true
                 animateContainerHeight(minimumContainerHeight)
             }
             else if newHeight < defaultHeight {
-                panGesture.isEnabled = false
+//                panGesture.isEnabled = false
                 animateContainerHeight(defaultHeight)
             }
         default:
@@ -152,17 +156,17 @@ extension TripViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y <= 0 {
-            panGesture.isEnabled = true
-            if currentContainerHeight == defaultHeight {
-                isDragedByUser = false
-                animateContainerHeight(minimumContainerHeight)
-            } else if currentContainerHeight == minimumContainerHeight && isDragedByUser{
-                animateMinimumHeight(dismissibleHeight)
-            }
-        } else {
-            animateContainerHeight(maximumContainerHeight)
-        }
+//        if scrollView.contentOffset.y <= 0 {
+////            panGesture.isEnabled = true
+//            if currentContainerHeight == defaultHeight {
+//                isDragedByUser = false
+//                animateContainerHeight(minimumContainerHeight)
+//            } else if currentContainerHeight == minimumContainerHeight && isDragedByUser{
+//                animateMinimumHeight(dismissibleHeight)
+//            }
+//        } else {
+//            animateContainerHeight(maximumContainerHeight)
+//        }
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

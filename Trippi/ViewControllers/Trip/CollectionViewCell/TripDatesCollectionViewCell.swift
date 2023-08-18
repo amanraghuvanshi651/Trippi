@@ -18,10 +18,13 @@ class TripDatesCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         dateFormatter.dateFormat = "MMMM d"
-        containerView.layer.cornerRadius = 20
     }
     
     func configure(date: Date) {
+        containerView.backgroundColor = .brown
+        containerView.layer.cornerRadius = 20
+        containerView.clipsToBounds = true
+        containerView.layer.masksToBounds = true
         dateLabel.text = dateFormatter.string(from: date)
     }
 }
