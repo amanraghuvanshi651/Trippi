@@ -9,9 +9,13 @@ import UIKit
 
 class TripHeaderTableViewCell: UITableViewCell {
 
+    
+    var gradient = CAGradientLayer()
+    
     //MARK: - Outlets
     @IBOutlet weak var tripImageView: UIImageView!
     @IBOutlet weak var tripTitleLabel: UILabel!
+    @IBOutlet weak var topGradientView: UIView!
     
     //user image
     @IBOutlet weak var user1: UIImageView!
@@ -30,6 +34,8 @@ class TripHeaderTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         tripImageView.layer.cornerRadius = 30
+        tripTitleLabel.textColor = tripImageView.image?.averageColor
+        topGradientView.alpha = 0.8
         user1.layer.cornerRadius = 18
         user2.layer.cornerRadius = 18
         user3.layer.cornerRadius = 18
@@ -48,7 +54,23 @@ class TripHeaderTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        addGradient()
+    }
+    
     //MARK: - Actions
     @IBAction func onClickMomentsButton(_ sender: Any) {
+    }
+    
+    //MARK: - Custom Methods
+    func addGradient() {
+        gradient.removeFromSuperlayer()
+        gradient.cornerRadius = 30
+        gradient.frame = topGradientView.bounds
+        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradient.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+
+        topGradientView.layer.insertSublayer(gradient, at: 0)
     }
 }

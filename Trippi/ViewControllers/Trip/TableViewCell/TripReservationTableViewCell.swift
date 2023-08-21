@@ -13,7 +13,8 @@ class TripReservationTableViewCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var cutViewFirst: UIView!
     @IBOutlet weak var cutViewSecond: UIView!
-
+    @IBOutlet weak var topView: UIView!
+    
     @IBOutlet weak var reservationTypeImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -26,6 +27,11 @@ class TripReservationTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        topView.drawDottedLine()
     }
     
     func configure(tripReservation: TripReservation) {

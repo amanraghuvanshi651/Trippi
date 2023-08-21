@@ -14,4 +14,17 @@ extension UIView {
         self.layer.shadowRadius = radius
         self.layer.shadowOpacity = opacity
     }
+    
+    func drawDottedLine() {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.strokeColor = UIColor(named: BUTTON_TEXT_COLOR)?.cgColor
+        shapeLayer.lineWidth = 1
+        shapeLayer.lineDashPattern = [7, 3] // 7 is the length of dash, 3 is length of the gap.
+
+        let path = CGMutablePath()
+        path.addLines(between: [CGPoint(x: self.bounds.minX, y: self.bounds.midY), CGPoint(x: self.bounds.maxX, y: self.bounds.midY)])
+        shapeLayer.path = path
+        self.layer.insertSublayer(shapeLayer, at: 0)
+//        self.layer.addSublayer(shapeLayer)
+    }
 }

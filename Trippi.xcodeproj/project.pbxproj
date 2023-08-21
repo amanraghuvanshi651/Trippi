@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		506626FA2A935B5F00E36F83 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506626F92A935B5F00E36F83 /* UIImageExtension.swift */; };
+		506626FD2A9398C900E36F83 /* AddNewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506626FB2A9398C900E36F83 /* AddNewTableViewCell.swift */; };
+		506626FE2A9398C900E36F83 /* AddNewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 506626FC2A9398C900E36F83 /* AddNewTableViewCell.xib */; };
 		507B87752A825417004D3DBE /* Comments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507B87742A825417004D3DBE /* Comments.storyboard */; };
 		507B87772A82542B004D3DBE /* Share.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507B87762A82542B004D3DBE /* Share.storyboard */; };
 		507B87842A825567004D3DBE /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B87832A825567004D3DBE /* CommentsViewController.swift */; };
@@ -20,6 +23,7 @@
 		507B87A12A826D83004D3DBE /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B879F2A826D83004D3DBE /* CommentTableViewCell.swift */; };
 		507B87A22A826D83004D3DBE /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 507B87A02A826D83004D3DBE /* CommentTableViewCell.xib */; };
 		507B87A52A827CB3004D3DBE /* CommentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B87A42A827CB3004D3DBE /* CommentDataModel.swift */; };
+		5084FBCE2A932FFE00DB9B72 /* TripBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5084FBCD2A932FFE00DB9B72 /* TripBottomSheetViewController.swift */; };
 		5091A6EE2A7108820091197E /* CreateNewTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5091A6EC2A7108820091197E /* CreateNewTripTableViewCell.swift */; };
 		5091A6EF2A7108820091197E /* CreateNewTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */; };
 		5091CD702A7A3472005D9A28 /* heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 5091CD6F2A7A3472005D9A28 /* heart.json */; };
@@ -154,6 +158,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		506626F92A935B5F00E36F83 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		506626FB2A9398C900E36F83 /* AddNewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTableViewCell.swift; sourceTree = "<group>"; };
+		506626FC2A9398C900E36F83 /* AddNewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewTableViewCell.xib; sourceTree = "<group>"; };
 		507B87742A825417004D3DBE /* Comments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Comments.storyboard; sourceTree = "<group>"; };
 		507B87762A82542B004D3DBE /* Share.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Share.storyboard; sourceTree = "<group>"; };
 		507B87832A825567004D3DBE /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +174,7 @@
 		507B879F2A826D83004D3DBE /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		507B87A02A826D83004D3DBE /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		507B87A42A827CB3004D3DBE /* CommentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDataModel.swift; sourceTree = "<group>"; };
+		5084FBCD2A932FFE00DB9B72 /* TripBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripBottomSheetViewController.swift; sourceTree = "<group>"; };
 		5091A6EC2A7108820091197E /* CreateNewTripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTripTableViewCell.swift; sourceTree = "<group>"; };
 		5091A6ED2A7108820091197E /* CreateNewTripTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewTripTableViewCell.xib; sourceTree = "<group>"; };
 		5091CD6F2A7A3472005D9A28 /* heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart.json; sourceTree = "<group>"; };
@@ -518,6 +526,7 @@
 				50A32F892A83A9B10017191B /* TableViewCell */,
 				50A32F852A83A8FA0017191B /* Model */,
 				50A32F832A83713D0017191B /* TripViewController.swift */,
+				5084FBCD2A932FFE00DB9B72 /* TripBottomSheetViewController.swift */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -550,6 +559,8 @@
 				50D676AC2A8E324C00DC0454 /* TripDatesTableViewCell.xib */,
 				783AD31F2A8FF39200AF8EE0 /* TripReservationTableViewCell.swift */,
 				783AD3202A8FF39200AF8EE0 /* TripReservationTableViewCell.xib */,
+				506626FB2A9398C900E36F83 /* AddNewTableViewCell.swift */,
+				506626FC2A9398C900E36F83 /* AddNewTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -703,6 +714,7 @@
 				50BB53812A6A8825000DE037 /* UIViewControllerExtension.swift */,
 				50A4027E2A7BB4990019F8EC /* UIButtonExtension.swift */,
 				50C3D0A42A6EB66800DDED53 /* UIImageViewExtension.swift */,
+				506626F92A935B5F00E36F83 /* UIImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -978,6 +990,7 @@
 				507B87942A825576004D3DBE /* ShareToUserTableViewCell.xib in Resources */,
 				50BE53092A794A7B00B445BB /* likeAnimation1.json in Resources */,
 				50BF32202A73C10400F7CD28 /* TopJourneysTableViewCell.xib in Resources */,
+				506626FE2A9398C900E36F83 /* AddNewTableViewCell.xib in Resources */,
 				50D676B32A8E32A800DC0454 /* TripDatesCollectionViewCell.xib in Resources */,
 				50BB534A2A6A728B000DE037 /* Assets.xcassets in Resources */,
 				5091CD9A2A7AA289005D9A28 /* Seoul.jpg in Resources */,
@@ -1038,6 +1051,7 @@
 				507B87902A825576004D3DBE /* ShareViewController.swift in Sources */,
 				50C3D0A32A6EADCA00DDED53 /* ReversedGeoLocation.swift in Sources */,
 				507B87952A825576004D3DBE /* ShareUserModel.swift in Sources */,
+				506626FA2A935B5F00E36F83 /* UIImageExtension.swift in Sources */,
 				50BB53412A6A7289000DE037 /* AppDelegate.swift in Sources */,
 				50D676B62A8E51AF00DC0454 /* OngoingTripTableViewCell.swift in Sources */,
 				783AD31C2A8FE9A000AF8EE0 /* TripBudget.swift in Sources */,
@@ -1050,6 +1064,7 @@
 				50BE53072A7946D600B445BB /* NSObject+Extension.swift in Sources */,
 				50A32F902A83AE290017191B /* TripHeaderTableViewCell.swift in Sources */,
 				509E2E022A77C5C200638F06 /* SearchPlaceViewController.swift in Sources */,
+				5084FBCE2A932FFE00DB9B72 /* TripBottomSheetViewController.swift in Sources */,
 				507B87972A82559C004D3DBE /* UIViewExtension.swift in Sources */,
 				507B87932A825576004D3DBE /* ShareToUserTableViewCell.swift in Sources */,
 				50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */,
@@ -1064,6 +1079,7 @@
 				783AD31A2A8FE80F00AF8EE0 /* TripReservationType.swift in Sources */,
 				507B87912A825576004D3DBE /* SharingOptionCollectionViewCell.swift in Sources */,
 				5091CD762A7A3682005D9A28 /* MomentModel.swift in Sources */,
+				506626FD2A9398C900E36F83 /* AddNewTableViewCell.swift in Sources */,
 				50C3D0A52A6EB66800DDED53 /* UIImageViewExtension.swift in Sources */,
 				50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */,
 				783AD3142A8FE4FB00AF8EE0 /* TripDate.swift in Sources */,

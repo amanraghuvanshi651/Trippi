@@ -10,6 +10,7 @@
     <customFonts key="customFonts">
         <array key="Montserrat-VariableFont_wght.ttf">
             <string>MontserratRoman-Bold</string>
+            <string>MontserratRoman-ExtraBold</string>
             <string>MontserratRoman-Medium</string>
             <string>MontserratRoman-Regular</string>
         </array>
@@ -25,25 +26,48 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3pj-cq-Iuv">
-                        <rect key="frame" x="10" y="10" width="407" height="319.33333333333331"/>
+                        <rect key="frame" x="10" y="10" width="407" height="274.66666666666669"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jkn-RE-hWA">
-                                <rect key="frame" x="0.0" y="0.0" width="407" height="224.66666666666666"/>
+                                <rect key="frame" x="0.0" y="0.0" width="407" height="180"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iiy-Tp-HKp">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uat-gY-Ttq">
                                         <rect key="frame" x="0.0" y="0.0" width="407" height="180"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moment5" translatesAutoresizingMaskIntoConstraints="NO" id="roU-X2-gcO">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moment3" translatesAutoresizingMaskIntoConstraints="NO" id="roU-X2-gcO">
                                                 <rect key="frame" x="0.0" y="0.0" width="407" height="180"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="180" id="dn3-4g-zRJ"/>
                                                 </constraints>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="618-Sw-oVC">
+                                                <rect key="frame" x="0.0" y="50" width="407" height="130"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kos-3Z-vjw">
+                                                <rect key="frame" x="10" y="123.33333333333336" width="387" height="36.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="MontserratRoman-ExtraBold" family="Montserrat" pointSize="30"/>
+                                                <color key="textColor" name="WhiteTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAt-Og-6NK">
-                                        <rect key="frame" x="0.0" y="200" width="407" height="24.666666666666657"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="roU-X2-gcO" secondAttribute="bottom" id="3GR-ls-eU6"/>
+                                            <constraint firstAttribute="trailing" secondItem="618-Sw-oVC" secondAttribute="trailing" id="5CN-Gf-tJ4"/>
+                                            <constraint firstItem="roU-X2-gcO" firstAttribute="top" secondItem="uat-gY-Ttq" secondAttribute="top" id="C3h-Td-idM"/>
+                                            <constraint firstItem="618-Sw-oVC" firstAttribute="top" secondItem="uat-gY-Ttq" secondAttribute="top" constant="50" id="FgQ-Kp-7cr"/>
+                                            <constraint firstItem="Kos-3Z-vjw" firstAttribute="leading" secondItem="uat-gY-Ttq" secondAttribute="leading" constant="10" id="GsD-Ku-xEu"/>
+                                            <constraint firstAttribute="bottom" secondItem="Kos-3Z-vjw" secondAttribute="bottom" constant="20" id="JLx-Xd-4KV"/>
+                                            <constraint firstItem="roU-X2-gcO" firstAttribute="leading" secondItem="uat-gY-Ttq" secondAttribute="leading" id="VDN-NM-n1W"/>
+                                            <constraint firstAttribute="trailing" secondItem="roU-X2-gcO" secondAttribute="trailing" id="WSn-Dj-WJC"/>
+                                            <constraint firstAttribute="bottom" secondItem="618-Sw-oVC" secondAttribute="bottom" id="aFu-zC-rZg"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kos-3Z-vjw" secondAttribute="trailing" constant="10" id="sG9-Tj-EX1"/>
+                                            <constraint firstItem="618-Sw-oVC" firstAttribute="leading" secondItem="uat-gY-Ttq" secondAttribute="leading" id="uZi-ki-m2z"/>
+                                        </constraints>
+                                    </view>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAt-Og-6NK">
+                                        <rect key="frame" x="0.0" y="180" width="407" height="0.0"/>
                                         <fontDescription key="fontDescription" name="MontserratRoman-Bold" family="Montserrat" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -51,7 +75,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FLq-nk-et3">
-                                <rect key="frame" x="0.0" y="229.66666666666666" width="407" height="89.666666666666657"/>
+                                <rect key="frame" x="0.0" y="185" width="407" height="89.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPE-wl-bqS">
                                         <rect key="frame" x="0.0" y="0.0" width="407" height="63.666666666666664"/>
@@ -61,7 +85,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date: 21/02/23 - 27/02/23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlT-VS-A7S">
-                                        <rect key="frame" x="0.0" y="73.666666666666657" width="407" height="16"/>
+                                        <rect key="frame" x="0.0" y="73.666666666666686" width="407" height="16"/>
                                         <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -72,7 +96,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7Hb-Js-L94">
-                        <rect key="frame" x="10" y="349.33333333333331" width="407" height="40"/>
+                        <rect key="frame" x="10" y="304.66666666666669" width="407" height="40"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="jmo-TB-Xcs">
                                 <rect key="frame" x="0.0" y="0.0" width="115" height="40"/>
@@ -213,8 +237,9 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="blurView" destination="iWJ-zj-PKM" id="7q0-M4-SXu"/>
+                <outlet property="topGradientView" destination="618-Sw-oVC" id="4kM-e9-bRf"/>
                 <outlet property="tripImageView" destination="roU-X2-gcO" id="6R1-CT-dJ4"/>
-                <outlet property="tripTitleLabel" destination="NAt-Og-6NK" id="9ow-Tu-2EH"/>
+                <outlet property="tripTitleLabel" destination="Kos-3Z-vjw" id="p6c-Bk-fnT"/>
                 <outlet property="user1" destination="MlT-CW-CBm" id="2sT-hx-APv"/>
                 <outlet property="user1ContainerView" destination="dkY-iY-BJU" id="jIZ-wq-KKO"/>
                 <outlet property="user2" destination="JEx-z1-VoB" id="Bkm-Fk-rCg"/>
@@ -229,7 +254,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Moment5" width="5760" height="7200"/>
+        <image name="Moment3" width="2912" height="4368"/>
         <image name="MomentsIcon" width="170.66667175292969" height="170.66667175292969"/>
         <image name="User" width="300" height="300"/>
         <namedColor name="AppBackground">
@@ -243,6 +268,9 @@
         </namedColor>
         <namedColor name="TextColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WhiteTextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
