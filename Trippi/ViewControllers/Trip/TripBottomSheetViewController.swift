@@ -2,7 +2,7 @@
 //  TripBottomSheetViewController.swift
 //  Trippi
 //
-//  Created by macmini50 on 21/08/23.
+//  Created by Aman Raghuvanshi on 21/08/23.
 //
 
 import UIKit
@@ -15,7 +15,36 @@ class TripBottomSheetViewController: UIViewController {
     weak var delegate: TripBottomSheetViewControllerDelegate?
     
     var selectedOption: TripOptions = .daysPlan
-    var tripData: TripDataModel? = TripDataModel(id: "dsadsa", title: "Trip to Bhusan", image: "", dates: [TripDate(date: Date(), isSelected: true), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false)], dayPlan: [TripDayPlan()], reservations: [TripReservation(id: "", reservationType: .bus, fromPlace: "", toPlace: ""), TripReservation(id: "", reservationType: .flight, fromPlace: "", toPlace: ""), TripReservation(id: "", reservationType: .train, fromPlace: "", toPlace: "")], budget: TripBudget())
+    var tripData: TripDataModel? = TripDataModel(
+        id: "dsadsa",
+        title: "Trip to Bhusan",
+        image: "",
+        dates: [
+            TripDate(date: Date(), isSelected: true),
+            TripDate(date: Date(), isSelected: false),
+            TripDate(date: Date(), isSelected: false),
+            TripDate(date: Date(), isSelected: false),
+            TripDate(date: Date(), isSelected: false)
+        ],
+        dayPlan: [TripDayPlan()],
+        reservations: [],
+        budget: TripBudget(
+            id: "",
+            total: 8000,
+            expenses: [
+                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
+                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
+                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
+                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
+                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
+                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
+                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
+                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
+                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food)
+            ]
+        )
+    )
+//    TripReservation(id: "", reservationType: .bus, fromPlace: "", toPlace: "", date: Date()), TripReservation(id: "", reservationType: .flight, fromPlace: "", toPlace: "", date: Date()), TripReservation(id: "", reservationType: .train, fromPlace: "", toPlace: "", date: Date())
     
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -45,6 +74,9 @@ class TripBottomSheetViewController: UIViewController {
         tableView.register(UINib(nibName: TripOptionsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripOptionsTableViewCell.identifier)
         tableView.register(UINib(nibName: TripDatesTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripDatesTableViewCell.identifier)
         tableView.register(UINib(nibName: TripReservationTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripReservationTableViewCell.identifier)
+        tableView.register(UINib(nibName: AddNewTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: AddNewTableViewCell.identifier)
+        tableView.register(UINib(nibName: TripBudgetTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripBudgetTableViewCell.identifier)
+        tableView.register(UINib(nibName: TripExpenseTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripExpenseTableViewCell.identifier)
     }
 }
 
@@ -59,11 +91,11 @@ extension TripBottomSheetViewController: UITableViewDelegate, UITableViewDataSou
         } else {
             switch selectedOption {
             case .daysPlan:
-                return (tripData?.dayPlan.count ?? 0) + 10
+                return (tripData?.dayPlan.count ?? 0) + 1
             case .reservations:
                 return (tripData?.reservations.count ?? 0) + 1
             case .budget:
-                return 10
+                return (tripData?.budget.expenses.count ?? 0) + 1
             }
         }
     }
@@ -104,7 +136,11 @@ extension TripBottomSheetViewController: UITableViewDelegate, UITableViewDataSou
             case .reservations:
                 switch indexPath.row {
                 case tripData?.reservations.count:
-                    return UITableViewCell()
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: AddNewTableViewCell.identifier, for: indexPath) as? AddNewTableViewCell else {
+                        return UITableViewCell()
+                    }
+                    cell.delegate = self
+                    return cell
                 default:
                     guard let cell = tableView.dequeueReusableCell(withIdentifier: TripReservationTableViewCell.identifier, for: indexPath) as? TripReservationTableViewCell else {
                         return UITableViewCell()
@@ -114,7 +150,22 @@ extension TripBottomSheetViewController: UITableViewDelegate, UITableViewDataSou
                     return cell
                 }
             case .budget:
-                return UITableViewCell()
+                switch indexPath.row {
+                case 0:
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: TripBudgetTableViewCell.identifier, for: indexPath) as? TripBudgetTableViewCell else {
+                        return UITableViewCell()
+                    }
+                    cell.configure(budget: tripData!.budget)
+                    cell.selectionStyle = .none
+                    return cell
+                default:
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: TripExpenseTableViewCell.identifier, for: indexPath) as? TripExpenseTableViewCell else {
+                        return UITableViewCell()
+                    }
+                    cell.selectionStyle = .none
+                    return cell
+                }
+                
             }
         }
     }
@@ -147,5 +198,13 @@ extension TripBottomSheetViewController: TripDatesTableViewCellDelegate {
     }
     
     func onClickAddDate() {
+    }
+}
+
+//MARK: - Add New Cell Delegate
+extension TripBottomSheetViewController: AddNewTableViewCellDelegate {
+    func onClickAddButton() {
+        let vc = getVC(storyboard: .addReservation, vc: AddReservationViewController.identifier) as! AddReservationViewController
+        self.presentVC(vc: vc)
     }
 }

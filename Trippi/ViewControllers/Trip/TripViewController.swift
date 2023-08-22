@@ -21,8 +21,6 @@ class TripViewController: UIViewController {
     var isKeyboardVisible = true
     var isDragedByUser = false
     var selectedOption: TripOptions = .daysPlan
-    
-    var tripData: TripDataModel? = TripDataModel(id: "dsadsa", title: "Trip to Bhusan", image: "", dates: [TripDate(date: Date(), isSelected: true), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false), TripDate(date: Date(), isSelected: false)], dayPlan: [TripDayPlan()], reservations: [TripReservation(id: "", reservationType: .bus, fromPlace: "", toPlace: ""), TripReservation(id: "", reservationType: .flight, fromPlace: "", toPlace: ""), TripReservation(id: "", reservationType: .train, fromPlace: "", toPlace: "")], budget: TripBudget())
 
     //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
@@ -45,7 +43,7 @@ class TripViewController: UIViewController {
         vc.isModalInPresentation = true
         if let sheet = vc.sheetPresentationController {
             sheet.detents = [.medium(), .large(), .custom(resolver: { context in
-                0.25 * context.maximumDetentValue
+                0.26 * context.maximumDetentValue
             })]
             sheet.prefersGrabberVisible = true
             sheet.preferredCornerRadius = 25

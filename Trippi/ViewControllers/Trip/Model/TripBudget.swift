@@ -5,8 +5,10 @@
 //  Created by Abhay Singh Raghuvanshi on 18/08/23.
 //
 
-import Foundation
+import UIKit
 
 struct TripBudget {
-    
+    var id: String
+    var total: Double
+    var expenses: [TripExpense]
 }

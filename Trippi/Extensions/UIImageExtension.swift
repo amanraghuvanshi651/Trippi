@@ -2,7 +2,7 @@
 //  UIColorExtension.swift
 //  Trippi
 //
-//  Created by macmini50 on 21/08/23.
+//  Created by Aman Raghuvanshi on 21/08/23.
 //
 
 import UIKit

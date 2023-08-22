@@ -12,7 +12,5 @@ struct TripReservation {
     var reservationType: TripReservationType
     var fromPlace: String
     var toPlace: String
-    var boardingTime: Date?
-    var driveTime: Date?
-    var rideTime: Date?
+    var date: Date
 }
