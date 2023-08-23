@@ -21,6 +21,13 @@ class TripViewController: UIViewController {
     var isKeyboardVisible = true
     var isDragedByUser = false
     var selectedOption: TripOptions = .daysPlan
+    
+    var bottomSheet: TripBottomSheetViewController = {
+        guard let vc = getVC(storyboard: .trip, vc: TripBottomSheetViewController.identifier) as? TripBottomSheetViewController else {
+            return TripBottomSheetViewController()
+        }
+        return vc
+    }()
 
     //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
@@ -36,20 +43,21 @@ class TripViewController: UIViewController {
     }
     
     func presentBottomSheet() {
-        guard let vc = getVC(storyboard: .trip, vc: TripBottomSheetViewController.identifier) as? TripBottomSheetViewController else {
-            return
-        }
-        vc.delegate = self
-        vc.isModalInPresentation = true
-        if let sheet = vc.sheetPresentationController {
+//        guard let vc = getVC(storyboard: .trip, vc: TripBottomSheetViewController.identifier) as? TripBottomSheetViewController else {
+//            return
+//        }
+        bottomSheet.delegate = self
+        bottomSheet.isModalInPresentation = true
+        if let sheet = bottomSheet.sheetPresentationController {
             sheet.detents = [.medium(), .large(), .custom(resolver: { context in
                 0.26 * context.maximumDetentValue
             })]
             sheet.prefersGrabberVisible = true
             sheet.preferredCornerRadius = 25
             sheet.largestUndimmedDetentIdentifier = .medium
+            sheet.delegate = self
         }
-        self.presentVC(vc: vc)
+        self.presentVC(vc: bottomSheet)
     }
 }
 
@@ -57,5 +65,21 @@ class TripViewController: UIViewController {
 extension TripViewController: TripBottomSheetViewControllerDelegate {
     func onClickCross() {
         self.dismissOrPop()
+    }
+}
+
+//MARK: - Sheet Presentation Controller Delegate
+extension TripViewController: UISheetPresentationControllerDelegate {
+    func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
+        if let selectedDetentIdentifier = sheetPresentationController.selectedDetentIdentifier {
+            switch selectedDetentIdentifier {
+            case .medium:
+                bottomSheet.setUpSheetDetent(detent: .medium)
+            case .large:
+                bottomSheet.setUpSheetDetent(detent: .large)
+            default:
+                bottomSheet.setUpSheetDetent(detent: .custom)
+            }
+        }
     }
 }

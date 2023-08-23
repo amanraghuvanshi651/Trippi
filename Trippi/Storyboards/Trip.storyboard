@@ -12,6 +12,7 @@
     <customFonts key="customFonts">
         <array key="Montserrat-VariableFont_wght.ttf">
             <string>MontserratRoman-Bold</string>
+            <string>MontserratRoman-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -82,7 +83,7 @@
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jre-dQ-F5e">
-                                        <rect key="frame" x="20" y="30" width="50" height="50"/>
+                                        <rect key="frame" x="20" y="50" width="50" height="50"/>
                                         <color key="backgroundColor" name="HighlightViewBackground"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="Ud6-iS-MmB"/>
@@ -97,6 +98,22 @@
                                             <action selector="onClickCrossButton:" destination="bi8-Lm-Iju" eventType="touchUpInside" id="SpX-sy-UiN"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCN-nf-cTA">
+                                        <rect key="frame" x="281.66666666666669" y="693" width="91.333333333333314" height="60"/>
+                                        <color key="backgroundColor" name="ButtonBackground"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="iVG-pU-Awq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MontserratRoman-Medium" family="Montserrat" pointSize="18"/>
+                                        <color key="tintColor" name="ButtonTextColor"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <state key="normal" title="Place" image="Add">
+                                            <color key="titleColor" name="ButtonTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onClickAddButton:" destination="bi8-Lm-Iju" eventType="touchUpInside" id="yvk-Jq-cQt"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="AppBackground"/>
                                 <constraints>
@@ -106,9 +123,11 @@
                                     <constraint firstAttribute="trailing" secondItem="UVD-aV-gIa" secondAttribute="trailing" id="Gei-5D-dkc"/>
                                     <constraint firstAttribute="trailing" secondItem="aho-6H-IVx" secondAttribute="trailing" id="LvO-9e-tJY"/>
                                     <constraint firstAttribute="bottom" secondItem="aho-6H-IVx" secondAttribute="bottom" id="O9f-gf-ptA"/>
+                                    <constraint firstAttribute="bottom" secondItem="NCN-nf-cTA" secondAttribute="bottom" constant="40" id="TJv-Fi-6mG"/>
                                     <constraint firstItem="aho-6H-IVx" firstAttribute="leading" secondItem="OGx-Cf-9T7" secondAttribute="leading" id="V5e-HV-o1f"/>
-                                    <constraint firstItem="jre-dQ-F5e" firstAttribute="top" secondItem="OGx-Cf-9T7" secondAttribute="top" constant="30" id="abA-Ji-ezD"/>
+                                    <constraint firstItem="jre-dQ-F5e" firstAttribute="top" secondItem="OGx-Cf-9T7" secondAttribute="top" constant="50" id="abA-Ji-ezD"/>
                                     <constraint firstItem="jre-dQ-F5e" firstAttribute="leading" secondItem="OGx-Cf-9T7" secondAttribute="leading" constant="20" id="cDP-8u-5lf"/>
+                                    <constraint firstAttribute="trailing" secondItem="NCN-nf-cTA" secondAttribute="trailing" constant="20" id="e7s-H4-fb7"/>
                                     <constraint firstAttribute="trailing" secondItem="UVD-aV-gIa" secondAttribute="trailing" id="eme-tF-Y9X"/>
                                     <constraint firstItem="UVD-aV-gIa" firstAttribute="leading" secondItem="OGx-Cf-9T7" secondAttribute="leading" id="hzJ-3o-kKA"/>
                                 </constraints>
@@ -124,6 +143,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="NCN-nf-cTA" id="CXI-Oc-Pb2"/>
                         <outlet property="tableView" destination="aho-6H-IVx" id="aE8-3c-YPZ"/>
                         <outlet property="tripViewCrossButton" destination="jre-dQ-F5e" id="SMh-vd-ce8"/>
                     </connections>
@@ -134,9 +154,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add" width="21.333333969116211" height="21.333333969116211"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AppBackground">
             <color red="0.92900002002716064" green="0.94099998474121094" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButtonBackground">
+            <color red="0.98000001907348633" green="0.81599998474121094" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButtonTextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="HighlightViewBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

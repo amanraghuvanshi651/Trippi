@@ -7,11 +7,12 @@
 
 import Foundation
 
-enum TripExpenseType: String {
+enum TripExpenseType: String, CaseIterable {
     case fuel = "Fuel"
     case transport = "Transport"
     case food = "Food"
     case activity = "Activity"
     case ticket = "Ticket"
+    case hotel = "Hotel"
     case custom = "Custom"
 }

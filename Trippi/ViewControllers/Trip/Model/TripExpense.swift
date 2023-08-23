@@ -12,6 +12,6 @@ struct TripExpense {
     var name: String
     var amount: Double
     var expenseType: TripExpenseType
-    var pic: String?
+    var pic: String
     var customExpenseName: String?
 }

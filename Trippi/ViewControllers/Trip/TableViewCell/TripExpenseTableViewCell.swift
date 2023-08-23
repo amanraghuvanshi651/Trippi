@@ -9,6 +9,7 @@ import UIKit
 
 class TripExpenseTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var expenseTypeImage: UIImageView!
     @IBOutlet weak var expenseLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
@@ -16,14 +17,16 @@ class TripExpenseTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        containerView.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure() {
-        expenseLabel.text = "Petrol"
-        amountLabel.text = "₹800.0"
+    func configure(expense: TripExpense) {
+        expenseLabel.text = expense.name
+        amountLabel.text = "₹\(expense.amount)"
+        expenseTypeImage.image = UIImage(named: expense.pic)
     }
 }

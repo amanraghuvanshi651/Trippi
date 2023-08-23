@@ -9,19 +9,6 @@ import UIKit
 import DGCharts
 
 class TripBudgetTableViewCell: UITableViewCell {
-    
-    var customColors = [
-        "FF6969",
-        "337CCF",
-        "FFBFBF",
-        "279EFF",
-        "EBE76C",
-        "40F8FF",
-        "4D3C77",
-        "96B6C5",
-        "EADBC8",
-        "9ED2BE"
-    ]
 
     //MARK: - Outlets
     @IBOutlet weak var budgetLabel: UILabel!
@@ -36,7 +23,7 @@ class TripBudgetTableViewCell: UITableViewCell {
     }
     
     func configure(budget: TripBudget) {
-        var expenses = budget.expenses.map { expense in
+        let expenses = budget.expenses.map { expense in
             expense.amount
         }
         let expenseTotal = expenses.reduce(0, +)
@@ -49,8 +36,8 @@ class TripBudgetTableViewCell: UITableViewCell {
         
         let dataSet = PieChartDataSet(entries: [expenseDataEntry, remainingDataEntry], label: "")
         let colors = [
-            UIColor(hexString: "FF6969"),
-            UIColor(hexString: "FFBFBF")
+            UIColor(hexString: "4A55A2"),
+            UIColor(hexString: "7895CB")
         ]
         
         let data = PieChartData(dataSet: dataSet)

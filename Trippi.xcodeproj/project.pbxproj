@@ -53,6 +53,13 @@
 		5091CDA62A7AA2BA005D9A28 /* TripImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5091CDA02A7AA2BA005D9A28 /* TripImage1.jpg */; };
 		5091CDA72A7AA2BA005D9A28 /* TripImage5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5091CDA12A7AA2BA005D9A28 /* TripImage5.jpg */; };
 		5091CDA82A7AA2BA005D9A28 /* TripImage6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5091CDA22A7AA2BA005D9A28 /* TripImage6.jpg */; };
+		509345A02A95F34D00C393C1 /* BottomSheetDetent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5093459F2A95F34D00C393C1 /* BottomSheetDetent.swift */; };
+		509345A22A95F67200C393C1 /* AddExpense.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509345A12A95F67200C393C1 /* AddExpense.storyboard */; };
+		509345A62A960C8100C393C1 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509345A52A960C8100C393C1 /* AddExpenseViewController.swift */; };
+		509345A92A960F0300C393C1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 509345A82A960F0300C393C1 /* IQKeyboardManagerSwift */; };
+		509345AD2A96135900C393C1 /* ExpenseTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509345AB2A96135900C393C1 /* ExpenseTypeCollectionViewCell.swift */; };
+		509345AE2A96135900C393C1 /* ExpenseTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 509345AC2A96135900C393C1 /* ExpenseTypeCollectionViewCell.xib */; };
+		509345B12A9614BC00C393C1 /* AddExpenseTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509345B02A9614BC00C393C1 /* AddExpenseTypeModel.swift */; };
 		509921F22A7CDC8A004B0BD1 /* TrippiTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509921F12A7CDC8A004B0BD1 /* TrippiTabBarViewController.swift */; };
 		509921F42A7CDC9A004B0BD1 /* TrippiTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509921F32A7CDC9A004B0BD1 /* TrippiTabBar.storyboard */; };
 		509921F82A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509921F62A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.swift */; };
@@ -212,6 +219,12 @@
 		5091CDA02A7AA2BA005D9A28 /* TripImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TripImage1.jpg; sourceTree = "<group>"; };
 		5091CDA12A7AA2BA005D9A28 /* TripImage5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TripImage5.jpg; sourceTree = "<group>"; };
 		5091CDA22A7AA2BA005D9A28 /* TripImage6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TripImage6.jpg; sourceTree = "<group>"; };
+		5093459F2A95F34D00C393C1 /* BottomSheetDetent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetDetent.swift; sourceTree = "<group>"; };
+		509345A12A95F67200C393C1 /* AddExpense.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddExpense.storyboard; sourceTree = "<group>"; };
+		509345A52A960C8100C393C1 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
+		509345AB2A96135900C393C1 /* ExpenseTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		509345AC2A96135900C393C1 /* ExpenseTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseTypeCollectionViewCell.xib; sourceTree = "<group>"; };
+		509345B02A9614BC00C393C1 /* AddExpenseTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseTypeModel.swift; sourceTree = "<group>"; };
 		509921F12A7CDC8A004B0BD1 /* TrippiTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippiTabBarViewController.swift; sourceTree = "<group>"; };
 		509921F32A7CDC9A004B0BD1 /* TrippiTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrippiTabBar.storyboard; sourceTree = "<group>"; };
 		509921F62A7CFC85004B0BD1 /* TrippiTabBarItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrippiTabBarItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -318,6 +331,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509345A92A960F0300C393C1 /* IQKeyboardManagerSwift in Frameworks */,
 				50A7AF6D2A94E6C600914BBC /* DGCharts in Frameworks */,
 				5091CD7D2A7A9EC5005D9A28 /* Kingfisher in Frameworks */,
 				509E2DFB2A77AB6E00638F06 /* Fastis in Frameworks */,
@@ -455,6 +469,41 @@
 			path = Trips;
 			sourceTree = "<group>";
 		};
+		509345A32A960C4800C393C1 /* AddReservation */ = {
+			isa = PBXGroup;
+			children = (
+				50A7AF5C2A94820300914BBC /* AddReservationViewController.swift */,
+			);
+			path = AddReservation;
+			sourceTree = "<group>";
+		};
+		509345A42A960C5300C393C1 /* AddExpense */ = {
+			isa = PBXGroup;
+			children = (
+				509345AF2A96147F00C393C1 /* Model */,
+				509345AA2A96131E00C393C1 /* CollectionViewCell */,
+				509345A52A960C8100C393C1 /* AddExpenseViewController.swift */,
+			);
+			path = AddExpense;
+			sourceTree = "<group>";
+		};
+		509345AA2A96131E00C393C1 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				509345AB2A96135900C393C1 /* ExpenseTypeCollectionViewCell.swift */,
+				509345AC2A96135900C393C1 /* ExpenseTypeCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		509345AF2A96147F00C393C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				509345B02A9614BC00C393C1 /* AddExpenseTypeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		509921F02A7CDC68004B0BD1 /* TrippiTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,7 +594,6 @@
 				50A32F852A83A8FA0017191B /* Model */,
 				50A32F832A83713D0017191B /* TripViewController.swift */,
 				5084FBCD2A932FFE00DB9B72 /* TripBottomSheetViewController.swift */,
-				50A7AF5C2A94820300914BBC /* AddReservationViewController.swift */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -686,6 +734,8 @@
 				50A2C83F2A72307C0096850D /* CreateTrip */,
 				50C3D09C2A6E5FBA00DDED53 /* Setting */,
 				50A32F822A83711E0017191B /* Trip */,
+				509345A42A960C5300C393C1 /* AddExpense */,
+				509345A32A960C4800C393C1 /* AddReservation */,
 				507B87822A825567004D3DBE /* Comments */,
 				507B87852A825576004D3DBE /* Share */,
 				5099220A2A7D2A15004B0BD1 /* SplashViewController.swift */,
@@ -710,6 +760,7 @@
 				5099220C2A7D2AA1004B0BD1 /* Splash.storyboard */,
 				50A32F802A8370E90017191B /* Trip.storyboard */,
 				50A7AF5E2A94822100914BBC /* AddReservation.storyboard */,
+				509345A12A95F67200C393C1 /* AddExpense.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -737,6 +788,7 @@
 				50D676A92A8E1EFD00DC0454 /* TripOptions.swift */,
 				783AD3192A8FE80F00AF8EE0 /* TripReservationType.swift */,
 				50A1DBEA2A94F485003E28AB /* TripExpenseType.swift */,
+				5093459F2A95F34D00C393C1 /* BottomSheetDetent.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -897,6 +949,7 @@
 				509E2DFA2A77AB6E00638F06 /* Fastis */,
 				5091CD7C2A7A9EC5005D9A28 /* Kingfisher */,
 				50A7AF6C2A94E6C600914BBC /* DGCharts */,
+				509345A82A960F0300C393C1 /* IQKeyboardManagerSwift */,
 			);
 			productName = Trippi;
 			productReference = 50BB533D2A6A7289000DE037 /* Trippi.app */;
@@ -975,6 +1028,7 @@
 				509E2DF92A77AB6E00638F06 /* XCRemoteSwiftPackageReference "Fastis" */,
 				5091CD7B2A7A9EC5005D9A28 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				50A7AF6B2A94E6C600914BBC /* XCRemoteSwiftPackageReference "Charts" */,
+				509345A72A960F0300C393C1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 50BB533E2A6A7289000DE037 /* Products */;
 			projectDirPath = "";
@@ -1013,6 +1067,7 @@
 				5091CD882A7AA1A4005D9A28 /* Moment7.jpg in Resources */,
 				50BB534D2A6A728B000DE037 /* LaunchScreen.storyboard in Resources */,
 				5091CD872A7AA1A4005D9A28 /* Moment8.jpg in Resources */,
+				509345AE2A96135900C393C1 /* ExpenseTypeCollectionViewCell.xib in Resources */,
 				50A32F812A8370E90017191B /* Trip.storyboard in Resources */,
 				50D676AE2A8E324C00DC0454 /* TripDatesTableViewCell.xib in Resources */,
 				5091CD8D2A7AA1A4005D9A28 /* Moment1.jpg in Resources */,
@@ -1037,6 +1092,7 @@
 				5091CD9B2A7AA289005D9A28 /* Paris.jpg in Resources */,
 				50C3D0B02A6EBB3B00DDED53 /* unknownLocation.json in Resources */,
 				50BB53912A6A9641000DE037 /* CitiesForYouTableViewCell.xib in Resources */,
+				509345A22A95F67200C393C1 /* AddExpense.storyboard in Resources */,
 				5091CDA52A7AA2BA005D9A28 /* TripImage4.jpg in Resources */,
 				507B87922A825576004D3DBE /* SharingOptionCollectionViewCell.xib in Resources */,
 				5091CD8C2A7AA1A4005D9A28 /* Moment3.jpg in Resources */,
@@ -1108,6 +1164,7 @@
 				509E2E022A77C5C200638F06 /* SearchPlaceViewController.swift in Sources */,
 				5084FBCE2A932FFE00DB9B72 /* TripBottomSheetViewController.swift in Sources */,
 				507B87972A82559C004D3DBE /* UIViewExtension.swift in Sources */,
+				509345A02A95F34D00C393C1 /* BottomSheetDetent.swift in Sources */,
 				507B87932A825576004D3DBE /* ShareToUserTableViewCell.swift in Sources */,
 				50A2C8412A7230920096850D /* CreateTripViewController.swift in Sources */,
 				783AD3162A8FE69500AF8EE0 /* TripPlace.swift in Sources */,
@@ -1127,9 +1184,12 @@
 				50AF64BE2A6FC5AE005FFAB8 /* SettingTableViewCell.swift in Sources */,
 				783AD3142A8FE4FB00AF8EE0 /* TripDate.swift in Sources */,
 				509922022A7CFE1F004B0BD1 /* ProfileViewController.swift in Sources */,
+				509345A62A960C8100C393C1 /* AddExpenseViewController.swift in Sources */,
+				509345AD2A96135900C393C1 /* ExpenseTypeCollectionViewCell.swift in Sources */,
 				50D676A42A8DED8F00DC0454 /* TabBarDelegate.swift in Sources */,
 				507B87A52A827CB3004D3DBE /* CommentDataModel.swift in Sources */,
 				50A7AF632A94E01500914BBC /* TripBudgetTableViewCell.swift in Sources */,
+				509345B12A9614BC00C393C1 /* AddExpenseTypeModel.swift in Sources */,
 				50D676AD2A8E324C00DC0454 /* TripDatesTableViewCell.swift in Sources */,
 				783AD31E2A8FEE2400AF8EE0 /* TripDayPlan.swift in Sources */,
 				5091CD742A7A35ED005D9A28 /* TopTripModel.swift in Sources */,
@@ -1510,6 +1570,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		509345A72A960F0300C393C1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		509E2DF92A77AB6E00638F06 /* XCRemoteSwiftPackageReference "Fastis" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/simla-tech/Fastis.git";
@@ -1541,6 +1609,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5091CD7B2A7A9EC5005D9A28 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		509345A82A960F0300C393C1 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 509345A72A960F0300C393C1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		509E2DFA2A77AB6E00638F06 /* Fastis */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -13,9 +13,10 @@ protocol TripBottomSheetViewControllerDelegate: AnyObject {
 
 class TripBottomSheetViewController: UIViewController {
     weak var delegate: TripBottomSheetViewControllerDelegate?
+    var sheetDetent: BottomSheetDetent = .medium
     
-    var selectedOption: TripOptions = .daysPlan
-    var tripData: TripDataModel? = TripDataModel(
+    private var selectedOption: TripOptions = .daysPlan
+    private var tripData: TripDataModel? = TripDataModel(
         id: "dsadsa",
         title: "Trip to Bhusan",
         image: "",
@@ -32,15 +33,15 @@ class TripBottomSheetViewController: UIViewController {
             id: "",
             total: 8000,
             expenses: [
-                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
-                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
-                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
-                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
-                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
-                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
-                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
-                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food),
-                TripExpense(id: "", name: "", amount: 500.0, expenseType: .food)
+                TripExpense(id: "", name: "Dinner", amount: 600, expenseType: .food, pic: TripExpenseType.food.rawValue),
+                TripExpense(id: "", name: "Fuel Up", amount: 200, expenseType: .fuel, pic: TripExpenseType.fuel.rawValue),
+                TripExpense(id: "", name: "Movie Tickets", amount: 900, expenseType: .ticket, pic: TripExpenseType.ticket.rawValue),
+                TripExpense(id: "", name: "Taxi", amount: 412, expenseType: .transport, pic: TripExpenseType.transport.rawValue),
+                TripExpense(id: "", name: "Lunch", amount: 125, expenseType: .food, pic: TripExpenseType.food.rawValue),
+                TripExpense(id: "", name: "Park View", amount: 155, expenseType: .custom, pic: TripExpenseType.custom.rawValue),
+                TripExpense(id: "", name: "Amusment Park", amount: 1500, expenseType: .activity, pic: TripExpenseType.activity.rawValue),
+                TripExpense(id: "", name: "Fuel Up", amount: 300, expenseType: .fuel, pic: TripExpenseType.fuel.rawValue),
+                TripExpense(id: "", name: "Taxi", amount: 50, expenseType: .transport, pic: TripExpenseType.transport.rawValue)
             ]
         )
     )
@@ -49,6 +50,7 @@ class TripBottomSheetViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tripViewCrossButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,13 +65,32 @@ class TripBottomSheetViewController: UIViewController {
         }
     }
     
-    //MARK: - Custom Methods
-    func setUpUI() {
-        tripViewCrossButton.layer.cornerRadius = 25
+    @IBAction func onClickAddButton(_ sender: Any) {
+        switch selectedOption {
+        case .daysPlan:
+            break
+        case .reservations:
+            guard let vc = getVC(storyboard: .addReservation, vc: AddReservationViewController.identifier) as? AddReservationViewController else {
+                return
+            }
+            self.presentVC(vc: vc)
+        case .budget:
+            guard let vc = getVC(storyboard: .addExpense, vc: AddExpenseViewController.identifier) as? AddExpenseViewController else {
+                return
+            }
+            self.presentVC(vc: vc)
+        }
     }
     
-    func setUpTableView() {
+    //MARK: - Custom Methods
+    private func setUpUI() {
+        tripViewCrossButton.layer.cornerRadius = 25
+        addButton.layer.cornerRadius = 10
+    }
+    
+    private func setUpTableView() {
         tableView.separatorStyle = .none
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
         tableView.register(UINib(nibName: TripHeaderTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripHeaderTableViewCell.identifier)
         tableView.register(UINib(nibName: TripOptionsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripOptionsTableViewCell.identifier)
         tableView.register(UINib(nibName: TripDatesTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripDatesTableViewCell.identifier)
@@ -77,6 +98,49 @@ class TripBottomSheetViewController: UIViewController {
         tableView.register(UINib(nibName: AddNewTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: AddNewTableViewCell.identifier)
         tableView.register(UINib(nibName: TripBudgetTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripBudgetTableViewCell.identifier)
         tableView.register(UINib(nibName: TripExpenseTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TripExpenseTableViewCell.identifier)
+    }
+    
+    func setUpSheetDetent(detent: BottomSheetDetent) {
+        sheetDetent = detent
+        
+        switch sheetDetent {
+        case .medium:
+            hideAddButton()
+        case .large:
+            showAddButton()
+        case .custom:
+            hideAddButton()
+        }
+    }
+    
+    func setUpAddButton(option: TripOptions) {
+        if selectedOption != option {
+            UIView.animate(withDuration: 0.2) {
+                switch option {
+                case .budget:
+                    self.addButton.setTitle(" Expense", for: .normal)
+                case .daysPlan:
+                    self.addButton.setTitle(" Place", for: .normal)
+                case .reservations:
+                    self.addButton.setTitle(" Reservation", for: .normal)
+                }
+            }
+        }
+    }
+    
+    private func hideAddButton() {
+        UIView.animate(withDuration: 0.2) {
+            self.addButton.alpha = 0
+        } completion: { _ in
+            self.addButton.isHidden = true
+        }
+    }
+    
+    private func showAddButton() {
+        addButton.isHidden = false
+        UIView.animate(withDuration: 0.3) {
+            self.addButton.alpha = 1
+        }
     }
 }
 
@@ -93,7 +157,7 @@ extension TripBottomSheetViewController: UITableViewDelegate, UITableViewDataSou
             case .daysPlan:
                 return (tripData?.dayPlan.count ?? 0) + 1
             case .reservations:
-                return (tripData?.reservations.count ?? 0) + 1
+                return (tripData?.reservations.count ?? 0)
             case .budget:
                 return (tripData?.budget.expenses.count ?? 0) + 1
             }
@@ -134,24 +198,15 @@ extension TripBottomSheetViewController: UITableViewDelegate, UITableViewDataSou
                     return UITableViewCell()
                 }
             case .reservations:
-                switch indexPath.row {
-                case tripData?.reservations.count:
-                    guard let cell = tableView.dequeueReusableCell(withIdentifier: AddNewTableViewCell.identifier, for: indexPath) as? AddNewTableViewCell else {
-                        return UITableViewCell()
-                    }
-                    cell.delegate = self
-                    return cell
-                default:
-                    guard let cell = tableView.dequeueReusableCell(withIdentifier: TripReservationTableViewCell.identifier, for: indexPath) as? TripReservationTableViewCell else {
-                        return UITableViewCell()
-                    }
-                    cell.configure(tripReservation: tripData!.reservations[indexPath.row])
-                    cell.selectionStyle = .none
-                    return cell
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: TripReservationTableViewCell.identifier, for: indexPath) as? TripReservationTableViewCell else {
+                    return UITableViewCell()
                 }
+                cell.configure(tripReservation: tripData?.reservations[indexPath.row] ?? TripReservation(id: "", reservationType: .bus, fromPlace: "", toPlace: "", date: Date()))
+                cell.selectionStyle = .none
+                return cell
             case .budget:
                 switch indexPath.row {
-                case 0:
+                case 0 :
                     guard let cell = tableView.dequeueReusableCell(withIdentifier: TripBudgetTableViewCell.identifier, for: indexPath) as? TripBudgetTableViewCell else {
                         return UITableViewCell()
                     }
@@ -162,10 +217,10 @@ extension TripBottomSheetViewController: UITableViewDelegate, UITableViewDataSou
                     guard let cell = tableView.dequeueReusableCell(withIdentifier: TripExpenseTableViewCell.identifier, for: indexPath) as? TripExpenseTableViewCell else {
                         return UITableViewCell()
                     }
+                    cell.configure(expense: tripData?.budget.expenses[indexPath.row - 1] ?? TripExpense(id: "", name: "", amount: 0.0, expenseType: .custom, pic: ""))
                     cell.selectionStyle = .none
                     return cell
                 }
-                
             }
         }
     }
@@ -175,6 +230,7 @@ extension TripBottomSheetViewController: UITableViewDelegate, UITableViewDataSou
 extension TripBottomSheetViewController: TripOptionsTableViewCellDelegate {
     func onClickOption(option: TripOptions) {
         if selectedOption != option {
+            setUpAddButton(option: option)
             var animation = UITableView.RowAnimation.left
             switch option {
             case .budget:

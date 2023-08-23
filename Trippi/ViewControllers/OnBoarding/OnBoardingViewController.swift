@@ -24,6 +24,11 @@ class OnBoardingViewController: UIViewController {
     func navigateToTrippiTabBarVC() {
         let vc = getVC(storyboard: .trippiTabBar, vc: TrippiTabBarViewController.identifier) as! TrippiTabBarViewController
         self.pushVC(vc: vc, isAnimated: true)
+        
+//        guard let vc = getVC(storyboard: .dashboard, vc: DashboardViewController.identifier) as? DashboardViewController else {
+//            return
+//        }
+//        self.pushVC(vc: vc, isAnimated: true)
     }
 
     //MARK: - Antions

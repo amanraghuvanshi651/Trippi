@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "5452468_buildings_holidays_hotel_vacations_icon.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "5452468_buildings_holidays_hotel_vacations_icon (1).png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "5452468_buildings_holidays_hotel_vacations_icon (2).png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -21,4 +21,5 @@ enum TrippiStoryboards: String {
     case comments = "Comments"
     case trip = "Trip"
     case addReservation = "AddReservation"
+    case addExpense = "AddExpense"
 }
